@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Day 3: Artificial intelligence for policy-making</title>
+    <title>Tag 2: Big Data, Good Data? Die kritische Nutzung von Daten</title>
     <meta charset="utf-8" />
     <meta name="author" content="Simon Munzert" />
     <script src="libs/header-attrs/header-attrs.js"></script>
@@ -17,10 +17,10 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Day 3: Artificial intelligence for policy-making
+# Tag 2: Big Data, Good Data? Die kritische Nutzung von Daten
 ]
 .subtitle[
-## The promise and perils of big data
+## Möglichkeiten und Probleme mit Big Data
 ]
 .author[
 ### Simon Munzert
@@ -43,29 +43,28 @@ class: center, middle, inverse, title-slide
 
 
 
-# Table of contents
+# Inhaltsverzeichnis
 
 &lt;br&gt;&lt;br&gt;
+1. [Was ist Big Data?](#whatisbigdata)
 
-1. [What is big data?](#whatisbigdata)
-
-2. [The big data paradox](#bigdataparadox)
+2. [Das Big-Data-Paradoxon](#bigdataparadox)
 
 3. [Garbage in, garbage out](#garbageingarbageout)
 
-4. [Opportunities of big data for the public good](#opportunities)
+4. [Chancen von Big Data für das Gemeinwohl](#opportunities)
 
 
 ---
 class: inverse, center, middle
 name: whatisbigdata
 
-# What is big data?
+# Was ist Big Data?
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
 
 
 ---
-# What is big data?
+# Was ist Big Data?
 
 &lt;div align="center"&gt;
 &lt;img src="../pics/big-data-5vs.png" height=480&gt;
@@ -73,7 +72,7 @@ name: whatisbigdata
 
 
 ---
-# Massive amounts of data around us&lt;sup&gt;1&lt;/sup&gt;
+# Massive Datenmengen um uns herum &lt;sup&gt;1&lt;/sup&gt;
 
 .pull-left-wide2[
 &lt;div align="center"&gt;
@@ -82,7 +81,7 @@ name: whatisbigdata
 
 `Source` Reinsel et al., 2017, ["Data Age 2025"](https://www.seagate.com/files/www-content/our-story/trends/files/Seagate-WP-DataAge2025-March-2017.pdf)
 
-.footnote[&lt;div class="font80"&gt;&lt;sup&gt;1&lt;/sup&gt;Don't take any of those numbers too seriously. Those are very difficult to measure and numbers you find online are at times differing by oders of magnitude. Also, they are a moving target.&lt;/div&gt;]
+.footnote[&lt;div class="font80"&gt;&lt;sup&gt;1&lt;/sup&gt;Nehmen Sie diese Zahlen nicht zu ernst. Sie sind sehr schwer zu messen, und die Zahlen, die Sie online finden, weichen manchmal um ein Vielfaches voneinander ab. Außerdem sind sie ein schwankendes Maß.&lt;/div&gt;]
 ]
 
 .pull-right-small2[
@@ -97,56 +96,54 @@ name: whatisbigdata
 
 
 ---
-# The age of big data - big trends
+# Das Zeitalter von Big Data - Big Trends
 
 &lt;br&gt;&lt;br&gt;
 
-1. Proliferation of **human-generated data** at scale, in particular in the digital sphere
+1. Ausbreitung von **vom Menschen erzeugten Daten** in großem Umfang, insbesondere im digitalen Bereich
 
-2.  Use of **new data types**: Text, video, digital traces
+2.  Verwendung von **neuen Datentypen**: Text, Video, digitale Spuren
 
-3.  **Computational and storage costs** fallen dramatically
+3.  **Rechen- und Speicherkosten** sind drastisch gesunken
 
-4.  Mainstreaming of **machine learning** and **AI** technologies
+4.  Mainstreaming von **maschinellem Lernen** und **KI**-Technologien
 
-5.  (Limited) **democratization of access** to large data resources
+5. (begrenzte) **Demokratisierung des Zugangs** zu großen Datenbeständen
 
-6.  **Embracement of computational methods** development across many disciplines
+6.  **Einführung von Berechnungsmethoden** in vielen Disziplinen
 
-7.  **Shift in research avant-garde** from academia to industry
-
-
+7.  **Verlagerung der Forschungsavantgarde** von der akademischen Welt zur Industrie
 
 
 ---
 class: inverse, center, middle
 name: bigdataparadox
 
-# The big data paradox
+# Das Big Data Paradox
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
 
 
 ---
-# An early big data disaster
+# Ein frühes Big Data Disaster
 
 &lt;div align="center"&gt;
 &lt;img src="../pics/literary-digest-1.png" height=520&gt;
 &lt;/div&gt;
 
 ---
-# Literary Digest's 1936 election poll
+# Wahlumfrage 1936 der Zeitschrift Literary Digest 
 
 .pull-left[
-## Background
+## Hintergrund
 
-- The weekly magazine *Literary Digest* had correctly predicted the outcomes of all presidential elections between 1920 and 1932 using straw polls.
-- Their 1936 poll of 10m voters indicated that Republican candidate Alfred Landon would be the overwhelming winner.
+- Die Wochenzeitschrift *Literary Digest* hatte die Ergebnisse aller Präsidentschaftswahlen zwischen 1920 und 1932 anhand von Umfragen korrekt vorhergesagt.
+- Ihre Umfrage von 1936 unter 10 Millionen Wählern ergab, dass der republikanische Kandidat Alfred Landon der überwältigende Sieger sein würde.
 
-## Aftermath
+## Nachwehen
 
-- The poll was a disaster: Landon lost in a landslide to Franklin D. Roosevelt, who carried 46 out of 48 states and won 60.8% of the popular vote.
-- The outcome was correctly predicted by George Gallup with sample of 50k people.
-- The magazine went bankrupt in 1938.
+- Die Umfrage war eine Katastrophe: Landon verlor erdrutschartig gegen Franklin D. Roosevelt, der 46 von 48 Bundesstaaten für sich entschied und 60,8% der Wählerstimmen erhielt.
+- Das Ergebnis wurde von George Gallup mit einer Stichprobe von 50.000 Personen richtig vorhergesagt.
+- Die Zeitschrift ging 1938 in Konkurs.
 ]
 
 .pull-right[
@@ -158,24 +155,23 @@ name: bigdataparadox
 
 
 ---
-# Literary Digest's 1936 election poll
+# Wahlumfrage 1936 der Zeitschrift Literary Digest
 
 &lt;div align="center"&gt;
 &lt;img src="../pics/literary-digest-2.png" height=520&gt;
 &lt;/div&gt;
 
 ---
-# Literary Digest's 1936 election poll
+# Wahlumfrage 1936 der Zeitschrift Literary Digest
 
 .pull-left[
-## Anatomy of a debacle
+## Anatomie eines Debakels
 
-1. **Sampling frame**: (1) own readers, (2) registered automobile owners, (3) registered telephone users
-2. **Data collection**: everyone was mailed a mock ballot and asked to return marked ballot
-3. **Response rate**: 2.4m out of 10m
+1. **Stichprobenrahmen**: (1) eigene Leser, (2) registrierte Autobesitzer, (3) registrierte Telefonnutzer
+2. **Datenerhebung**: Jeder bekam einen Musterstimmzettel zugeschickt und wurde gebeten, den markierten Stimmzettel zurückzugeben
+3. **Rücklaufquote**: 2,4 Mio. von 10 Mio.
 
-**Selection bias** as a consequence of **coverage** and **nonresponse bias**: overrepresentation of wealthier individuals with a preference for Landon
-
+**Auswahlverzerrung** als Folge von **Erfassungsgrad** und **Non-Response-Verzerrung**: Überrepräsentation von wohlhabenderen Personen mit einer Präferenz für Landon
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 `Source` [Peverill Squire, 1988, Public Opinion Quarterly](https://www.jstor.org/stable/2749114)
@@ -190,7 +186,7 @@ name: bigdataparadox
 ]
 
 ---
-# Take surveys with a pinch of salt
+# Nehmen Sie Umfragen mit einer Prise Skepsis
 
 &lt;div align="center"&gt;
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
@@ -200,8 +196,8 @@ name: bigdataparadox
 
 
 ---
-# A modern big data polling disaster
-
+# Ein modernes Big Data Umfrage-Desaster
+ 
 .pull-left[
 &lt;div align="center"&gt;
 &lt;img src="../pics/bradley-unrepresentative-big-surveys-vaccine-1.png" height=480&gt;
@@ -216,7 +212,7 @@ name: bigdataparadox
 
 
 ---
-# A modern big data polling disaster
+# Ein modernes Big Data Umfrage-Desaster
 
 .pull-left-wide[
 &lt;div align="center"&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
@@ -233,14 +229,14 @@ name: bigdataparadox
 
 
 ---
-# The big data paradox
+# Das Big Data Paradox
 
 .pull-left[
-&gt; "[W]hen biased samples are large, they are doubly misleading: they produce confidence intervals with incorrect centres and substantially underestimated widths. This is the **Big Data Paradox**: the bigger the data, the surer we fool ourselves when we fail to account for bias in data collection."
+&gt; „Wenn verzerrte Stichproben groß sind, sind sie doppelt irreführend: Sie erzeugen Konfidenzintervalle mit falschen Zentren und erheblich unterschätzten Breiten. Dies ist das **Big-Data-Paradox**: Je größer die Daten sind, desto sicherer täuschen wir uns selbst, wenn wir die Verzerrungen bei der Datenerhebung nicht berücksichtigen.“
 
 &lt;div align="right"&gt;Bradley et al. (2021), &lt;i&gt;Nature&lt;/i&gt;&lt;/div&gt;
 
-&gt; "[T]he 'bigness' of such Big Data (for population inferences) should be measured by the relative size f = n/N of the sample to the population, not by the absolute size n of the sample."
+&gt; „Die 'Größe' solcher Big Data (für Rückschlüsse auf die Population) sollte an der relativen Größe f = n/N der Stichprobe zur Population gemessen werden, nicht an der absoluten Größe n der Stichprobe.
 
 &lt;div align="right"&gt;Xiao-Li Meng (2018), &lt;i&gt;The Annals of Applied Statistics&lt;/i&gt;&lt;/div&gt;
 
@@ -249,34 +245,34 @@ name: bigdataparadox
 --
 
 .pull-right[
-## Finite population correction to the rescue?
+## Korrektur endlicher Grundgesamtheiten zur Rettung?
 
-- Intuition tells us that when the sample size becomes big relative to the population size, we should be less likely to err.
-- That's true, but the gain is relatively slow.
-- For instance, the finite population correction factor for the standard error of a quantity of interest  given by `\(\sqrt{\frac{N-n}{N-1}}\)`. 
+- Die Intuition sagt uns, dass die Wahrscheinlichkeit eines Fehlers geringer sein sollte, wenn der Stichprobenumfang im Verhältnis zum Umfang der Grundgesamtheit groß ist.
+- Das stimmt auch, aber der Zugewinn ist relativ langsam.
+- Der endliche Populationskorrekturfaktor für den Standardfehler einer interessierenden Größe ist zum Beispiel gegeben durch `\(\sqrt{\frac{N-n}{N-1}}\)`. 
 
-## Example
+## Beispiel
 
-- We run a survey of 100k people in a population of 3.7m.
-- For `\(N=3.7m\)` and `\(n=100k\)`, this is `\(\sqrt{0.973}\)`.
+- Wir führen eine Umfrage bei 100k Personen in einer Bevölkerung von 3,7 Mio. durch.
+- Für `\(N=3.7m\)` und `\(n=100k\)` ist dies `\(\sqrt{0.973}\)`.
 ]
 
 ---
 class: inverse, center, middle
 name: garbageingarbageout
 
-# Garbage in, garbage out
+# Garbage in, Garbage out
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
 
 
 ---
-# Garbage in, garbage out
+# Garbage in, Garbage out
 
 .pull-left[
-## THE GIGO principle
-- The quality of information coming out of a model (e.g., predictions) cannot be better than the quality of information that went in.
-- The principle is particularly relevant in the context of big data, where data quality is often poor.
-- This is particularly relevant in the context of machine learning, where models can be very complex and opaque.
+## Das GIGO Prinzip
+- Die Qualität der Informationen, die aus einem Modell herauskommen (z.B. Vorhersagen), kann nicht besser sein als die Qualität der Informationen, die hineinkamen.
+- Dieser Grundsatz ist vor allem im Zusammenhang mit Big Data von Bedeutung, wo die Datenqualität oft schlecht ist.
+- Dies gilt insbesondere für das maschinelle Lernen, bei dem die Modelle sehr komplex und undurchsichtig sein können.
 ]
 
 .pull-right[
@@ -288,7 +284,7 @@ name: garbageingarbageout
 
 
 ---
-# Google Flu Trends - the big promise
+# Google Grippe-Trends - der große Fehlschlag
 
 &lt;div align="center"&gt;
 &lt;img src="../pics/google-flu-nature.png" width=600&gt;
@@ -297,7 +293,7 @@ name: garbageingarbageout
 `Source` Ginsberg et al., 2009, [Nature](https://www.nature.com/articles/nature07634)
 
 ---
-# Google Flu Trends - the big promise
+# Google Grippe-Trends - der große Fehlschlag
 
 &lt;div align="center"&gt;
 &lt;img src="../pics/google-flu-trends-screenshot-1.jpg" width=480&gt;&lt;br&gt;
@@ -306,7 +302,7 @@ name: garbageingarbageout
 
 
 ---
-# Google Flu Trends - the failure
+# Google Grippe-Trends - der große Fehlschlag
 
 
 .pull-left-wide2[
@@ -326,7 +322,7 @@ name: garbageingarbageout
 
 
 ---
-# Detecting criminality with face images
+# Erkennen von Straftaten mit Gesichtsbildern
 
 &lt;div align="center"&gt;
 &lt;img src="../pics/criminal-faces-1.png" width=600&gt;
@@ -334,7 +330,7 @@ name: garbageingarbageout
 
 
 ---
-# Detecting criminality with face images
+# Erkennen von Straftaten mit Gesichtsbildern
 
 &lt;div align="center"&gt;
 &lt;img src="../pics/criminal-faces-2.png" width=600&gt;
@@ -342,7 +338,7 @@ name: garbageingarbageout
 
 
 ---
-# Detecting criminality with face images
+# Erkennen von Straftaten mit Gesichtsbildern
 
 &lt;div align="center"&gt;&lt;br&gt;
 &lt;img src="../pics/criminal-faces-3.png" width=500&gt;
@@ -352,18 +348,18 @@ name: garbageingarbageout
 
 
 ---
-# Garbage in, garbage out: lessons learned
+# Garbage in, Garbage out: gelernte Lektionen
 
 .pull-left[
-1. **Measurement** and **selection issues** are still key in Big Data analytics
+1. **Messung** und **Auswahlfragen** sind bei der Big-Data-Analyse nach wie vor entscheidend
 
-2. Don't trust **measures** that haven't been **properly validated**
+2. Trauen Sie **Messungen** nicht, die nicht **richtig validiert** wurden
 
-3. Look out for what goes into a model (the **input**: cases, variables/features)
+3. Achten Sie darauf, was in ein Modell einfließt (der **Input**: Fälle, Variablen/Merkmale)
 
-4. Look for proper **out-of-sample validation** of models
+4. Achten Sie auf eine angemessene **Out-of-Sample-Validierung** von Modellen
 
-5. Beware of **uncritical use of online/social media** as a data source
+5. Vorsicht bei **unkritischer Nutzung von Online-/Sozialen Medien** als Datenquelle
 ]
 
 .pull-right-center[
@@ -378,12 +374,12 @@ name: garbageingarbageout
 class: inverse, center, middle
 name: opportunities
 
-# Opportunities of big data for the public good
+# Chancen von Big Data für das Gemeinwohl
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
 
 
 ---
-# The age of big data - the age of dystopia?
+# Das Zeitalter von Big Data - das Zeitalter der Dystopie?
 
 .pull-left[
 &lt;div align="center"&gt;&lt;br&gt;&lt;br&gt;
@@ -402,7 +398,7 @@ name: opportunities
 
 
 ---
-# Boost public services with AI for individualized health care
+# KI für eine individualisierte Gesundheitsversorgung
 
 &lt;div align="center"&gt;&lt;br&gt;&lt;br&gt;
 &lt;img src="../pics/hark-app.png" height=280&gt;
@@ -412,7 +408,7 @@ name: opportunities
 `More information` [Google Deepmind](https://deepmind.google/discover/blog/we-are-very-excited-to-announce-the-launch-of-deepmind-health/), [Data breach](https://www.bbc.com/news/technology-58761324)
 
 ---
-# Boost public services with AI for individualized health care
+# KI für eine individualisierte Gesundheitsversorgung
 
 &lt;div align="center"&gt;
 &lt;img src="../pics/hark-app-breach.png" width=1000&gt;
@@ -421,7 +417,7 @@ name: opportunities
 
 
 ---
-# Climate Change AI
+# Klimawandel KI
 
 .pull-left-small-center[
 &lt;div align="center"&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
@@ -440,7 +436,7 @@ name: opportunities
 
 
 ---
-# Climate Change AI
+# Klimawandel KI
 &lt;div align="center"&gt;
 &lt;img src="../pics/geraedts-contrails.png" height=400&gt;
 &lt;img src="../pics/contrails.jpeg" height=400&gt;
@@ -451,7 +447,7 @@ name: opportunities
 
 
 ---
-# LLMs for more efficient administration?
+# LLMs für effizientere Verwaltung?
 
 &lt;div align="center"&gt;
 &lt;img src="../pics/llm-public-admin-1.png" height=270&gt;
