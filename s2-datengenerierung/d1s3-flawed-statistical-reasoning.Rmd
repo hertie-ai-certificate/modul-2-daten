@@ -1,6 +1,6 @@
 ---
-title: "Day 1: Fundamental data and statistical literacy"
-subtitle: "Spotting flawed statistical reasoning"
+title: "Tag 1: Der Daten-Lifecycle und: Woher kommen Daten?"
+subtitle: "Session 2: Datengenerierung und was dabei schief gehen kann"
 author: "Simon Munzert"
 institute: "Hertie School"
 output:
@@ -56,28 +56,26 @@ library(fontawesome)
 
 
 
-# Table of contents
+# Inhaltsverzeichnis
 
 <br><br>
 
-1. [Bad sampling: representativity is in the eye of the beholder](#sampling)
+1. [Schlechte Stichproben: Repräsentativität liegt im Auge des Betrachters](#sampling)
 
-3. [Bad analytics: significance is not all that matters](#analytics)
+2. [Schlechte Analytik: Signifikanz ist nicht alles, was zählt](#analytics)
 
-3. [Bad inference: correlation does not imply causation](#inference)
-
-
+3. [Schlechte Schlussfolgerung: Korrelation impliziert keine Kausalität](#inference)
 
 ---
 class: inverse, center, middle
 name: correlation
 
-# Bad sampling: representativity is in the eye of the beholder
+# Schlechte Stichproben: Repräsentativität liegt im Auge des Betrachters
 <html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
 
 
 ---
-# Fooled by "representativity"
+# Getäuscht durch „Repräsentativität“
 
 <div align="center">
 <img src="../pics/survey-intelligence.png" height=450>
@@ -87,7 +85,7 @@ name: correlation
 
 
 ---
-# Fooled by "representativity"
+# Getäuscht durch „Repräsentativität“
 
 <div align="center">
 <img src="../pics/eu-summertime.png" height=400>
@@ -99,18 +97,18 @@ name: correlation
 
 
 ---
-# Samples and representativity
+# Stichproben und Repräsentativität
 
 .pull-left[
-## A folk definition of representativity
+## Eine volkstümliche Definition von Repräsentativität
 
-A sample (or data in general) is "representative" if **conclusions drawn from the sample can be generalized** to the population of interest.
+Eine Stichprobe (oder Daten im Allgemeinen) ist „repräsentativ“, wenn **die aus der Stichprobe gezogenen Schlüsse verallgemeinert werden können** für die Grundgesamtheit von Interesse.
 ]
 
 .pull-right[
-## A more formal definition
+## Eine formalere Definition
 
-A sample is representative if it is drawn in such a way that it is **statistically indistinguishable** from the population of interest.
+Eine Stichprobe ist repräsentativ, wenn sie so gezogen wird, dass sie **statistisch nicht von der interessierenden Grundgesamtheit** unterscheidbar ist.
 ]
 
 <div align="center">
@@ -120,32 +118,31 @@ A sample is representative if it is drawn in such a way that it is **statistical
 
 
 ---
-# The issue with the term "representativity"
+# Das Problem mit dem Begriff „Repräsentativität“
 
-## Why "representativity" is a problematic term
+## Warum „Repräsentativität“ ein problematischer Begriff ist
 
-1. Whether a sample is representative depends on your interest.
-2. You cannot call a sample "representative" a priori. 
-3. Assessing the representativity of a sample requires strong assumptions about your knowledge on the population (but where does it come from?) and your measures of characteristics which should be "representative".
-
+1. Ob eine Stichprobe repräsentativ ist, hängt von Ihrem Interesse ab.
+2. Man kann eine Stichprobe nicht a priori als „repräsentativ“ bezeichnen. 
+3. Die Beurteilung der Repräsentativität einer Stichprobe erfordert starke Annahmen über Ihr Wissen über die Grundgesamtheit und Ihre Messungen der Merkmale, die „repräsentativ“ sein sollten.
 
 ---
-# Total survey error
+# Gesamtfehler der Umfrage
 
 .pull-left[
-## Inference in survey research
+## Inferenz in der Umfrageforschung
 
-- Learn something about the distribution of attributes in a population
-- Collect information from  a subset of the population
+- Etwas über die Verteilung von Merkmalen in einer Grundgesamtheit erfahren
+- Sammeln von Informationen aus einer Teilmenge der Grundgesamtheit
 
-## Two types of errors
+## Zwei Arten von Fehlern
 
-- Errors of **measurement**: what you measure is not what you want to measure
-- Errors of **representation**: the set of whom you observe is not generalizable to the population of interest
+- **Messfehler**: was man misst, ist nicht das, was man messen will
+- Fehler der **Repräsentation**: Die Gruppe, die Sie beobachten, ist nicht verallgemeinerbar auf die interessierende Population
 ]
 
 .pull-right[
-## Total Survey Error framework
+## Gesamtfehler der Umfrage Framework
 
 <div align="center">
 <br>
@@ -157,17 +154,17 @@ A sample is representative if it is drawn in such a way that it is **statistical
 
 
 ---
-# Measurement and sampling error in the wild
+# Mess- und Stichprobenfehler in freier Wildbahn
 
 .pull-left[
-## Overrepresentation and misreporting in election surveys
+## Überrepräsentation und falsche Angaben in Wahlumfragen
 
-- Figures from postelection surveys often grossly overestimate election turnout. 
-- Two distinct phenomena are responsible for this gap:
-    1. Overrepresentation of actual voters
-    2. Vote misreporting by actual nonvoters among survey respondents. 
-- Vote validation studies help identify the issue at the individual level.
-- Turnout bias can also affect analyses of downstream variables (e.g., voting behavior).
+- Die Zahlen aus Umfragen nach der Wahl überschätzen die Wahlbeteiligung oft erheblich. 
+- Zwei unterschiedliche Phänomene sind für diese Diskrepanz verantwortlich:
+    1. Überrepräsentation der tatsächlichen Wähler
+    2. Falsche Angaben zur Wahlbeteiligung durch Nichtwähler unter den Umfrageteilnehmern. 
+- Studien zur Validierung der Wahlbeteiligung helfen, das Problem auf individueller Ebene zu identifizieren.
+- Eine Verzerrung der Wahlbeteiligung kann sich auch auf Analysen nachgelagerter Variablen (z.B. Wahlverhalten) auswirken.
 ]
 
 .pull-right[
@@ -180,39 +177,39 @@ A sample is representative if it is drawn in such a way that it is **statistical
 ]
 
 ---
-# Bad sampling: lessons learned
+# Schlechte Stichproben: gelernte Lektionen
 
 
 .pull-left[
-## What does this mean for you?
+## Was bedeutet das für Sie?
 
-- Don't take reported "representativity" at face value.
-- Sample size alone does not guarantee representativity.
-- Don't be fooled by "big data" (it's not representative by default).
-- Don't be fooled by "convenience samples" (they are not representative by default).
-- Probability sampling is not a panacea because people still self-select into/out of samples.
-- Bad sampling is not restricted to surveys (think, e.g., about social media data, case selection for a medical trial, or selection of countries for a policy study).
+- Nehmen Sie die angegebene „Repräsentativität“ nicht für bare Münze.
+- Der Stichprobenumfang allein garantiert keine Repräsentativität.
+- Lassen Sie sich nicht von „großen Datenmengen“ täuschen (sie sind standardmäßig nicht repräsentativ).
+- Lassen Sie sich nicht von „Zufallsstichproben“ täuschen (sie sind standardmäßig nicht repräsentativ).
+- Wahrscheinlichkeitsstichproben sind kein Allheilmittel, da Menschen immer noch eine Selbstselektion in/aus Stichproben vornehmen.
+- Schlechte Stichproben sind nicht auf Erhebungen beschränkt (denken Sie z.B. an Daten aus sozialen Medien, die Auswahl von Fällen für eine medizinische Studie oder die Auswahl von Ländern für eine politische Studie).
 ]
 
 .pull-right[
-## Instead, look for the following: 
+## Suchen Sie stattdessen nach den folgenden Punkten: 
 
-1. **Transparency** about the sampling process.
-2. **Assessment** of the representativity of the sample.
-3. **Validation** of the sample against external benchmarks.
-4. **Common sense** (does it make sense to call the representative?)
+1. **Transparenz** über das Stichprobenverfahren.
+2. **Einschätzung** der Repräsentativität der Stichprobe.
+3. **Validierung** der Stichprobe anhand externer Benchmarks.
+4. **Gesunder Menschenverstand** (ist es sinnvoll, den Repräsentanten anzurufen?)
 ]
 
 
 ---
-# Discussion
+# Diskussion
 
 .pull-left[
 
-## Points for discussion
+## Eckpunkte für die Diskussion
 
-1. At which point of the policy cycle could which type of consultation be useful?
-2. What are distinct pros and cons of different consultation types for monitoring and evaluation?
+1. Zu welchem Zeitpunkt des Politikzyklus könnte welche Art der Konsultation sinnvoll sein?
+2. Welche Vor- und Nachteile haben die verschiedenen Konsultationsarten für die Beobachtung und Bewertung?
 
 <div align="center">
 <img src="../pics/georgia-handbook-3.png" width=405>
@@ -238,58 +235,55 @@ A sample is representative if it is drawn in such a way that it is **statistical
 class: inverse, center, middle
 name: analytics
 
-# Bad analytics: significance is not all that matters
+# Schlechte Analytik: Signifikanz ist nicht alles, was zählt
 <html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
 
 
 ---
-# Back to statistical significance
+# Zurück zu statistischer Signifikanz
 
 .pull-left[
-## Statistical significance in practice
-- By convention, Type I errors should be avoided at all cost
-- A result is regarded statistically significant when it is very unlikely to have occurred under a true null hypothesis
-- A significance level $\alpha$ gives the probability of Type I error. Commonly set to 5%
+## Statistische Signifikanz in der Praxis
+- Konventionell sollten Fehler vom Typ I um jeden Preis vermieden werden.
+- Ein Ergebnis gilt als statistisch signifikant, wenn es sehr unwahrscheinlich ist, dass es unter einer wahren Nullhypothese aufgetreten wäre.
+- Ein Signifikanzniveau $\alpha$ gibt die Wahrscheinlichkeit eines Fehlers vom Typ I an. Üblicherweise wird es auf 5% festgelegt.
 ]
 
 --
 
 .pull-right[
-## Some problems
-- Just because an effect is significant does not mean it is substantively meaningful (large).
-- There is an incentive for researchers to produce statistically significant findings. $\rightarrow$ publication bias
-- Statistical significance is (also) a function of sample size. It is **trivial to generate significant findings with big data**.
-- Unfortunately, it's also often **trivial to generate significant findings with small data** when you are flexible with regards to your hypotheses.
+## Gewisse Probleme
+- Nur weil ein Effekt signifikant ist, heißt das nicht, dass er substanziell bedeutsam (groß) ist.
+- Es gibt einen Anreiz für Forscher, statistisch signifikante Ergebnisse zu produzieren $\rightarrow$ "publication bias"
+- Statistische Signifikanz ist (auch) eine Funktion der Stichprobengröße. Es ist **trivial, mit großen Daten signifikante Ergebnisse zu erzielen**.
+- Leider ist es auch oft **trivial, mit kleinen Daten signifikante Ergebnisse zu erzielen**, wenn man in Bezug auf seine Hypothesen flexibel ist.
 ]
 
 ---
-# Don't get duped by stretched expressions of significance
+# Lassen Sie sich nicht von übertriebenen Ausdrücken der Signifikanz täuschen.
 
-> "The following list is culled from peer-reviewed journal articles in which (a) the authors set themselves the threshold of 0.05 for significance, (b) failed to achieve that threshold value for p and (c) described it in such a way as to make it seem more interesting." [Matthew Hankins, Probable Error](https://goo.gl/iUGz7a)
-
+> „Die folgende Liste stammt aus begutachteten Zeitschriftenartikeln, in denen (a) die Autoren sich selbst den Schwellenwert von 0,05 für die Signifikanz gesetzt haben, (b) diesen Schwellenwert für p nicht erreicht haben und (c) ihn so beschrieben haben, dass er interessanter erscheint.“ [Matthew Hankins, Probable Error](https://goo.gl/iUGz7a)
 <br>
 
-> *(barely) not statistically significant (p=0.052), a barely detectable statistically significant difference (p=0.073), a borderline significant trend (p=0.09), a certain trend toward significance (p=0.08), a clear tendency to significance (p=0.052), a clear trend (p<0.09), a clear, strong trend (p=0.09), ..., very closely brushed the limit of statistical significance (p=0.051), very narrowly missed significance (p<0.06), very nearly significant (p=0.0656), very slightly non-significant (p=0.10), very slightly significant (p<0.1), 
-virtually significant (p=0.059), weak significance (p>0.10), weakened..significance (p=0.06), weakly non-significant (p=0.07), weakly significant (p=0.11), weakly statistically significant (p=0.0557), well-nigh significant (p=0.11)*
-
+> *(knapp) nicht statistisch signifikant (p=0,052), ein kaum nachweisbarer statistisch signifikanter Unterschied (p=0,073), ein grenzwertig signifikanter Trend (p=0,09), ein gewisser Trend zur Signifikanz (p=0,08), eine klare Tendenz zur Signifikanz (p=0,052), ein klarer Trend (p<0. 09), ein klarer, starker Trend (p=0,09), ..., sehr knapp an der Grenze der statistischen Signifikanz (p=0,051), sehr knapp an der Signifikanz vorbei (p<0,06), sehr knapp signifikant (p=0,0656), sehr knapp nicht signifikant (p=0,10), sehr knapp signifikant (p<0,1), 
+praktisch signifikant (p=0,059), schwach signifikant (p>0,10), abgeschwächt signifikant (p=0,06), schwach nicht signifikant (p=0,07), schwach signifikant (p=0,11), schwach statistisch signifikant (p=0,0557), nahezu signifikant (p=0,11)*
 
 ---
-# Fishing and p-hacking
+# Daten-Fishing und p-Hacking
 
 .pull-left-wide2[
-## The problem
+## Das Problem
 
-The dominance of statistical significance as decision criterion in the scientific publishing game makes p-values a key target criterion in statistical analysis. Small p-values are reported more often than we'd expect!
+Die Dominanz der statistischen Signifikanz als Entscheidungskriterium bei wissenschaftlichen Veröffentlichungen macht die p-Werte zu einem wichtigen Zielkriterium bei der statistischen Analyse. Kleine p-Werte werden häufiger berichtet, als man erwarten würde!
 
-## The symptoms
+## Die Symptome
 
-- **Fishing**: testing many hypotheses until significance
-- **P-hacking**: tweaking your analysis (e.g., adding/removing controls, transforming variables, changing models) until significance
-- **HARKing**: **H**ypothesizing **a**fter the **r**esults are **k**nown
+- **Daten-Fishing**: Testen vieler Hypothesen bis zur Signifikanz
+- **p-Hacking**: Optimieren der Analyse (z.B. Hinzufügen/Entfernen von Kontrollen, Transformieren von Variablen, Ändern von Modellen) bis zur Signifikanz
+- **HARKing**: **H**ypothesizing **a**fter the **r**esults are **k**nown (Hypothesenbildung nachdem die Ergebnisse bekannt sind) 
+## Das Gegenmittel?
 
-## The cure?
-
-Special issue in [The American Statistician, 2019](https://www.tandfonline.com/toc/utas20/73/sup1): *"Statistical Inference in the 21st Century: A World Beyond p < 0.05"*
+Sonderausgabe in [The American Statistician, 2019](https://www.tandfonline.com/toc/utas20/73/sup1): *"Statistical Inference in the 21st Century: A World Beyond p < 0.05"*
 ]
 
 .pull-right-small2[
@@ -298,20 +292,21 @@ Special issue in [The American Statistician, 2019](https://www.tandfonline.com/t
 <img src="../pics/p-values-pone.png" height=260><br>
 </div>
 
-> "The data set consists of over 135’000 records. The data have been harvested by means of computer-based search from (...) five Journals of Experimental Psychology in the period January 1996-March 2008." 
+> "Der Datensatz besteht aus über 135'000 Datensätzen. Die Daten wurden mittels computergestützter Suche aus (...) fünf Journals of Experimental Psychology im Zeitraum von Januar 1996 bis März 2008 gewonnen." 
 
 `Source` [Krawczyk, M., 2015, PLOS ONE](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0127872)
 ]
 
 
 ---
-# Fishing and p-hacking: exercise
+# Daten-Fishing and p-Hacking: Übung
 
 .pull-left[
-## Exercise
-- Check out [https://projects.fivethirtyeight.com/p-hacking/](https://projects.fivethirtyeight.com/p-hacking/)
-- Spend five minutes to hack your way to scientific glory
-- More background [here](https://fivethirtyeight.com/features/science-isnt-broken).
+## Übung
+- Schau dir [https://projects.fivethirtyeight.com/p-hacking/](https://projects.fivethirtyeight.com/p-hacking/) an.
+- Verbringen Sie fünf Minuten damit, sich zu wissenschaftlichem Ruhm zu hacken
+- Mehr Hintergrundinformationen [hier](https://fivethirtyeight.com/features/science-isnt-broken).
+
 ]
 
 .pull-right[
@@ -323,22 +318,19 @@ Special issue in [The American Statistician, 2019](https://www.tandfonline.com/t
 
 
 ---
-# The effect of pre-registration
+# Die Folgen der Vorregistrierung
 
 .pull-left[
-## The idea
+## Die Idee
+- Vorregistrierung bedeutet, dass Sie Ihre Studie (Hypothesen, Methoden, Analysen) registrieren (z.B. indem Sie sie online stellen), bevor sie durchgeführt wird
+- In den letzten Jahren hat sich die Forschungspraxis stark verändert; siehe das [Open Science Framework (OSF) Registry](https://osf.io/registries/osf/new) und das [American Economic Association (AEA) RCT Registry](https://docs.socialscienceregistry.org/)
+## Warum das wichtig ist
 
-- Pre-registration implies registering (e.g., by putting it online) your study (hypotheses, methods, analyses) before it is conducted
-- Major change in research practice over the last years; check out the [Open Science Framework (OSF) Registry](https://osf.io/registries/osf/new) and  the [American Economic Association (AEA) RCT Registry](https://docs.socialscienceregistry.org/)
-
-
-## Why this matters
-
-> "17 of 30 studies (57\%) published prior to 2000 showed a significant benefit of intervention on the primary outcome in comparison to only 2 among the 25 (8\%) trials published after 2000." (see plot) 
+> "17 von 30 Studien (57\%), die vor dem Jahr 2000 veröffentlicht wurden, zeigten einen signifikanten Nutzen der Intervention für das primäre Ergebnis im Vergleich zu nur 2 der 25 (8\%) Studien, die nach 2000 veröffentlicht wurden." (siehe Grafik)
 ]
 
 .pull-right-center[
-<div class=font50><b>Figure:</b> Relative risk of showing benefit or harm of treatment by year of publication for large NHLBI trials on pharmaceutical and dietary supplement interventions.</div><br>
+<div class=font50><b>Figure:</b> Relatives Risiko, einen Nutzen oder Schaden der Behandlung zu zeigen, nach Jahr der Veröffentlichung für große NHLBI-Studien zu Arzneimitteln und Nahrungsergänzungsmitteln.</div><br>
 
 <div align="center">
 <img src="../pics/preregistration-effect.jpg" height=400>
@@ -349,15 +341,14 @@ Special issue in [The American Statistician, 2019](https://www.tandfonline.com/t
 
 
 ---
-# Statistical power
-
+# Teststärke (statistical power)
 .pull-left[
-## The concept
-- We are used to guard against false positives (significance tests!), but false negatives can hurt, too – in particular if a study/experiment was very costly to run
-- Statistical power is the **probability of correctly rejecting the null hypothesis when it is false**
-- The ability to distinguish signal from noise, where the signal is the treatment effect of interest
-- P("There is an effect and I see it"): Power = 1 - Type II error
-- The higher the statistical power for an experiment, the lower the probability of a Type II error
+## Das Konzept
+- Wir sind daran gewöhnt, uns vor falsch-positiven Ergebnissen (Signifikanztests!) zu schützen, aber auch falsch-negative Ergebnisse können schaden - insb., wenn die Durchführung einer Studie sehr kostspielig war
+- Die statistische Aussagekraft ist die **Wahrscheinlichkeit, die Nullhypothese korrekt zurückzuweisen, wenn sie falsch ist**.
+- Die Fähigkeit, Signal und Rauschen zu unterscheiden, wobei das Signal der interessierende Behandlungseffekt ist
+- P(„Es gibt einen Effekt und ich sehe ihn“): Aussagekraft = 1 - Fehler vom Typ II
+- Je höher die statistische Aussagekraft eines Experiments ist, desto geringer ist die Wahrscheinlichkeit eines Fehlers vom Typ II.
 ]
 
 .pull-right[
@@ -368,48 +359,48 @@ Special issue in [The American Statistician, 2019](https://www.tandfonline.com/t
 ]
 
 ---
-# Power analysis
+# Teststärke (statistical power)
 
 .pull-left-wide2[
 ## Motivation
-- Is your sample big enough to uncover an effect of a certain size? Run a power analysis (ideally before data collection)!
-- [Power analysis](https://egap.org/resource/10-things-to-know-about-statistical-power/) is the process of determining the probability of detecting an effect of a given size with a given sample size
-- If you can afford it, adapt sample size and/or design on the basis of your power calculations
+- Ist Ihre Stichprobe groß genug, um einen Effekt einer bestimmten Größe aufzudecken? Führen Sie eine Power-Analyse durch (idealerweise vor der Datenerhebung)!
+- Bei der [Power-Analyse](https://egap.org/resource/10-things-to-know-about-statistical-power/) wird die Wahrscheinlichkeit ermittelt, mit der ein Effekt einer bestimmten Größe bei einem bestimmten Stichprobenumfang entdeckt wird.
+- Wenn Sie es sich leisten können, passen Sie den Stichprobenumfang und/oder das Design auf der Grundlage Ihrer Power-Berechnungen an
 
-## Calculation
-- Multiple power formulas for different experimental (and observational) designs
-- Formula can be rearranged to, e.g., determine $N$
-- Many off-the-shelf power calculators out there, e.g. [here](https://egap.shinyapps.io/power-app/) (explainer [here](https://www.povertyactionlab.org/sites/default/files/research-resources/ExerciseC_PowerCalc_Participants.pdf))
-- In practice, doing power analyses requires you to make more or less strong assumptions about effect size 
+## Berechnung
+- Mehrere Teststärke-Formeln für verschiedene Versuchs- (und Beobachtungs-) Designs
+- Die Formeln können umgestellt werden, um z.B. $N$ zu bestimmen.
+- Es gibt viele handelsübliche Potenzrechner, z. B. [hier](https://egap.shinyapps.io/power-app/) (Erläuterung [hier](https://www.povertyactionlab.org/sites/default/files/research-resources/ExerciseC_PowerCalc_Participants.pdf))
+- In der Praxis erfordert die Durchführung von Teststärke-Analysen mehr oder weniger starke Annahmen über die Effektgröße 
 ]
 
 .pull-right-small2[
-## Formula
+## Formeln
 
-Power calculation for two-group difference-in-means test with equal variances and group sizes:
+Teststärkeberechnung für zwei Gruppen Differenz-im-Mittelwert-Test mit gleichen Varianzen und Gruppengrößen:
 
 $\text{power} = \Phi(\frac{|\mu_{t}-\mu_{c}|\sqrt{N}}{2\sigma}-\Phi^{-1}(1-\frac{\alpha}{2}))$
 
-- $\Phi$ is the CDF of the Normal distribution $\rightarrow$ power assumed to follow the Normal
-- $\mu_{t,c}$ is the average outcome in treatment/control group $\rightarrow$ effect
-- $\sigma$ is the standard deviation of outcomes $\rightarrow$ noisiness
-- $\alpha$ is chosen significance level, often 0.05 by convention
-- $N$ is the total number of subjects
+- $\Phi$ ist die CDF der Normalverteilung $\rightarrow$ Teststärke unter der Annahme, dass sie der Normalverteilung folgt
+- $\mu_{t,c}$ ist das durchschnittliche Ergebnis in der Behandlungs-/Kontrollgruppe $\rightarrow$ Effekt
+- $\sigma$ ist die Standardabweichung der Ergebnisse $\rightarrow$ Störanfälligkeit
+- $\alpha$ ist das gewählte Signifikanzniveau, häufig 0,05 nach Konvention
+- $N$ ist die Gesamtzahl der Probanden
 ]
 
 ---
-# Power analysis: example
+# Teststärke Analyse: Beispiel
 
 .pull-left[
-## Example
-- You want to detect a 5% increase in voter turnout due to a new campaign
-- You have a sample of 500 voters
-- Assume a standard deviation of 20% in voter turnout
-- Assume a significance level of 0.05
-- What is the power of your study?
-- Use e.g., [EGAP calculator](https://egap.shinyapps.io/power-app/)
+## Beispiel
+- Sie möchten einen Anstieg der Wahlbeteiligung um 5 % aufgrund einer neuen Kampagne feststellen
+- Sie haben eine Stichprobe von 500 Wählern
+- Gehen Sie von einer Standardabweichung der Wahlbeteiligung von 20% aus.
+- Nehmen Sie ein Signifikanzniveau von 0,05 an.
+- Wie hoch ist die Aussagekraft Ihrer Studie?
+- Verwenden Sie z.B. [EGAP-Rechner](https://egap.shinyapps.io/power-app/)
 
-## Calculation
+## Berechnung
 - $\mu_{t}-\mu_{c} = 0.05$
 - $\sigma = 0.2$
 - $N = 500$
@@ -432,18 +423,18 @@ $\text{power} = \Phi(\frac{|\mu_{t}-\mu_{c}|\sqrt{N}}{2\sigma}-\Phi^{-1}(1-\frac
 
 
 ---
-# Bad analytics: lessons learned
+# Schlechte Analytik: gelernte Lektionen
 
 .pull-left-wide[
-## Checklist
+## Checkliste
 
-- **Check the evidence.** Is it really statistically significant?
-- **Look at the theory and evidence.** Is it plausible?
-- **Look at the design.** Can you spot any major flaws?
-- **Look at the effect size.** Is it meaningful? Is it too good to be true?
-- **Look at the sample size.** Is it reasonably large? Is the study well-powered?
-- **Check whether the study was pre-registered.** Spot ad-hoc hypotheses.
-- **Don't trust any single study.** Look for meta-analyses!
+- **Prüfen Sie die Evidenz.** Ist sie wirklich statistisch signifikant?
+- **Betrachten Sie die Theorie und die Evidenz.** Ist sie plausibel?
+- **Schauen Sie sich das Design an.** Können Sie irgendwelche größeren Fehler entdecken?
+- **Betrachten Sie die Effektgröße.** Ist sie aussagekräftig? Ist sie zu gut, um wahr zu sein?
+- **Schauen Sie sich die Stichprobengröße an.** Ist sie angemessen groß? Ist die Studie gut getestet?
+- **Prüfen Sie, ob die Studie vorregistriert wurde.** Erkennen Sie Ad-hoc-Hypothesen.
+- **Vertrauen Sie keiner einzelnen Studie.** Achten Sie auf Meta-Analysen!
 ]
 
 .pull-right-small[
@@ -461,11 +452,11 @@ $\text{power} = \Phi(\frac{|\mu_{t}-\mu_{c}|\sqrt{N}}{2\sigma}-\Phi^{-1}(1-\frac
 class: inverse, center, middle
 name: inference
 
-# Bad inference: correlation does not imply causation
+# Schlechte Inferenz: Korrelation impliziert keine Kausalität
 <html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
 
 ---
-# A classic
+# Ein Klassiker
 
 <div align="center">
 <br>
@@ -478,11 +469,11 @@ name: inference
 ---
 class: exercise, center
 
-# Exercise
+# Übung
 
 <br><br>
 
-# Guess the correlations!
+# Raten Sie die Korrelationen!
 
 <div align="center">
 <img src="../pics/cor-examples1.png" height=400>
@@ -492,11 +483,11 @@ class: exercise, center
 ---
 class: exercise, center
 
-# Exercise
+# Übung
 
 <br><br>
 
-# Guess the correlations!
+# Raten Sie die Korrelationen!
 
 <div align="center">
 <img src="../pics/cor-examples2.png" height=400>
@@ -506,11 +497,11 @@ class: exercise, center
 ---
 class: exercise, center
 
-# Exercise
+# Übung
 
 <br><br>
 
-# Guess the correlations!
+# Raten Sie die Korrelationen!
 
 <div align="center">
 <img src="../pics/cor-examples3.png" height=400>
@@ -519,11 +510,11 @@ class: exercise, center
 ---
 class: exercise, center
 
-# Exercise
+# Übung
 
 <br><br>
 
-# Guess the correlations!
+# Raten Sie die Korrelationen!
 
 <div align="center">
 <img src="../pics/cor-examples4.png" height=400>
@@ -532,11 +523,11 @@ class: exercise, center
 ---
 class: exercise, center
 
-# Exercise
+# Übung
 
 <br><br>
 
-# Guess the correlations!
+# Raten Sie die Korrelationen!
 
 <div align="center">
 <img src="../pics/cor-examples5.png" height=400>
@@ -545,11 +536,11 @@ class: exercise, center
 ---
 class: exercise, center
 
-# Exercise
+# Übung
 
 <br><br>
 
-# Guess the correlations!
+# Raten Sie die Korrelationen!
 
 <div align="center">
 <img src="../pics/cor-examples6.png" height=400>
@@ -559,20 +550,20 @@ class: exercise, center
 ---
 class: exercise, center
 
-# Exercise
+# Übung
 
 <br><br>
 
-# Guess the correlations!
+# Raten Sie die Korrelationen!
 
 <div align="center">
 <img src="../pics/cor-examples7.png" height=400>
 </div>
 
 ---
-# Getting better at guessing correlations
+# Korrelationen besser erraten
 
-## Check out http://guessthecorrelation.com/
+## Siehe http://guessthecorrelation.com/
 
 <br>
 <div align="center">
@@ -582,27 +573,25 @@ class: exercise, center
 
 
 ---
-# The math of correlation, explained
+# Die Mathematik der Korrelation, erklärt
 
 .pull-left[
-## The Pearson correlation coefficient
+## Der Pearson-Korrelationskoeffizient
 
-- Measures the **strength and direction** of a **linear relationship** between two variables
-- Ranges from -1 to 1
-- Formula to compute it:
-
+- Misst die **Stärke und Richtung** einer **linearen Beziehung** zwischen zwei Variablen
+- Der Bereich reicht von -1 bis 1
+- Formel zur Berechnung:
 $r_{xy} = \frac{\text{covariation of X and Y}}{\text{separate variation of X and Y}} = \frac{Cov(x, y)}{s_x s_y} = \sum_i \frac{(x_i - \bar{x})(y_i - \bar{y})}{s_x s_y}$
  ]
  
 
 .pull-right[
-## Pearson's r is...
-
-- positive when variables A and B increase together
-- negative when A[B] increases and B[A] decreases
-- 1 when A and B increase together perfectly
-- -1 when A increases and B decreases perfectly
-- 0 when A and B don't covary
+## Pearson's r ist...
+- positiv, wenn die Variablen A und B gemeinsam steigen
+- negativ, wenn A[B] steigt und B[A] sinkt
+- 1, wenn A und B gemeinsam steigen
+-1, wenn A steigt und B sinkt
+- 0, wenn A und B nicht kovariieren
 ]
 
 <div align="center">
@@ -613,23 +602,23 @@ $r_{xy} = \frac{\text{covariation of X and Y}}{\text{separate variation of X and
 
 
 ---
-# Correlation does not imply causation
+# Korrelation bedeutet nicht gleich Kausalität
 
 .pull-left[
-## Correlation
+## Korrelation
 
-Two variables are **correlated** when knowing the value of one gives you information about the likely value of the other.
+Zwei Variablen sind **korreliert**, wenn die Kenntnis des Wertes der einen Variablen Aufschluss über den wahrscheinlichen Wert der anderen gibt.
 
-## Causation
+## Kausalität
 
-Two events are **causally related** when the occurrence of one is a result of the occurrence of another.
+Zwei Ereignisse sind **kausal miteinander verbunden**, wenn das Auftreten des einen Ereignisses eine Folge des Auftretens des anderen ist.
 
-## The causal fallacy
+## Der kausale Trugschluss
 
-Two variables that are correlated are not necessarily in a cause-and-effect relationship.
+Zwei Variablen, die miteinander korreliert sind, stehen nicht notwendigerweise in einer Ursache-Wirkungs-Beziehung.
 
-- cum hoc ergo propter hoc ("with this, therefore because of this")
-- post hoc ergo propter hoc ("after this, therefore because of this")
+- cum hoc ergo propter hoc („damit, also deswegen“)
+- post hoc ergo propter hoc („nach diesem, also wegen diesem“)
 ]
 
 .pull-right[
@@ -639,7 +628,7 @@ Two variables that are correlated are not necessarily in a cause-and-effect rela
 
 
 ---
-# Spurious correlations
+# Scheinkorrelationen
 
 <div align="center">
 <img src="../pics/2563_american-cheese-consumption_correlates-with_total-geothermal-power-generated-globally.png" height=450>
@@ -648,7 +637,7 @@ Two variables that are correlated are not necessarily in a cause-and-effect rela
 `Source` [Tyler Vigen, http://tylervigen.com/spurious-correlations](http://tylervigen.com/spurious-correlations)
 
 ---
-# Spurious correlations
+# Scheinkorrelationen
 
 <div align="center">
 <img src="../pics/5236_number-of-websites-on-the-internet_correlates-with_total-wind-power-generated-globally.png" height=450>
@@ -658,7 +647,7 @@ Two variables that are correlated are not necessarily in a cause-and-effect rela
 
 
 ---
-# Spurious correlations
+# Scheinkorrelationen
 
 <div align="center">
 <img src="../pics/7776_google-searches-for-barack-obama_correlates-with_kerosene-used-in-jamaica.png" height=450>
@@ -668,47 +657,45 @@ Two variables that are correlated are not necessarily in a cause-and-effect rela
 
 
 ---
-# So, what does it imply when variables A and B are correlated?
+# Was bedeutet es also, wenn die Variablen A und B korreliert sind?
+## Einige mögliche Erklärungen
 
-## Some possible explanations
+- A verursacht B (direkte Kausalität)
+- B verursacht A (umgekehrte Kausalität)
+- A und B sind Folgen einer gemeinsamen Ursache (Confounding)
+- A verursacht C, das B verursacht (Mediation)
+- A und B verursachen beide C, das bedingt wird (collider bias)
+- Es gibt keinen Zusammenhang zwischen A und B, die empirische Korrelation ist ein Zufall (Scheinkorelation)
 
-- A causes B (direct causation)
-- B causes A (reverse causation)
-- A and B are consequences of a common cause (confounding)
-- A causes C which causes B (mediation)
-- A and B both cause C which is conditioned on (collider bias)
-- There is no connection between A and B, the empirical correlation is a coincidence (spurious correlation)
+## Wie kann man zwischen diesen unterscheiden?
 
-## How to distinguish between these?
+- **Experimentelle Designs** (randomisierte kontrollierte Studien)
+- **Natürliche Experimente** (Quasi-Experimente)
+- **Observationsdaten** (sorgfältige Analyse von Störfaktoren und Kollisionen)
+- **Gesunder Menschenverstand** (ist es sinnvoll, dass A Ursache für B ist?)
+- **Rivalisierende Erklärungen** (können wir andere Erklärungen ausschließen?)
 
-- **Experimental designs** (randomized controlled trials)
-- **Natural experiments** (quasi-experiments)
-- **Observational data** (careful analysis of confounders and colliders)
-- **Common sense** (does it make sense that A causes B?)
-- **Rival explanations** (can we rule out other explanations?)
-
-We'll look into those strategies tomorrow.
 
 
 ---
-# Bad inference: lessons learned
+# Schlechte Inferenz: gelernte Lektionen
 
 .pull-left[
-## What does this mean for you?
+## Was bedeutet das für Sie?
 
-- Don't be fooled by **high correlation or large effect size**.
-- Don't be fooled by **statistical significance**.
-- Don't be fooled by **huge variance explained (R squared)**. 
+- Lassen Sie sich nicht von **hoher Korrelation oder großer Effektgröße** täuschen.
+- Lassen Sie sich nicht von der **statistischen Signifikanz** täuschen.
+- Lassen Sie sich nicht von **großer erklärter Varianz (R-Quadrat)** täuschen. 
 ]
 
 .pull-right[
-## Instead, ask yourself these questions
+## Stellen Sie sich stattdessen die folgenden Fragen:
 
-1. Does it really make sense that A causes B?
-2. Do we have evidence to rule out other rival explanations?
-3. Is the evidence built on a clean experimental design?
-4. Is the evidence built on a natural experiment with a convincing story?
-5. In the absence of (quasi-)experiments, is the evidence built on a careful analysis of observational data, taking care of plausible confounders and colliders?
+1. Ist es wirklich sinnvoll, dass A Ursache für B ist?
+2. Gibt es Beweise, die andere Erklärungen ausschließen?
+3. Stützen sich die Beweise auf einen sauberen Versuchsplan?
+4. Beruhen die Beweise auf einem natürlichen Experiment mit einer überzeugenden Geschichte?
+5. Wenn es keine (Quasi-)Experimente gibt, beruht der Nachweis auf einer sorgfältigen Analyse von Beobachtungsdaten, wobei plausible Störfaktoren und Kollider berücksichtigt werden?
 ]
 
 
