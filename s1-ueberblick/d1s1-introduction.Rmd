@@ -1,6 +1,6 @@
 ---
-title: "Day 1: Fundamental data and statistical literacy"
-subtitle: "Data science, statistical reasoning, and policy-making"
+title: "Tag 1: Der Daten-Lifecycle und: Woher kommen Daten?"
+subtitle: "Session 1: Data Science - Ein Überblick"
 author: "Simon Munzert"
 institute: "Hertie School"
 output:
