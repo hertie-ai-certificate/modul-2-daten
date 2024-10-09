@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Day 1: Fundamental data and statistical literacy</title>
+    <title>Tag 2: Big Data, Good Data? Die kritische Nutzung von Daten</title>
     <meta charset="utf-8" />
     <meta name="author" content="Simon Munzert" />
     <script src="libs/header-attrs/header-attrs.js"></script>
@@ -17,10 +17,10 @@
 class: center, middle, inverse, title-slide
 
 .title[
-# Day 1: Fundamental data and statistical literacy
+# Tag 2: Big Data, Good Data? Die kritische Nutzung von Daten
 ]
 .subtitle[
-## Consuming statistics
+## Session 6: Informierter Konsum von Daten und Statistiken
 ]
 .author[
 ### Simon Munzert
@@ -43,49 +43,47 @@ class: center, middle, inverse, title-slide
 
 
 
-# Table of contents
+# Inhaltsverzeichnis
 
 &lt;br&gt;&lt;br&gt;
 
-1. [Making sense of descriptive statistics](#descriptives)
+1. [Deskriptive Statistik verstehen](#descriptives)
 
-2. [Making sense of probability](#probability)
+2. [Wahrscheinlichkeit verstehen](#probability)
 
-3. [Making sense of statistical effects](#effects)
+3. [Statistische Effekte verstehen](#effects)
 
-4. [Making sense of statistical significance](#significance)
-
-
+4. [Statistische Signifikanz verstehen](#significance)
 
 ---
 class: inverse, center, middle
 name: descriptives
 
-# Making sense of descriptive statistics
+# Deskriptiven Statistik verstehen
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
 
 
 ---
-# Descriptive vs. inferential statistics
+# Deskriptive vs. Inferenzstatistik
 
 .pull-left[
-## Descriptive statistics
-- Summarize and describe characteristics of a sample or population
-- Can be communicated numerically and visually
-- Different scales (levels of measurement) require different descriptive statistics
-- Good description can be challenging if data collection or measurement is complex
+## Descriptive Statistik
+- Zusammenfassen und Beschreiben von Merkmalen einer Stichprobe oder Population
+- Kann numerisch und visuell kommuniziert werden
+- Unterschiedliche Skalen (Messniveaus) erfordern unterschiedliche deskriptive Statistiken
+- Eine gute Beschreibung kann schwierig sein, wenn die Datenerfassung oder Messung komplex ist.
 ]
 
 .pull-right[
-## Inferential statistics
-- Make inferences about a population based on a sample
-- Can be inferences about means, proportions, relationships, etc.
-- Can be communicated numerically and visually
-- Good description is the basis for good inference
+## Inferenzstatistik
+- Schlussfolgerungen über eine Grundgesamtheit auf der Grundlage einer Stichprobe
+- Es können Rückschlüsse auf Mittelwerte, Proportionen, Beziehungen usw. gezogen werden
+- Kann numerisch und visuell kommuniziert werden
+- Gute Beschreibung ist die Grundlage für gute Schlussfolgerungen
 ]
 
 ---
-# Descriptive vs. inferential statistics
+# Deskriptive vs. Inferenzstatistik
 
 &lt;div align="center"&gt;
 &lt;img src="../pics/descriptive-inferential.jpeg" width=1000&gt;
@@ -94,21 +92,21 @@ name: descriptives
 
 
 ---
-# Measures of central tendency
+# Maße für zentrale Tendenz
 
 
 .pull-left[
-## Three popular measures of central tendency
+## Drei populäre Maße für zentrale Tendenz
 
-- **(Arithmetic) Mean**: The **average** of all values in a dataset
-- **Median**: The **middle** value of a dataset
-- **Mode**: The **most frequent** value in a dataset
+- **(Arithmetischer) Mittelwert**: Der **Durchschnitt** aller Werte in einem Datensatz
+- **Median**: Der **mittlere** Wert eines Datensatzes
+- **Modus**: Der **häufigste** Wert in einem Datensatz
 
-Why "central tendency"? Describes the tendency of quantitative data to cluster around some central value.
+Warum „zentrale Tendenz“? Beschreibt die Tendenz von quantitativen Daten, sich um einen zentralen Wert zu gruppieren.
 
-## Try it out
+## Probieren Sie es aus
 
-Identify the mode, median, and mean of the following values:
+Ermitteln Sie den Modus, den Median und den Mittelwert der folgenden Werte:
 
 8, 2, 4, 2, 18, 6, 2
 ]
@@ -116,21 +114,20 @@ Identify the mode, median, and mean of the following values:
 --
 
 .pull-right[
-## Which one to use?
+## Welches Maß ist zu verwenden?
 
-- **Mean**: Sensitive to outliers, but with an intuitive meaning
-- **Median**: Robust to outliers, but a bit less intuitive
-- **Mode**: Useful for categorical data, but can be misleading for continuous data
+- **Mittelwert**: Empfindlich für Outlier, aber mit einer intuitiven Bedeutung
+- **Median**: Robust gegenüber Outliern, aber etwas weniger intuitiv
+- **Modus**: Nützlich für kategoriale Daten, kann aber bei kontinuierlichen Daten irreführend sein
 
-## Skewed distributions
-
+## Verzerrte Verteilungen
 &lt;div align="center"&gt;
 &lt;img src="../pics/empirical-relation-between-mean-median-and-mode.png" width=1000&gt;
 &lt;/div&gt;
 ]
 
 ---
-# Measures of central tendency: examples
+# Maße für zentrale Tendenz: Beispiele
 
 .pull-left-center[
 &lt;br&gt;
@@ -153,29 +150,29 @@ Identify the mode, median, and mean of the following values:
 
 
 ---
-# Measures of variation
+# Streuungsmaß
 
 .pull-left[
-## Why do we need measures of variation?
-- Central tendency alone does not tell the whole story
-- "How spread out/stretched are our data?"
+## Warum brauchen wir Streuungsmaße?
+- Die zentrale Tendenz allein ist nicht aussagekräftig
+- „Wie weit sind unsere Daten gestreut/ausgedehnt?“
 
-## Three popular measures of variation
+## Drei gängige Streuungsmaße
 
-- **Range**: The difference between the highest and lowest value in a dataset
-- **Variance**: The average of the squared differences from the mean
-- **Standard deviation**: The square root of the variance
+- **Bereich**: Die Differenz zwischen dem höchsten und dem niedrigsten Wert in einem Datensatz
+- **Varianz**: Der Durchschnitt der quadrierten Differenzen vom Mittelwert
+- **Standardabweichung**: Die Quadratwurzel aus der Varianz
 
-Formula to calculate the variance: `\(\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}\)`
+Formel zur Berechnung der Varianz: `\(\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n-1}\)`
 
-See [here](https://seeing-theory.brown.edu/basic-probability/index.html#section3) for interactive intuition.
+Siehe [hier](https://seeing-theory.brown.edu/basic-probability/index.html#section3) für interaktive Intuition.
 ]
 
 .pull-right[
-## Why is this substantively important?
+## Warum ist das so wichtig?
 
-- Most people are, in fact, not "average". Variation can be a source of insight into underlying processes
-- Key measure for downstream statistics, e.g., the standard error as an estimate of sampling variability (uncertainty of an estimate)
+- Die meisten Menschen sind in der Tat nicht „durchschnittlich“. Variation kann eine Quelle für Einblicke in die zugrunde liegenden Prozesse sein
+- Schlüsselmaß für nachgelagerte Statistiken, z.B. der Standardfehler als Schätzung der Stichprobenvariabilität (Unsicherheit einer Schätzung)
 
 &lt;div align="center"&gt;
 &lt;img src="../pics/normal-variations.png" width=500&gt;
@@ -187,13 +184,12 @@ See [here](https://seeing-theory.brown.edu/basic-probability/index.html#section3
 # Puzzle 1
 
 .pull-left[
-## How can all of the following be true?&lt;sup&gt;1&lt;/sup&gt;
+## Wie können alle der folgenden Punkte wahr sein?&lt;sup&gt;1&lt;/sup&gt;
 
-1. 80% of the 100 most prominent Georgian TikTokers are male.
-2. On average, female Georgian TikTokers have 500 followers whereas males only 300. 
-3. There's an approximately equal number of male and female Georgian TikTokers.
-
-.footnote[&lt;sup&gt;1&lt;/sup&gt;"True" in the sense of "theoretically true". The numbers are all made up.]
+1. 80 % der 100 prominentesten georgischen TikTokers sind männlich.
+2. Weibliche georgische TikToker haben im Durchschnitt 500 Follower, männliche nur 300. 
+3. Es gibt ungefähr gleich viele männliche und weibliche georgische TikTokers.
+.footnote[&lt;sup&gt;1&lt;/sup&gt;"„Wahr“ im Sinne von ‚theoretisch wahr‘. Die Zahlen sind alle erfunden.]
 ]
 
 .pull-right[
@@ -211,8 +207,11 @@ See [here](https://seeing-theory.brown.edu/basic-probability/index.html#section3
 
 1. At a Georgian university, the acceptance rate to each of four departments is higher for females than for males.
 2. Aggregated over the departments, the acceptance rate is higher for males.
+## Wie können alle der folgenden Punkte wahr sein?&lt;sup&gt;1&lt;/sup&gt;
 
-.footnote[&lt;sup&gt;1&lt;/sup&gt;Same disclaimer as in previous example.]
+1. An einer georgischen Universität ist die Zulassungsquote in jedem der vier Fachbereiche für Frauen höher als für Männer.
+2. Über alle Fachbereiche hinweg ist die Zulassungsquote bei den Männern höher.
+.footnote[&lt;sup&gt;1&lt;/sup&gt;Gleicher Hinweis wie im vorherigen Beispiel.]
 ]
 
 .pull-right-wide[
@@ -224,26 +223,26 @@ See [here](https://seeing-theory.brown.edu/basic-probability/index.html#section3
 
 
 ---
-# Simpson's paradox
+# Simpsons Paradoxon
 
 .pull-left[
-## Paradox explained
+## Paradox erklärt
 
-- Some departments (C+D) were more competitive than others, and women were applying more to those.
-- Overall acceptance rates and within-department acceptance rates have different baselines!
-- It is not really a "paradox", but a confounding issue: When we adjust/control for the grouping variable, the relationship between the variables changes.
+- Einige Abteilungen (C+D) waren wettbewerbsfähiger als andere, und dort bewarben sich mehr Frauen.
+- Die allgemeinen Zulassungsquoten und die Zulassungsquoten innerhalb eines Fachbereichs haben unterschiedliche Ausgangspunkte!
+- Es handelt sich nicht wirklich um ein „Paradoxon“, sondern um ein verwirrendes Problem: Wenn wir die gruppierende Variable anpassen/kontrollieren, ändert sich die Beziehung zwischen den Variablen.
 
-## The phenomenon, generalized
+## Das Phänomen, verallgemeinert
 
-- A trend appears in different groups of data but disappears or reverses when these groups are combined.
-- This can also arise in correlations (positive vs. negative correlation within vs. across groups).
+- Ein Trend erscheint in verschiedenen Datengruppen, verschwindet aber oder kehrt sich um, wenn diese Gruppen kombiniert werden.
+- Dies kann auch bei Korrelationen auftreten (positive vs. negative Korrelation innerhalb vs. zwischen Gruppen).
 ]
 
 .pull-right[
-## Relevance for policy-making
+## Relevanz für die Politikgestaltung
 
-- Analysis of patterns at different levels (e.g., regional vs. federal, schools vs. school districts)
-- If within-group patterns are not accounted for, policy conclusions might be misleading.
+- Analyse von Mustern auf verschiedenen Ebenen (z.B. Region vs. Bund, Schulen vs. Schulbezirke)
+- Wenn gruppeninterne Muster nicht berücksichtigt werden, könnten die politischen Schlussfolgerungen irreführend sein.
 
 &lt;div align="center"&gt;
 &lt;img src="../pics/simpsons-paradox-animation.gif" width=400&gt;
@@ -259,28 +258,28 @@ See [here](https://seeing-theory.brown.edu/basic-probability/index.html#section3
 class: inverse, center, middle
 name: probability
 
-# Making sense of probability
+# Wahrscheinlichkeit verstehen
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
 
 
 ---
-# Probabilities
+# Wahrscheinlichkeiten
 
 .pull-left[
-## What are probabilities?&lt;sup&gt;1&lt;/sup&gt;
+## Was sind Wahrscheinlichkeiten?&lt;sup&gt;1&lt;/sup&gt;
 
-- Probabilities quantify the likelihood of an event occurring
-- Probabilities are between 0 and 1 (or 0 and 100%)
-- Probabilities can be communicated verbally or numerically
+- Wahrscheinlichkeiten quantifizieren die Möglichkeit eines Ereignisses
+- Wahrscheinlichkeiten liegen zwischen 0 und 1 (oder 0 und 100%)
+- Wahrscheinlichkeiten können verbal oder numerisch kommuniziert werden
 
-## Relevance of probabilities for policy-making
+## Relevanz von Wahrscheinlichkeiten für politische Entscheidungen
 
-Probabilities are ...
-- ... at the core of risk assessment and decision-making
-- ... used to quantify uncertainty
-- ... used to assess the effectiveness of policies
+Wahrscheinlichkeiten sind ...
+- ... das Kernstück der Risikobewertung und Entscheidungsfindung
+- ... werden zur Quantifizierung von Unsicherheit verwendet
+- ... zur Bewertung der Wirksamkeit von Maßnahmen
 
-.footnote[&lt;sup&gt;1&lt;/sup&gt;See [here](https://bookdown.org/kevin_davisross/probsim-book) for a nice primer to probability and simulation.]
+.footnote[&lt;sup&gt;1&lt;/sup&gt;See [hier](https://bookdown.org/kevin_davisross/probsim-book) für eine gute Einführung in die Wahrscheinlichkeitsrechnung und Simulation.]
 ]
 
 --
@@ -296,24 +295,24 @@ Probabilities are ...
 
 
 ---
-# Marginal, conditional, and joint probabilities
+# Marginale, bedingte und gemeinsame Wahrscheinlichkeiten
 
 .pull-left[
-## Marginal probability
-- The probability of an event occurring: `\(p(A)\)`
-- Unconditional probability - it is not conditioned on another event
-- 🎲 example: `\(p(\text{rolling a 5}) = 1/6\)`
+## Marginalwahrscheinlichkeit
+- Die Wahrscheinlichkeit des Eintretens eines Ereignisses: `\(p(A)\)`
+- Unbedingte Wahrscheinlichkeit ist nicht von einem anderen Ereignis abhängig
+- 🎲 Beispiel: `\(p(\text{Würfeln einer 5}) = 1/6\)`
 
-## Conditional probability
-- The probability of event A occurring, given that event B occurs: `\(p(A|B)\)`
-- Important: The marginal probability of B does not matter here!
-- 🎲 example: `\(p(\text{rolling a 5|rolling an odd number}) = 1/3\)`
+## Bedingte Wahrscheinlichkeit
+- Die Wahrscheinlichkeit, dass das Ereignis A eintritt, wenn das Ereignis B eintritt: `\(p(A|B)\)`
+- Wichtig: Die Randwahrscheinlichkeit von B spielt hier keine Rolle!
+- 🎲 Beispiel: `\(p(\text{Würfeln einer 5|Würferln einer ungeraden Zahl}) = 1/3\)`
 ]
 
 .pull-right[
-## Joint probability
-- The probability of event A and event B occurring: `\(p(\text{A and B}) = p(A ∩ B)\)`
-- 🎲 example: `\(p(\text{rolling a 5 and an even number}) = 0\)`
+## Gemeinsame Wahrscheinlichkeit
+- Die Wahrscheinlichkeit, dass Ereignis A und Ereignis B eintreten: `\(p(\text{A und B}) = p(A ∩ B)\)`
+- 🎲 Beispiel: `\(p(\text{Würfeln einer 5 und einer geraden Zahl}) = 0\)`
 
 &lt;div align="center"&gt;
 &lt;img src="../pics/dice-roll-tree.png" width=490&gt;
@@ -324,24 +323,24 @@ Probabilities are ...
 
 
 ---
-# Conditional probabilities
+# Bedingte Wahrscheinlichkeiten
 
 
 &lt;div align="center"&gt;
 &lt;img src="../pics/conditional-probability-simulation.png" width=1100&gt;
 &lt;/div&gt;
 
-`Source` [Victor Powell, setosa.io](https://setosa.io/conditional/) (check out for interactive simulation)
+`Source` [Victor Powell, setosa.io](https://setosa.io/conditional/) (Siehe zur interaktiven Simulation)
 
 
 ---
 # Puzzle
 
 .pull-left[
-## How can all of the following be true?
+## Wie können alle der folgenden Punkte wahr sein?
 
-1. A vaccine is highly effective in protecting against a disease.
-2. Most people who get the disease have been vaccinated.
+1. Ein Impfstoff ist hochwirksam beim Schutz gegen eine Krankheit.
+2. Die meisten Menschen, die die Krankheit bekommen, sind geimpft worden.
 ]
 
 .pull-right[
@@ -356,15 +355,15 @@ Probabilities are ...
 # Puzzle
 
 .pull-left[
-## How can all of the following be true?
+## Wie können alle der folgenden Punkte wahr sein?
 
-1. A vaccine is highly effective in protecting against a disease.
-2. Most people who get the disease have been vaccinated.
+1. Ein Impfstoff schützt hochwirksam vor einer Krankheit.
+2. Die meisten Menschen, die die Krankheit bekommen, sind geimpft worden.
 
-## Base rate fallacy
+## Irrtum der Basisrate
 
-- This is a classic case of the "base rate fallacy" or "prosecutor's fallacy".
-- If the vaccination rate P(vaccinated) is high in the population, there's just much more opportunity for vaccinated people to get hospitalized than for unvaccinated people.
+- Dies ist ein klassischer Fall des „Base Rate Fallacy“ oder „Prosecutor's fallacy“.
+- Wenn die Impfrate P(geimpft) in der Bevölkerung hoch ist, besteht für geimpfte Personen einfach eine viel größere Chance, ins Krankenhaus zu kommen, als für ungeimpfte Personen.
 ]
 
 .pull-right[
@@ -376,7 +375,7 @@ Probabilities are ...
 ]
 
 ---
-# The base rate fallacy illustrated
+# Das Irrtum der Basisrate illustriert
 
 &lt;div align="center"&gt;
 &lt;img src="../pics/base-rate-fallacy.png" height=450&gt;
@@ -384,44 +383,43 @@ Probabilities are ...
 `Source` [Marc Rumilly](https://twitter.com/MarcRummy/status/1464178903224889345) 
 
 ---
-# Relevance of the base rate fallacy for policy
+# Relevanz der Irrtum der Basisrate für die Politik
 
 
 .pull-left[
-## Policies for low-probability events
+## Politik für Ereignisse mit geringer Wahrscheinlichkeit
 
-- Some policies are designed to prevent low-probability events that are extremely costly if they happen.
-- Examples: Terrorist attacks, war, natural disasters
-- Predicting such events is inherently difficult
-- Yet, AI-supported detection systems claim high detection rates. But even with very high accuracy, the amount of false positives generated can be prohibitively high
+- Politikmaßnahmen sind darauf ausgerichtet, Ereignisse mit geringer Wahrscheinlichkeit zu verhindern, die extrem kostspielig sind, wenn sie eintreten.
+- Beispiele: Terroranschläge, Krieg, Naturkatastrophen
+- Die Vorhersage solcher Ereignisse ist von Natur aus schwierig.
+- KI-gestützte Erkennungssysteme versprechen jedoch hohe Erkennungsraten. Aber selbst bei einer sehr hohen Genauigkeit kann die Anzahl der falsch-positiven Meldungen prohibitiv hoch sein.
 
-## Guidance
+## Leitfaden
 
-- Always consider the **base rate** when interpreting probabilities
-- Be cautious when interpreting **conditional probabilities** without considering the base rate
+- Berücksichtigen Sie bei der Interpretation von Wahrscheinlichkeiten immer die **Basisrate**.
+- Seien Sie vorsichtig, wenn Sie **bedingte Wahrscheinlichkeiten** ohne Berücksichtigung der Basisrate interpretieren
 ]
 
 --
 
 .pull-right[
-## Example: [terrorist identification](https://en.wikipedia.org/wiki/Base_rate_fallacy)
+## Beispiel: [Terrorist Identifikation](https://en.wikipedia.org/wiki/Base_rate_fallacy)
+- In einer Stadt mit 1 Mio. Einwohnern gibt es 100 Terroristen und 999.900 Nicht-Terroristen: `\(p(\text{Terrorist}) = 0,0001\)`
+- Überwachungssystem auf der Grundlage von Gesichtserkennungssoftware mit zwei Fehlerquoten von 1%:
+  1. Falsch-negativ-Rate: `\(p(\text{kein Alarm}|\text{Terrorist}) = 0,01\)`
+    1. Falsch-positiv-Rate: `\(p(\text{Alarm}|\text{kein Terrorist}) = 0.01\)`
 
-- In a city of 1m inhabitants, there are 100 terrorists and 999,900 non-terrorists: `\(p(\text{terrorist}) = 0.0001\)`
-- Surveillance system based on facial recognition software with two failure rates of 1%:
-  1. False negative rate: `\(p(\text{no alarm}|\text{terrorist}) = 0.01\)`
-    1. False positive rate: `\(p(\text{alarm}|\text{no terrorist}) = 0.01\)`
+**Was bedeutet das, wenn wir einen Alarm erhalten?**&lt;sup&gt;1&lt;/sup&gt;
+  `\(p(\text{Terrorist}|\text{Alarm})=\frac{p(\text{Alarm}|\text{Terrorist})p(\text{Terrorist})}{p(\text{Alarm})}\)` `\(=\frac{0.99 * 0.0001}{0.01} = 0.01\)`
 
-**What does this mean when we get an alarm?**&lt;sup&gt;1&lt;/sup&gt;
-  `\(p(\text{terrorist}|\text{alarm})=\frac{p(\text{alarm}|\text{terrorist})p(\text{terrorist})}{p(\text{alarm})}\)` `\(=\frac{0.99 * 0.0001}{0.01} = 0.01\)`
-
-.footnote[&lt;div class="font50"&gt;&lt;sup&gt;1&lt;/sup&gt;Getting `\(p(\text{alarm}) = p(\text{alarm}|\text{terrorist})*p(\text{terrorist})\)` `\(+ p(\text{alarm}|\text{no terrorist})*p(\text{no terrorist})\)` `\(=\)`
-  `\(p(\text{terrorist}|\text{alarm})\)` `\(= 0.99*0.0001 + 0.01*0.9999 = 0.01\)`&lt;/div&gt;]
+.footnote[&lt;div class="font50"&gt;&lt;sup&gt;1&lt;/sup&gt;Getting `\(p(\text{Alarm}) = p(\text{Alarm}|\text{Terrorist})*p(\text{Terrorist})\)` `\(+ p(\text{Alarm}|\text{Nicht-Terrorist})*p(\text{Nicht-Terrorist})\)` `\(=\)`
+  `\(p(\text{Terrorist}|\text{Alarm})\)` `\(= 0.99*0.0001 + 0.01*0.9999 = 0.01\)`&lt;/div&gt;]
 
 ]
 
 
 ---
-# Communicating probabilities with verbal expressions
+#  Kommunikation von Wahrscheinlichkeiten mit verbalen Ausdrücken
 
 .pull-left-wide2[
 &lt;div align="center"&gt;
@@ -438,7 +436,7 @@ Probabilities are ...
 ]
 
 ---
-# What does probability mean for different professions?
+# Was bedeutet die Wahrscheinlichkeit für verschiedene Berufe?
 
 .pull-left[
 &lt;div align="center"&gt;
@@ -467,43 +465,43 @@ Probabilities are ...
 class: inverse, center, middle
 name: effects
 
-# Making sense of statistical effects
+# Statischte Effekte verstehen
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
 
 
 ---
-# Statistical effects and effect sizes
+# Statischte Effekte and Effektgrößen
 
 .pull-left[
-## What are statistical effects?
-- Statistical effect quantify a difference or relationship between variables
+## Was sind statistische Effekte?
+- Statistische Effekte quantifizieren einen Unterschied oder eine Beziehung zwischen Variablen.
 
 
-## Example questions about effects
-- What is the marginal effect of education on income?
-- How much does the probability of voting increase with age?
+## Beispielfragen zu Effekten
+- Wie groß ist der marginale Effekt von Bildung auf das Einkommen?
+- Wie stark steigt die Wahrscheinlichkeit, wählen zu gehen, mit dem Alter?
 
-## Statistical effect `\(\neq\)` causal effect!
-- Statistical effects are about statistical relationships between variables, not about causal relationships. 
-- For instance, just because your model tells you that an additional 100$ per month income are associated with 1 additional year of education, you would not conclude that income causally increases education
+## Statistischer Effekt `\(\neq\)` kausaler Effekt!
+- Bei statistischen Effekten geht es um statistische Beziehungen zwischen Variablen, nicht um kausale Beziehungen. 
+- Nur weil Ihr Modell Ihnen beispielsweise sagt, dass ein zusätzliches Einkommen von 100 $ pro Monat mit einem zusätzlichen Jahr Bildung verbunden ist, würden Sie nicht zu dem Schluss kommen, dass das Einkommen die Bildung kausal erhöht.
 ]
 
 --
 
 .pull-right[
-## Effect sizes
-- Effect sizes are quantitative measures of the **strength of a relationship**.
-- Effect sizes express the magnitude of a difference or relationship in a standardized way.
+## Effektgrößen
+- Effektgrößen sind quantitative Maße für die **Stärke einer Beziehung**.
+- Effektgrößen drücken das Ausmaß eines Unterschieds oder einer Beziehung auf standardisierte Weise aus.
 
-## Examples
-- A (unstandardized or standardized) **group mean difference**
-- The **correlation coefficient** is an effect size for the relationship between two continuous variables (see later!), e.g., `\(r = 0.1\)` `\(\rightarrow\)` weak, `\(r = 0.5\)` `\(\rightarrow\)` moderate, `\(r = 0.9\)` `\(\rightarrow\)` strong
-- The **regression coefficient** expresses the predicted marginal change in an outcome relative to a unit change of the predictor (potentially conditionally on other covariates)
+## Beispiele
+- Ein (nicht standardisierter oder standardisierter) **Gruppenmittelwertunterschied**
+- Der **Korrelationskoeffizient** ist eine Effektgröße für die Beziehung zwischen zwei kontinuierlichen Variablen (siehe später!), z.B. `\(r = 0,1\)` `\(\rightarrow\)` schwach, `\(r = 0,5\)` `\(\rightarrow\)` mittel, `\(r = 0,9\)` `\(\rightarrow\)` stark
+- Der **Regressionskoeffizient** drückt die vorhergesagte marginale Änderung eines Ergebnisses im Verhältnis zu einer Einheitsänderung des Prädiktors aus (möglicherweise in Abhängigkeit von anderen Kovariaten)
 ]
 
 
 ---
-# Example: regression effects
+# Beispiel: Regressionseffekt
 
 &lt;div align="center"&gt;
 &lt;img src="../pics/regression-multiple.png" width=400&gt;
@@ -512,12 +510,12 @@ name: effects
 
 
 ---
-# Some advice when consuming effect sizes
+# Einige Hinweise zur Verwendung von Effektgrößen
 
 .pull-left[
-## Some questions to ask yourself
+## Einige Fragen, die Sie sich stellen sollten
 
-1. What does the effect size mean **substantively**? E.g., what does an "effect of 0.87" mean?
+1. Was bedeutet die Effektgröße **substanziell**? Was bedeutet z.B. ein „Effekt von 0,87“?
 ]
 
 .pull-right[
@@ -528,14 +526,14 @@ name: effects
 
 
 ---
-# Some advice when consuming effect sizes
+# Einige Hinweise zur Verwendung von Effektgrößen
 
 .pull-left[
-## Some questions to ask yourself
+## Einige Fragen, die Sie sich stellen sollten
 
-1. What does the effect size mean **substantively**? E.g., what does an "effect of 0.87" mean?
+1. Was bedeutet die Effektgröße **substanziell**? Was bedeutet z.B. ein „Effekt von 0,87“?
 
-2. Is the effect size **plausible**? How does it compare to your intuition and other effects in the literature?
+2. Ist die Effektgröße **plausibel**? Wie steht sie im Vergleich zu Ihrer Intuition und anderen Effekten in der Literatur?
 ]
 
 .pull-right[
@@ -547,16 +545,16 @@ name: effects
 
 
 ---
-# Some advice when consuming effect sizes
+# Einige Hinweise zur Verwendung von Effektgrößen
 
 .pull-left[
-## Some questions to ask yourself
+## Einige Fragen, die Sie sich stellen sollten
 
-1. What does the effect size mean **substantively**? E.g., what does an "effect of 0.87" mean?
+1. Was bedeutet die Effektgröße **substanziell**? Was bedeutet z.B. ein „Effekt von 0,87“?
 
-2. Is the effect size **plausible**? How does it compare to your intuition and other effects in the literature?
+2. Ist die Effektgröße **plausibel**? Wie steht sie im Vergleich zu Ihrer Intuition und anderen Effekten in der Literatur?
 
-3. How **precisely** is the effect estimated?
+3. Wie **präzise** wird der Effekt geschätzt?
 ]
 
 .pull-right[
@@ -571,11 +569,11 @@ name: effects
 class: inverse, center, middle
 name: significance
 
-# Making sense of statistical significance
+# Statistische Signifikanz verstehen
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
 
 ---
-# "Statistical significance" everywhere
+# "Statistische Signifikanz" überall
 
 .pull-left-vwide[
 &lt;div align="center"&gt;
@@ -595,7 +593,7 @@ name: significance
 
 
 ---
-# "Statistical significance" everywhere
+# "Statistische Signifikanz" überall
 
 &lt;div align="center"&gt;
 &lt;img src="../pics/xkcd-jelly-beans-1.png" height=500&gt;
@@ -604,17 +602,17 @@ name: significance
 
 
 ---
-# Statistical error types
+# Statistische Fehlertypen
 
 .pull-left-wide[
-## A life and death example of statistical errors
+## Beispiel statistischer Fehler, bei denen es um Leben und Tod geht
 
-You are a paramedic and you approach the scene of a car accident. One victim is laying motionless on the road and you must assess whether the victim is dead or alive, and the victim will be treated accordingly. Based on this information, **which error results in the most costly mistake?**
+Sie sind Rettungssanitäter und nähern sich dem Ort eines Autounfalls. Ein Opfer liegt regungslos auf der Straße und Sie müssen einschätzen, ob das Opfer tot oder lebendig ist, und das Opfer entsprechend behandeln. Ausgehend von diesen Informationen, **welcher Fehler führt zum größten Fehlschlag?**
 
-## Hypotheses
+## Hypothesen
 
-- **Null hypothesis**: The victim is alive.
-- **Alternative hypothesis**: The victim is not alive.
+- **Nullhypothese**: Das Opfer ist am Leben.
+- **Alternative Hypothese**: Das Opfer ist nicht am Leben.
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 `Source` [jeffalltogether, StackExchange.com](https://stats.stackexchange.com/questions/211736/type-i-error-and-type-ii-error-trade-off)
@@ -629,44 +627,43 @@ You are a paramedic and you approach the scene of a car accident. One victim is 
 
 
 ---
-# Statistical error types
+# Statistische Fehlertypen
 
-## Hypotheses
+## Hypothesen
 
-- **Null hypothesis**: The victim is alive.
-- **Alternative hypothesis**: The victim is not alive.
-
---
-
-## Error types
-
-- **Type I error**: You reject the null when the null is actually true. ("false positive")
-- **Type II error**: You fail to reject the null when the null is actually false. ("false negative")
+- **Nullhypothese**: Das Opfer ist am Leben.
+- **Alternative Hypothese**: Das Opfer ist nicht am Leben.
 
 --
 
-## Costs
+## Fehlertypen
 
-- **Type I error**: You declare the victim dead when they are actually alive. They do not receive an ambulance to the hospital for a life saving medical treatment. `\(\rightarrow\)` **Extremely costly mistake**
-- **Type II error**: You declare the victim alive when they are actually dead. You erroneously send a dead person to the hospital in an ambulance `\(\rightarrow\)` **Not that costly mistake**
+- **Typ-I-Fehler**: Sie weisen die Null zurück, obwohl die Null tatsächlich wahr ist („falsch positiv“).
+- **Typ II-Fehler**: Sie verwerfen die Null nicht, wenn die Null tatsächlich falsch ist. („falsch negativ“)
 
+--
+
+## Kosten
+
+- **Typ I-Fehler**: Sie erklären das Opfer für tot, obwohl es in Wirklichkeit noch lebt. Sie erhalten keinen Krankenwagen, der sie zur lebensrettenden medizinischen Behandlung ins Krankenhaus bringt. `\(\rightarrow\)` **Extrem kostspieliger Fehler**
+- **Typ II-Fehler**: Sie erklären das Opfer für lebendig, obwohl es in Wirklichkeit tot ist. Sie schicken eine tote Person fälschlicherweise mit einem Krankenwagen ins Krankenhaus `\(\rightarrow\)` **Nicht so kostspieliger Fehler**
 
 ---
-# Error types illustrated
+# Fehlertypen illustriert
 
 &lt;div align="center"&gt;
 &lt;img src="../pics/error-types.jpg" height=450&gt;
 &lt;/div&gt;
 
 ---
-# Error types in hypothesis testing
+# Fehlertypen im Hypothesentesten
 
 &lt;div align="center"&gt;
 &lt;img src="../pics/error-types-matrix.png" height=450&gt;
 &lt;/div&gt;
 
 ---
-# Error types in hypothesis testing
+# Fehlertypen im Hypothesentesten
 
 &lt;div align="center"&gt;
 &lt;img src="../pics/error-types-distributions.png" height=450&gt;
@@ -676,30 +673,30 @@ You are a paramedic and you approach the scene of a car accident. One victim is 
 
 
 ---
-# Assessing statistical significance
+# Bewertung der statistischen Signifikanz
 
 .pull-left[
-## Statistical significance vs. practical significance
-- They are not the same.
-- Statistical significance is about the probability of observing the data given the null hypothesis. 
-- Practical significance is about the real-world importance of the result.
+## Statistische Signifikanz vs. praktische Signifikanz
+- Sie sind nicht dasselbe.
+- Bei der statistischen Signifikanz geht es um die Wahrscheinlichkeit der Beobachtung der Daten unter Berücksichtigung der Nullhypothese. 
+- Bei der praktischen Signifikanz geht es um die Bedeutung des Ergebnisses in der realen Welt.
 
-## From hypothesis testing to statistical significance
+## Vom Hypothesentest zur statistischen Signifikanz
 
-**Three-step approach:**
-1. Formulate null and alternative hypotheses.
-2. Calculate a test statistic. For instance, effect size in a regression divided by standard error.
-3. Compare the test statistic to a critical value; calculate a p-value.
+**Der dreistufige Ansatz:**
+1. Formulierung von Null- und Alternativhypothesen.
+2. Berechnen Sie eine Teststatistik. Zum Beispiel die Effektgröße in einer Regression geteilt durch den Standardfehler.
+3. Vergleichen Sie die Teststatistik mit einem kritischen Wert; berechnen Sie einen p-Wert.
 ]
 
 --
 
 .pull-right[
-## The p-value
+## Der p-Wert
 
-- The p-value is the probability of observing a result at least as extreme as the observed result if the null hypothesis were true.
-- The p-value is compared to a threshold (e.g., 0.05) to decide whether to reject the null hypothesis.
-- Importantly, the p-value is not the probability that the null hypothesis is true or false!
+- Der p-Wert ist die Wahrscheinlichkeit, dass ein Ergebnis beobachtet wird, das mindestens so extrem ist wie das beobachtete Ergebnis, wenn die Nullhypothese wahr wäre.
+- Der p-Wert wird mit einem Schwellenwert (z.B. 0,05) verglichen, um zu entscheiden, ob die Nullhypothese verworfen werden soll.
+- Wichtig ist, dass der p-Wert nicht die Wahrscheinlichkeit angibt, dass die Nullhypothese wahr oder falsch ist!
 
 &lt;div align="center"&gt;
 &lt;img src="../pics/distribution-sigmas.png" height=270&gt;
@@ -708,7 +705,7 @@ You are a paramedic and you approach the scene of a car accident. One victim is 
 
 
 ---
-# Eyeballing statistical significance
+# Statistische Signifikanz im Auge behalten
 
 .pull-left[
 &lt;div align="center"&gt;
@@ -723,7 +720,7 @@ You are a paramedic and you approach the scene of a car accident. One victim is 
 ]
 
 ---
-# Eyeballing statistical significance
+# Statistische Signifikanz im Auge behalten
 
 &lt;div align="center"&gt;
 &lt;img src="../pics/nhb-app-effects-with-title.png" width=750&gt;
@@ -732,7 +729,7 @@ You are a paramedic and you approach the scene of a car accident. One victim is 
 
 
 ---
-# Controversies around statistical significance&lt;sup&gt;1&lt;/sup&gt;
+# Kontroversen um statistische Signifikanz&lt;sup&gt;1&lt;/sup&gt;
 
 .footnote[&lt;sup&gt;1&lt;/sup&gt;See also [here](https://bookdown.org/kevin_davisross/probsim-book) for a nice primer to this controversy.]
 
@@ -741,16 +738,16 @@ You are a paramedic and you approach the scene of a car accident. One victim is 
 &lt;img src="../pics/p-values-asa.png" width=550&gt;
 &lt;/div&gt;
 
-## Six principles
+## Sechs Prinzipien
 
 &lt;div class=font80&gt;
 &lt;ol&gt;
-&lt;li&gt;P-values can indicate how incompatible the data are with a specified statistical model.&lt;/li&gt;
-&lt;li&gt;P-values do not measure the probability that the studied hypothesis is true, or the probability that the data were produced by random chance alone.&lt;/li&gt;
-&lt;li&gt;Scientific conclusions and business or policy decisions should not be based only on whether a p-value passes a specific threshold.&lt;/li&gt;
-&lt;li&gt;Proper inference requires full reporting and transparency.&lt;/li&gt;
-&lt;li&gt;A p-value does not measure the size of an effect or the importance of a result.&lt;/li&gt;
-&lt;li&gt;By itself, a p-value does not provide a good measure of evidence regarding a model or hypothesis.&lt;/li&gt;
+&lt;li&gt;p-Werte können angeben, wie unvereinbar die Daten mit einem bestimmten statistischen Modell sind.&lt;/li&gt;
+&lt;li&gt;p-Werte messen nicht die Wahrscheinlichkeit, dass die untersuchte Hypothese wahr ist, oder die Wahrscheinlichkeit, dass die Daten allein durch Zufall entstanden sind.&lt;/li&gt;
+&lt;li&gt;Wissenschaftliche Schlussfolgerungen und geschäftliche oder politische Entscheidungen sollten nicht nur darauf beruhen, ob ein p-Wert einen bestimmten Schwellenwert überschreitet.&lt;/li&gt;
+&lt;li&gt;Eine korrekte Schlussfolgerung erfordert eine vollständige Berichterstattung und Transparenz.&lt;/li&gt;
+&lt;li&gt;Ein p-Wert sagt nichts über die Größe eines Effekts oder die Bedeutung eines Ergebnisses aus.&lt;/li&gt;
+&lt;li&gt;Ein p-Wert an sich ist kein guter Maßstab für die Evidenz eines Modells oder einer Hypothese.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
 ]
@@ -763,16 +760,16 @@ You are a paramedic and you approach the scene of a car accident. One victim is 
 
 
 ---
-# Consuming statistics: lessons learned
+# Statistiken verwenden: gelernte Lektionen
 
 .pull-left[
-## Lies, Damned Lies and Statistics
+## Lügen, verdammte Lügen und Statistiken
 
-- Policy debates almost inevitable also revolve around statistics
-- Strategic incentive to tilt evidence in favor
-- Statistical pitfalls: Not everything that sounds logical is statistically sound 
-- A fundamental understanding of basic concepts of statistics is key to make you a critical consumer of statistical information
-- Some popular fallacies and errors occur again and again `\(\rightarrow\)` learn to spot them!
+- Politische Debatten drehen sich fast zwangsläufig auch um Statistiken
+- Strategischer Anreiz, Beweise zu seinen Gunsten zu beeinflussen
+- Statistische Fallstricke: Nicht alles, was logisch klingt, ist statistisch fundiert 
+- Ein grundlegendes Verständnis der grundlegenden Konzepte der Statistik ist der Schlüssel zu einem kritischen Verbraucher statistischer Informationen
+- Einige populäre Irrtümer und Fehler treten immer wieder auf - lernen Sie, sie zu erkennen!
 ]
 
 .pull-right[
