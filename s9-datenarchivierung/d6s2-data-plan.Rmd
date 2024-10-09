@@ -1,6 +1,6 @@
 ---
-title: "Day 6: Data management and ethics"
-subtitle: "Guiding Principles for Data Management I"
+title: "Tag 3: Auf dem Weg zur datenbewussten Organisation"
+subtitle: "Session 9: Datenarchivierung und Veröffentlichung"
 author: "Sebastian Ramirez-Ruiz"
 institute: "Hertie School"
 output:
@@ -67,14 +67,14 @@ bib <-  RefManageR::ReadBib("grateful-refs.bib")
 ```
 
 
-# What people think working with data looks like...
+# Was die Leute denken, wie die Arbeit mit Daten aussieht...
 
 <div align="center">
 <img src="../pics/d6-s2-programming.jpeg" width=800>
 </div>
 
 ---
-# How it really is...
+# Wie es wirklich ist...
 
 <div align="center">
 <br><br><br>
@@ -91,7 +91,7 @@ bib <-  RefManageR::ReadBib("grateful-refs.bib")
 
 ---
 
-# Research data management (RDM) lifecycle
+# Research Data Management (RDM) Lifecycle
 
 <div align="center">
 <img src="../pics/rdm-lifecycle.png" width=700>
@@ -101,19 +101,17 @@ bib <-  RefManageR::ReadBib("grateful-refs.bib")
 ---
 
 
-# Table of contents
+# Inhaltsverzeichnis
 
 </br></br>
+1. [Datenmanagement und ein Datenmanagementplan (DMP)](#dmp)
 
-1. [Data management and a data management plan (DMP)](#dmp)
+2. [Schutz](#protecting)
 
-2. [Protecting](#protecting)
-
-3. [Organizing, documenting, processing, and storing](#organizing)
-
+3. [Organisieren, Dokumentieren, Verarbeiten und Speichern](#organizing)
 ---
 
-# Research data management (RDM) lifecycle
+# Research Data Management (RDM) Lifecycle
 
 <div align="center">
 <img src="../pics/rdm-lifecycle-s1.png" width=700>
@@ -124,101 +122,101 @@ bib <-  RefManageR::ReadBib("grateful-refs.bib")
 
 class: midtext
 
-# A show of hands!
+# Ich bitte um Handzeichen!
 
-### Raise your hand if you:
+### Heben Sie die Hand, wenn Sie:
 
-- have heard the term data management plan (DMP)
-
---
-- can define what a data management plan entails
+- den Begriff Datenmanagementplan (DMP) schon einmal gehört haben
 
 --
-- have ever created a data management plan for a project
+- definieren können, was ein Datenmanagementplan beinhaltet
 
 --
-- have planned data collection methods for research or policy work
+- schon einmal einen Datenmanagementplan für ein Projekt erstellt haben
 
 --
-- have implemented strategies to ensure data integrity and security
+- Datenerhebungsmethoden für Forschung oder politische Arbeit geplant haben
 
 --
-- are familiar with the FAIR principles (Findability, Accessibility, Interoperability, and Reuse)
+- Strategien zur Gewährleistung der Datenintegrität und -sicherheit umgesetzt haben
 
 --
-- have incorporated open data practices into your work
+- mit den FAIR-Prinzipien (Findability, Accessibility, Interoperability und Reuse) vertraut sind
 
 --
-- have archived or published datasets for public access
+- Sie haben Praktiken für offene Daten in Ihre Arbeit integriert
 
 --
-- are familiar with data protection regulations and compliance requirements
+- Sie haben Datensätze archiviert oder für den öffentlichen Zugang veröffentlicht
 
 --
-- have used techniques to discover and access relevant datasets
+- mit Datenschutzbestimmungen und Compliance-Anforderungen vertraut sind
 
 --
-- have utilized data management tools or software in your projects
+- Techniken zum Auffinden und Zugreifen auf relevante Datensätze eingesetzt haben
 
 --
-- have trained or guided others in effective data management practices
+- in Ihren Projekten Datenmanagement-Tools oder -Software eingesetzt haben
 
+--
+- Sie haben andere in effektiven Datenverwaltungspraktiken geschult oder angeleitet.
 
 ---
 class: inverse, center, middle
 name: dmp
 
-# Data management and a data management plan (DMP)
+# Data Management und ein Data Management Plan (DMP)
 <html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
 
 
 ---
 
-# Data
+# Daten
 
 .pull-left[
 <br>
-## What are data?
+## Was sind Daten?
 
-- Data are disembodied **facts**, **signs**, and **symbols**.
+- Daten sind unkörperliche **Fakten**, **Zeichen** und **Symbole**.
 
 .text-invisible[
-- We often define them by their **source** (*e.g. administrative, historical, medical, etc.*) and their **formats** (*e.g., numerical, textual, still image, geospatial, audio, video, and software.*) 
+- Wir definieren sie oft nach ihrer **Quelle** (*z.B. Verwaltung, Geschichte, Medizin usw.*) und ihren **Formaten** (*z.B. Zahlen, Text, Standbilder, Geodaten, Audio, Video und Software.*) 
 
-- It is thought about as the basis under the *DIKW pyramid*.
+- Es wird als Basis unter der *DIKW-Pyramide* betrachtet.
 ]
 ]
 ---
 
-# Data
+# Daten
 
 .pull-left[
 <br>
-## What are data?
+## Was sind Daten?
 
-- Data are disembodied **facts**, **signs**, and **symbols**.
+- Daten sind unkörperliche **Fakten**, **Zeichen** und **Symbole**.
 
 
-- We often define them by their **source** (*e.g. administrative, historical, medical, etc.*) and their **formats** (*e.g., numerical, textual, still image, geospatial, audio, video, and software.*) 
+- Wir definieren sie oft nach ihrer **Quelle** (*z.B. Verwaltung, Geschichte, Medizin usw.*) und ihren **Formaten** (*z.B. Zahlen, Text, Standbilder, Geodaten, Audio, Video und Software.*) 
 
 .text-invisible[
-- It is thought about as the basis of the **knowledge hierarchy** under the *DIKW pyramid*.
+- Sie wird als Grundlage der **Wissenshierarchie** unter der *DIKW-Pyramide* betrachtet.
 ]
 ]
 ---
 
 
-# Data
+# Daten
 
 .pull-left[
 <br>
-## What are data?
+## Was sind Daten?
 
-- Data are disembodied **facts**, **signs**, and **symbols**.
+- Daten sind unkörperliche **Fakten**, **Zeichen** und **Symbole**.
 
-- We often define them by their **source** (*e.g. administrative, historical, medical, etc.*) and their **formats** (*e.g., numerical, textual, still image, geospatial, audio, video, and software.*) 
 
-- It is thought about as the basis of the **knowledge hierarchy** under the *DIKW pyramid*.
+- Wir definieren sie oft nach ihrer **Quelle** (*z.B. Verwaltung, Geschichte, Medizin usw.*) und ihren **Formaten** (*z.B. Zahlen, Text, Standbilder, Geodaten, Audio, Video und Software.*) 
+
+- Sie wird als Grundlage der **Wissenshierarchie** unter der *DIKW-Pyramide* betrachtet.
 ]
 
 .pull-right[
@@ -229,9 +227,9 @@ name: dmp
 ]
 ---
 
-# Data in policy analysis
+# Daten in der politischen Analyse
 
-In a similar way to academic research, as **policy analysts you might rely on a broad range of materials**, from structured numerical datasets to interviews, field notes, and documents collected for ethnographic field studies,
+Ähnlich wie in der akademischen Forschung können Sie sich als **Politikanalysten auf eine breite Palette von Materialien** stützen, von strukturierten numerischen Datensätzen bis hin zu Interviews, Feldnotizen und Dokumenten, die für ethnografische Feldstudien gesammelt wurden,
 
 --
 
@@ -255,34 +253,32 @@ In a similar way to academic research, as **policy analysts you might rely on a 
 --
 
 <br>
-Regardless of *"type"*, in the policy world, we will likely deal largely with **collection of data about individuals** (i.e., .i-pink[human subject research]).
+Unabhängig von der *"Art “* werden wir es in der Politik wahrscheinlich weitgehend mit der **Erhebung von Daten über Einzelpersonen** zu tun haben (d. h. i-pink[Forschung am Menschen]).
 
 ---
 class: midtext
 
 
-# Personal data
+# Persönliche Daten
 
-Any data that enables you to **identify a person** is classified as personal data. In the General Data Protection Regulation (GDPR) personal data are .i-pink[any information relating to] an **identified** or **identifiable** natural person known as ‘a data subject’<sup>1</sup>.
+Alle Daten, die es Ihnen ermöglichen, eine Person zu **identifizieren**, werden als personenbezogene Daten eingestuft. In der Allgemeinen Datenschutzverordnung (DSGVO) sind personenbezogene Daten alle Informationen, die sich auf eine **identifizierte** oder **identifizierbare** natürliche Person, die als „betroffene Person“ bezeichnet wird, beziehen.<sup>1</sup>.
 
-.footnote[<sup>1</sup>The GDPR applies only to the data of living persons. Data which do not count as personal data do not fall under data protection legislation, though there might still be ethical reasons for protecting this information.]
+.footnote[<sup>1</sup>Die Datenschutz-Grundverordnung (DSGVO) gilt nur für die Daten von lebenden Personen. Daten, die nicht als personenbezogene Daten gelten, fallen nicht unter die Datenschutzvorschriften, obwohl es dennoch ethische Gründe für den Schutz dieser Informationen geben kann.]
 --
 
 .pull-left-wide[
+## Sensible personenbezogene Daten
 
-## Sensitive personal data
+Bestimmte personenbezogene Daten können besonders schützenswert sein, wenn sie Informationen preisgeben, die erhebliche *Risiken* für die *Grundrechte* und *Freiheiten* der betroffenen Person darstellen können. Im Zusammenhang mit der DSGVO können dies sein:
 
-Certain personal data can .i-pink[require specific protection] when they reveal information that may create important *risks* for the *fundamental rights* and *freedoms* of the involved individual. In the context of GDPR, these can be:
-
-- Racial or ethnic origin;
-- Political opinions;
-- Religious or philosophical beliefs;
-- Trade union membership;
-- Genetic data;
-- Biometric data;
-- Data concerning health;
-- Data concerning a natural person’s sex life or sexual orientation.
-
+- Ethnische Herkunft;
+- Politische Meinungen;
+- Religiöse oder philosophische Überzeugungen;
+- Gewerkschaftszugehörigkeit;
+- Genetische Daten;
+- Biometrische Daten;
+- Daten über die Gesundheit;
+- Daten über das Sexualleben oder die sexuelle Identität einer Person.
 ]
 
 .pull-right-small[
@@ -294,7 +290,7 @@ Certain personal data can .i-pink[require specific protection] when they reveal 
 
 ---
 
-# Research data management (RDM)
+# Research Data Management (RDM)
 
 <br><br><br>
 
@@ -303,12 +299,12 @@ Certain personal data can .i-pink[require specific protection] when they reveal 
 .pull-left-small[
 <br>
 
-**Research data management** is like “.i-pink[health care]” for your data:
-- keeps them safe from harm,
-- makes them usable and discoverable.
+**Research Data Management** ist wie “.i-pink[health care]” für Ihre Daten:
+- sie vor Schaden bewahrt,
+- macht sie nutzbar und auffindbar.
 
 
-It entails strategies, processes and measures to maintain data quality, interpretability of research results, (re-)usability of your data.
+Dazu gehören Strategien, Prozesse und Maßnahmen zur Erhaltung der Datenqualität, der Interpretierbarkeit von Forschungsergebnissen und der (Wieder-)Verwendbarkeit Ihrer Daten.
 ]
 
 .pull-right-wider[
@@ -321,22 +317,22 @@ It entails strategies, processes and measures to maintain data quality, interpre
 
 ---
 
-# Research data management (RDM)
+# Research Data Management (RDM)
 
 .content-box-gray-wide[
-The .i-pink[need] for thinking closely about **RDM** increases when dealing with .i-pink[sensitive personal data].
+Der .i-pink[Bedarf] **RDM** sorgsam zu überdenken steigt mit .i-pink[sensiblen personenbezogenen Daten] an.
 ]
 
 
 .pull-left-small[
 <br>
 
-**Research data management** is like “.i-pink[health care]” for your data:
-- keeps them safe from harm,
-- makes them usable and discoverable.
+**Research Data Management** ist wie “.i-pink[health care]” für Ihre Daten:
+- sie vor Schaden bewahrt,
+- macht sie nutzbar und auffindbar.
 
 
-It entails strategies, processes and measures to maintain data quality, interpretability of research results, (re-)usability of your data.
+Dazu gehören Strategien, Prozesse und Maßnahmen zur Erhaltung der Datenqualität, der Interpretierbarkeit von Forschungsergebnissen und der (Wieder-)Verwendbarkeit Ihrer Daten.
 ]
 
 .pull-right-wider[
@@ -348,7 +344,7 @@ It entails strategies, processes and measures to maintain data quality, interpre
 
 ---
 
-# Research data management (RDM) lifecycle
+# Research Data Management (RDM) Lifecycle
 
 <div align="center">
 <img src="../pics/rdm-lifecycle.png" width=700>
@@ -356,45 +352,45 @@ It entails strategies, processes and measures to maintain data quality, interpre
 
 ---
 
-# Data management plan (DMP)
+# Data Management Plan (DMP)
 
 <br><br>
 
 .pull-left[
-## Data management plans are an important tool to structure the data management of your project.
+## Datenmanagementpläne sind ein wichtiges Instrument zur Strukturierung des Datenmanagements Ihres Projekts.
 
-Defines strategies, measures and responsibilities for:
+Definiert Strategien, Maßnahmen und Verantwortlichkeiten für:
 
-- processing and validating,
-- storing and protecting, 
-- preserving and sharing
+- die Verarbeitung und Validierung,
+- Speicherung und Schutz, 
+- Bewahrung und gemeinsame Nutzung
 
-your data throughout the data cycle.
+Ihre Daten während des gesamten Datenzyklus.
 
-More and more .i-pink[funding partners increasingly require them].
+Immer mehr .i-pink[Finanzierungspartner verlangen diesen].
 ]
 
 --
 
 .pull-right[
-## Components of a data management plan
+## Bestandteile eines Datenmanagementplans
 
-1. Data summary
-2. FAIR data
-    - *Findable*
-    - *Accessible*
-    - *Interoperable*
-    - *Reusable*
-3. Allocation of resources
-4. Data security
-5. Ethical aspects
-6. *Other*\*
+1. Zusammenfassung der Daten
+2. FAIR Daten
+    - *Auffindbar*
+    - *Zugänglich*
+    - *Interoperabel*
+    - *Wiederverwendbar*
+3. Zuteilung von Ressourcen
+4. Sicherheit der Daten
+5. Ethische Aspekte
+6. *Sonstiges*\*
 ]
 
 ---
 class: midtext
 
-# Data management plan (DMP) (cont.)
+# Data Management Plan (DMP) (Fortführung)
 
 <br>
 
@@ -425,13 +421,13 @@ class: midtext
 # Data management plan (DMP) (cont.)
 
 
-| DMP component | Issues to be addressed |
+| DMP Komponente | Zu behandelnde Fragen |
 | -------------- | ---------------------- |
-| <b>FAIR data:</b><br> **2.4. Increase data re-use (through clarifying licences)** | - Specify how the data will be licensed to permit the widest reuse possible<br>- Specify when the data will be made available for re-use. If applicable, specify why and for what period a data embargo is needed<br>- Specify whether the data produced and/or used in the project is usable by third parties, in particular after the end of the project? If the re-use of some data is restricted, explain why<br>- Describe data quality assurance processes<br>- Specify the length of time for which the data will remain re-usable |
-| **3. Allocation of resources** | - Estimate the costs for making your data FAIR. Describe how you intend to cover these costs<br>- Clearly identify responsibilities for data management in your project<br>- Describe costs and potential value of long term preservation |
-| **4. Data security** | - Address data recovery as well as secure storage and transfer of sensitive data |
-| **5. Ethical aspects** | - To be covered in the context of the ethics review, ethics section of DoA and ethics deliverables. Include references and related technical aspects if not covered by the former |
-| **6. Other** | - Refer to other national/funder/sectorial/departmental procedures for data management that you are using (if any) |
+| <b>FAIR data:</b><br> **2.4. Verbesserung der Wiederverwendung von Daten (durch Klärung der Lizenzen)** | - Legen Sie fest, wie die Daten lizenziert werden, um die weitestmögliche Wiederverwendung zu ermöglichen<br>- Legen Sie fest, wann die Daten zur Wiederverwendung verfügbar gemacht werden. Falls zutreffend, geben Sie an, warum und für welchen Zeitraum ein Datenembargo erforderlich ist<br>- Legen Sie fest, ob die im Projekt erzeugten und/oder verwendeten Daten von Dritten nutzbar sind, insbesondere nach Ende des Projekts? Wenn die Wiederverwendung einiger Daten eingeschränkt ist, erklären Sie warum<br>- Beschreiben Sie die Prozesse zur Qualitätssicherung der Daten<br>- Legen Sie die Dauer fest, für die die Daten wiederverwendbar bleiben |
+| **3. Zuweisung von Ressourcen** | - Schätzen Sie die Kosten für die Umsetzung Ihrer Daten nach FAIR-Prinzipien. Beschreiben Sie, wie Sie diese Kosten decken wollen<br>- Identifizieren Sie klar die Verantwortlichkeiten für das Datenmanagement in Ihrem Projekt<br>- Beschreiben Sie die Kosten und den potenziellen Wert der langfristigen Aufbewahrung |
+| **4. Datensicherheit** | - Behandeln Sie Datenwiederherstellung sowie sichere Lagerung und Übertragung sensibler Daten |
+| **5. Ethische Aspekte** | - Im Kontext der Ethikprüfung, des ethischen Abschnitts des DoA und der ethischen Lieferungen zu behandeln. Schließen Sie Verweise und verwandte technische Aspekte ein, falls diese nicht von den vorgenannten abgedeckt werden |
+| **6. Sonstiges** | - Beziehen Sie sich auf andere nationale/finanzierende/branchenspezifische/abteilungsspezifische Verfahren zum Datenmanagement, die Sie verwenden (falls vorhanden) |
 
 
 `Source`: [H2020 DMP Template](https://ec.europa.eu/research/participants/data/ref/h2020/other/gm/reporting/h2020-tpl-oa-data-mgt-plan-annotated_en.pdf)
@@ -441,26 +437,24 @@ class: midtext
 class: inverse, center, middle
 name: protecting
 
-# Protecting
+# Beschützen
 <html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
 
 ---
 
-# Data protection
+# Datenschutz
 
 
 .pull-left[
-## Research ethics
+## Forschungsethik
+Die moralischen **Prinzipien** und **Handlungen**, die Forschung leiten und gestalten
 
-The moral **principles** and **actions** guiding and shaping research
-
-<b style="color:#1D375B">In policy analysis</b> is closely linked to research ethics in the social sciences.
-- Initially, a 'patient protection' model from medical research.
-- Today it has a broader scope, including:
-    - consideration of <i style="color:#cc0065">benefits, risks, and harms</i>
-    - <i style="color:#cc0065">to all persons</i> connected with and affected by the research
-- Gives **responsibilities** to researchers and analysts (e.g., *legal framework*).
-
+<b style="color:#1D375B">In der Politikanalyse</b> ist eng mit der Forschungsethik in den Sozialwissenschaften verbunden.
+- Ursprünglich ein Modell des 'Patientenschutzes' aus der medizinischen Forschung.
+- Heute hat es einen breiteren Anwendungsbereich, einschließlich:
+    - Berücksichtigung von <i style="color:#cc0065">Nutzen, Risiken und Schäden</i>
+    - <i style="color:#cc0065">für alle Personen</i>, die mit der Forschung in Verbindung stehen und davon betroffen sind
+- Weist **Verantwortlichkeiten** den Forschern und Analysten zu (z.B. *rechtlicher Rahmen*).
 ]
 
 .pull-right[
@@ -472,14 +466,14 @@ The moral **principles** and **actions** guiding and shaping research
 ]
 
 ---
-# Nuremberg code (1947)
+# Nürnberg Code (1947)
 
 .pull-left[
-**Ethical guidelines** for the preparation and conduct of medical, psychological and other experiments on humans: 
+**Ethische Richtlinien** für die Vorbereitung und Durchführung von medizinischen, psychologischen und anderen Experimenten am Menschen: 
 
 
 
->“The voluntary consent of the human subject is absolutely essential [...] without the intervention of any element of force, fraud, deceit, duress, over-reaching, or other ulterior form of constraint or coercion [...] should have sufficient knowledge and comprehension of the elements of the subject matter involved as to enable him to make an **understanding and enlightened decision**.”
+>"Die freiwillige Zustimmung der Versuchsperson ist absolut unerlässlich [...], ohne dass ein Element der Gewalt, des Betrugs, der Täuschung, der Nötigung, der Übervorteilung oder einer anderen Form von Zwang oder Nötigung vorliegt [...], sollte über ausreichende Kenntnisse und ein ausreichendes Verständnis der Elemente des betreffenden Gegenstands verfügen, um sie in die Lage zu versetzen, eine **einsichtige und aufgeklärte Entscheidung** zu treffen.”
 
 ]
 
@@ -493,18 +487,18 @@ The moral **principles** and **actions** guiding and shaping research
 
 ---
 
-# Reviews of ethics in academic research
+# Überprüfungen der Ethik in der akademischen Forschung
 
 <br><br>
 .pull-left[
-## Institutional Review Board (IRB) and ethical boards
+## Ethikkommission (IRB) und ethische Gremien
 
-- Administrative bodies established to **protect the rights and welfare** of research subjects
-- Often housed within the academic institution
-- Checks proposals and recommends changes and improvements
-- .i-pink[Can kill unethical projects by denying approval]
-
+- Verwaltungsorgane, die eingerichtet wurden, um die **Rechte und das Wohlergehen** der Forschungsteilnehmer zu schützen
+- Oft innerhalb der akademischen Einrichtung angesiedelt
+- Überprüft Vorschläge und empfiehlt Änderungen und Verbesserungen
+- .i-pink[ Kann unethische Projekte durch Verweigerung der Genehmigung stoppen]
 ]
+
 
 .pull-right[
 <div align="center">
@@ -515,19 +509,19 @@ The moral **principles** and **actions** guiding and shaping research
 ]
 
 ---
-# What is "data protection"?
+# Was ist "Datenschutz"?
 
 
 .pull-left[
-## Data protection
+## Datenschutz
 
-- Part of fundamental .i-pink[right to privacy] (or 'informational freedom’).
-- In research there might be instances of tensions of fundamental rights:
-    - Freedom of research vs. freedom of personal information.
-- “Privacy is a personal condition of life characterized by seclusion from, and therefore absence of acquaintance by, the public” (Neethling 2005).
-- **Core**:
-    - prevention of unwanted disclosure of personal information or
-    - the misuse of such information.
+- Teil des Grundrechts .i-pink[Recht auf Privatsphäre] (oder 'informationelle Freiheit').
+- In der Forschung kann es zu Spannungen zwischen den Grundrechten kommen:
+    - Freiheit der Forschung vs. Freiheit der persönlichen Information.
+- „Privatsphäre ist ein persönlicher Lebenszustand, der durch Abgeschiedenheit von der Öffentlichkeit und damit durch Abwesenheit von deren Kenntnisnahme gekennzeichnet ist“ (Neethling 2005).
+- **Kern**:
+    - Verhinderung der unerwünschten Offenlegung von persönlichen Informationen oder
+    - des Missbrauchs solcher Informationen.
 ]
 
 .pull-right[
@@ -540,7 +534,7 @@ The moral **principles** and **actions** guiding and shaping research
 
 ---
 
-# There are individuals behind the data...
+# Hinter Daten befinden sich Individuen...
 
 
 <div align="center">
@@ -550,7 +544,7 @@ The moral **principles** and **actions** guiding and shaping research
 
 ---
 
-# Data protection principles under GDPR
+# Datenschutz unter der DSGVO
 
 <div align="center">
 <br>
@@ -559,7 +553,7 @@ The moral **principles** and **actions** guiding and shaping research
 
 ---
 
-# Data protection principles under GDPR (cont.)
+# Datenschutz unter der DSGVO
 
 <div align="center">
 <br>
@@ -568,20 +562,20 @@ The moral **principles** and **actions** guiding and shaping research
 
 ---
 
-# GDPR
+# DSGVO
 
 <br>
 
 .pull-left[
 ## General Data Protection Regulation
 
-- In place since May 25, 2018 (.i-pink[almost six years to the day] 😎)
-    - 99 articles and 173 recitals
-    - Applies directly
-    - Intended to harmonize data protection law EU-wide
-    - *but*, about 150 “opening clauses” or exemptions...
+- In Kraft seit 25. Mai 2018 (.i-pink[fast auf den Tag genau sechs Jahre] 😎)
+    - 99 Artikel und 173 Erwägungsgründe
+    - Gilt unmittelbar
+    - Soll das Datenschutzrecht EU-weit harmonisieren
+    - *aber*, etwa 150 „Öffnungsklauseln“ oder Ausnahmen...
 
-- GDPR (factually) integrated into a hierarchy of norms
+- GDPR (faktisch) integriert in eine Normenhierarchie
 ]
 
 .pull-right[
@@ -593,19 +587,19 @@ The moral **principles** and **actions** guiding and shaping research
 ]
 
 
-.footnote[<sup>1</sup> Let's check this piece out https://www.bbc.com/news/uk-wales-politics-58395974]
+.footnote[<sup>1</sup> Schauen wir uns diesen Artikel an https://www.bbc.com/news/uk-wales-politics-58395974]
 
 ---
 
 class: inverse, center, middle
 name: organizing
 
-# Organizing, documenting, processing, and storing
+# Organisieren, Dokumentieren, Verarbeiten und Speichern
 <html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
 
 ---
 
-# Data processing under GDPR
+# Datenverarbeitung unter GDPR
 
 <div align="center">
 <br>
@@ -614,7 +608,7 @@ name: organizing
 
 ---
 
-# Data processing under GDPR (cont.)
+# Datenverarbeitung unter GDPR
 
 <div align="center">
 <br>
@@ -624,16 +618,16 @@ name: organizing
 
 ---
 
-# Informed consent for data processing
+# Informierte Zustimmung zur Datenverarbeitung
 
 .pull-left[
 
 
 <br><br><br>
-## Art 4 Par 11 GDPR
+## Art. 4 Abs. 11 GDPR
 
 
->“‘(C)onsent’ of the data subject means **any freely given, specific, informed and unambiguous indication of the data subject’s wishes** by which he or she, by a statement or by a clear affirmative action, signifies **agreement to the processing of personal data** relating to him or her;”
+> "'Einwilligung' der betroffenen Person ist **jede Willensbekundung, die ohne Zwang, für den konkreten Fall, in Kenntnis der Sachlage und unmissverständlich erfolgt** und mit der die betroffene Person durch eine Erklärung oder eine eindeutige bestätigende Handlung zu verstehen gibt, dass sie **mit der Verarbeitung der sie betreffenden personenbezogenen Daten** einverstanden ist;“
 
 ]
 
@@ -641,36 +635,36 @@ name: organizing
 
 .pull-right[
 
-## Conditions for consent
+## Bedingungen für die Zustimmung
 
-- Written form no longer required.
-- Conditions for consent (Art 7 GDPR):
-    - Requirement to provide evidence (Par1)
-    - Separation requirement (Par2)
-    - Easy revocability at any time (Par3) 
-    - Increased requirement of voluntariness (Par4)
-- More stringent for minors under 14 years of age (Art 8 GDPR).
-- Important: Collection of "special categories" of personal data "prohibited" under Art 9 GDPR, unless there is a legal basis.
+- Schriftform nicht mehr erforderlich.
+- Bedingungen für die Einwilligung (Artikel 7 GDPR):
+    - Nachweispflicht (Abs. 1)
+    - Trennungsgebot (Abs. 2)
+    - Leichte Widerrufbarkeit zu jeder Zeit (Abs. 3) 
+    - Erhöhte Anforderung an die Freiwilligkeit (Abs. 4)
+- Verschärfung für Minderjährige unter 14 Jahren (Art. 8 GDPR).
+- Wichtig: Erhebung „besonderer Kategorien“ personenbezogener Daten gemäß Artikel 9 DSGVO „verboten“, es sei denn, es gibt eine Rechtsgrundlage.
 
 
-- **Central**: .i-pink[consent needs to be documented!]
+- **Zentral**: .i-pink[Einwilligung muss dokumentiert werden!]
 
 ]
 
 ---
 
-# Can we process data without consent? (in research)
+# Können wir Daten ohne Einwilligung verarbeiten? (in der Forschung)
 
 .pull-left[
-## Are <span style="color:#cc0065">researchers</span> allowed to process data that was collected without consent? 
+## Dürfen <span style="color:#cc0065">Forscher</span> Daten verarbeiten, die ohne Einwilligung gesammelt wurden?
 
-- .i-pink[It depends...]
-- May need to try to gain consent after the data was gathered.
-- They may skip this step, if "the provision of such information proves impossible or would involve a disproportionate effort" (Art 14 Par 5 Lit b).
-- But this is no default!
-- **Disproportionate really means disproportionate**.
+- .i-pink[Es kommt darauf an...]
+- Es könnte notwendig sein, nachträglich eine Einwilligung einzuholen, nachdem die Daten gesammelt wurden.
+- Dieser Schritt kann übersprungen werden, wenn "die Bereitstellung solcher Informationen unmöglich ist oder einen unverhältnismäßigen Aufwand bedeuten würde" (Art 14 Abs 5 Lit b).
+- Aber das ist keine Standardlösung!
+- **Unverhältnismäßig bedeutet wirklich unverhältnismäßig**.
 
-## Consent after the fact is a balance of interests
+## Einwilligung nachträglich ist eine Interessenabwägung
 ]
 
 
@@ -684,35 +678,34 @@ name: organizing
 ]
 
 ---
-# Consent after the dact and the balance of interests
+# Die Zustimmung nach dem Vertrag und die Interessenabwägung
 
-## "Balance of interest" - checklist: 
+## „Interessenabwägung“ - Checkliste: 
 
-- Legitimate interest of the researcher?
-- Is the data processing necessary?
-    - Are the more lenient ways to achieve research goal?
-- Can the subject refuse to the processing?
-- Are these data linked (or linkable) to other data?
-- How long will the data be stored?
-- How many people are going to access the data?
-- Are the research subjects from a vulnerable group?
-- Would the research subjects have to expect the processing of their data?
-
+- Legitimes Interesse des Forschers?
+- Ist die Datenverarbeitung notwendig?
+    - Gibt es mildere Mittel, um das Forschungsziel zu erreichen?
+- Kann die betroffene Person der Verarbeitung widersprechen?
+- Sind diese Daten mit anderen Daten verknüpft (oder verknüpfbar)?
+- Wie lange werden die Daten gespeichert?
+- Wie viele Personen werden auf die Daten zugreifen?
+- Gehören die Forschungsteilnehmer zu einer schutzbedürftigen Gruppe?
+- Müssen die Forschungssubjekte mit der Verarbeitung ihrer Daten rechnen?
 --
 
-## THINK CLOSELY: if research subjects’ interest weigh more than yours, data processing is improper
+## Überlegen Sie genau: Wenn die Interessen der Versuchspersonen schwerer wiegen als Ihre, ist die Datenverarbeitung unzulässig
 
 ---
 
-# Secure storage
+# Sicherer Datenspeicher
 
 .pull-left[
 <br><br>
-## Technical and organizational measures (TOMs)
+## Technical and Organizational Measures (TOMs)
 
-- **The security of out data**
+- **Die Sicherheit unserer Daten**
 
-> TOMs should be designed to "implement data-protection principles, such as data minimisation, in an effective manner and to integrate the necessary safeguards into the processing in order to meet the requirements of this Regulation and protect the rights of data subjects" (Art 25 Par 1 GDPR).
+> TOMs sollten so konzipiert sein, dass „Datenschutzgrundsätze wie die Datenminimierung wirksam umgesetzt und die erforderlichen Garantien in die Verarbeitung integriert werden, um die Anforderungen dieser Verordnung zu erfüllen und die Rechte der betroffenen Personen zu schützen“. (Art 25 Par 1 GDPR).
 
 ]
 
@@ -728,7 +721,7 @@ name: organizing
 
 ---
 
-# Examples of TOMs
+# Beispiele für TOMs
 
 <div align="center">
 <br><br>
@@ -737,48 +730,47 @@ name: organizing
 
 ---
 
-# Pseudonymization and anonymization
+# Pseudonymisierung und Anonymisierung
 
 .pull-left[
-## Pseudonymization
+## Pseudonymisierung
 
-**(Art 4 Par 1 No 5 GDPR)**:
-> "processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information, provided that such additional information is     kept separately and     is subject to technical and organisational measures     to ensure that the personal data are not attributed to an identified or identifiable natural person;"
+**(Art. 4 Abs. 1 Nr. 5 GDPR)**:
+> „Verarbeitung personenbezogener Daten in einer Weise, dass die personenbezogenen Daten ohne Hinzuziehung zusätzlicher Informationen nicht mehr einer spezifischen betroffenen Person zugeordnet werden können, sofern diese zusätzlichen Informationen gesondert aufbewahrt werden und technischen und organisatorischen Maßnahmen unterliegen, die gewährleisten, dass die personenbezogenen Daten nicht einer identifizierten oder identifizierbaren natürlichen Person zugewiesen werden;“
 
 
-## With pseudonymization the <span style="color:#cc0065">possibility of establishing the true identity remains</span>
+## Bei der Pseudonymisierung bleibt die <span style=„color:#cc0065“>Möglichkeit, die wahre Identität festzustellen</span>
 ]
 
 --
 
 .pull-right[
-## Anonymization
+## Anonymisierung
 
-**(GDPR Recital 26)**:
+**(DSGVO Erwägungsgrund 26)**:
 
-> "information which does not relate to an identified or identifiable natural person or to personal data rendered anonymous in such a manner that the data subject is not or no longer identifiable."
+> „Informationen, die sich nicht auf eine identifizierte oder identifizierbare natürliche Person beziehen oder auf personenbezogene Daten, die so anonymisiert wurden, dass die betroffene Person nicht oder nicht mehr identifizierbar ist.“
 
-
-## With anonymization there is <span style="color:#cc0065">no possibility of establishing the true identity</span>
+## Mit Anonymisierung gibt es <span style=„color:#cc0065“>keine Möglichkeit, die wahre Identität festzustellen</span>
 ]
 
 ---
 
-# What is enough?
+# Was ist genug?
 
-- This is a question that **does not have a clear answer**.
-
---
-- Consider the **risk-based approach** of GDPR.
+- Das ist eine Frage, auf die es **keine klare Antwort** gibt.
 
 --
-- Technical and organizational measures (TOMs) aid you in keeping the risk at bay.
+- Betrachten Sie den **Risiko-basierten Ansatz** der GDPR.
 
 --
-- If working with large datasets, consider means of **Statistical Disclosure Control** (e.g. k-anonymity).
+- Technische und organisatorische Maßnahmen (TOMs) helfen Ihnen, das Risiko in Schach zu halten.
 
 --
-- If you are uncertain, turn out to a **data management and legal expert**!!!
+- Wenn Sie mit großen Datensätzen arbeiten, sollten Sie Mittel zur **Statistischen Offenlegungskontrolle** (z. B. k-Anonymität) in Betracht ziehen.
+
+--
+- Wenn Sie unsicher sind, wenden Sie sich an einen **Datenmanagement- und Rechtsexperten**!!!
 
 <div align="center">
 <br>
@@ -788,11 +780,11 @@ name: organizing
 
 ---
 
-# Data security
+# Datensicherheit
 
 .pull-center[
 .content-box-gray-wide[
-Does anyone know the difference between .i-pink[data protection] and .i-pink[data security]?
+Kennt jemand den Unterschied zwischen .i-pink[Datenschutz] und .i-pink[Datensicherheit]?
 ]
 ]
 
@@ -801,12 +793,12 @@ Does anyone know the difference between .i-pink[data protection] and .i-pink[dat
 <br><br>
 
 .pull-left[
-## Data security is more encompassing and not necessarily person related.
+## Datensicherheit ist umfassender und nicht unbedingt personenbezogen.
 
-- Encryption
-- Strong passwords
-- Access rights
-- Back ups
+- Verschlüsselung
+- Starke Passwörter
+- Zugriffsrechte
+- Backups
 ]
 
 .pull-right[
@@ -820,19 +812,19 @@ Does anyone know the difference between .i-pink[data protection] and .i-pink[dat
 # Encryption
 
 .pull-left[
-## Encryption maintains security of data
-- Uses an algorithm to transform information
-- Needs a "key" to decrypt
+## Verschlüsselung erhält die Sicherheit von Daten
+- Verwendet einen Algorithmus zur Umwandlung von Informationen
+- Benötigt einen „Schlüssel“ zum Entschlüsseln
 
-## Use encryption to
-- Transfer data
-- Store data (back-ups)
-- On remote discs
+## Mit Verschlüsselung können
+- Daten zu übertragen
+- Speichern von Daten (Backups)
+- Auf entfernten Datenträgern
 
-## Tools. e.g., 7Zip, Gpg4win, Veracrypt
+## Tools. z.B. 7Zip, Gpg4win, Veracrypt
 
 
-.footnote[Here is some extra information about encryption by the [Federal Office for Information Security 🇩🇪](https://www.bsi.bund.de/EN/Themen/Verbraucherinnen-und-Verbraucher/Informationen-und-Empfehlungen/Cyber-Sicherheitsempfehlungen/Daten-sichern-verschluesseln-und-loeschen/Datenverschluesselung/Soft-und-hardwaregestuetzte-Verschluesselung/soft-und-hardwaregestuetzte-verschluesselung_node.html)]
+.footnote[Hier finden Sie einige zusätzliche Informationen zur Verschlüsselung vom [Bundesamt für Sicherheit in der Informationstechnik 🇩🇪](https://www.bsi.bund.de/EN/Themen/Verbraucherinnen-und-Verbraucher/Informationen-und-Empfehlungen/Cyber-Sicherheitsempfehlungen/Daten-sichern-verschluesseln-und-loeschen/Datenverschluesselung/Soft-und-hardwaregestuetzte-Verschluesselung/soft-und-hardwaregestuetzte-verschluesselung_node.html)]
 ]
 
 .pull-right[
@@ -844,24 +836,22 @@ Does anyone know the difference between .i-pink[data protection] and .i-pink[dat
 
 ---
 
-# Strong passwords
+# Starke Passwörter
 
 .pull-left[
-## A strong password has:
-- eight to fifteen characters or even more
-- a random distribution of characters
+## Ein starkes Passwort hat:
+- acht bis fünfzehn Zeichen oder sogar mehr
+- eine zufällige Verteilung der Zeichen
 
-## Combine
-- upper case letters: A - Z
-- lower case letters: a - z
-- numerals: 0-9
-- special characters: !"#$%&'()*+,-./:, etc.
+## Kombinieren Sie
+- Großbuchstaben: A - Z
+- Kleinbuchstaben: a - z
+- Ziffern: 0-9
+- Sonderzeichen: !"#$%&'()*+,-./:, etc.
 
+## Verwenden Sie einen <span style = "color:#cc0065">‘Pass-Satz’</span> anstelle eines Passworts!
 
-## Use a <span style = "color:#cc0065">‘pass-sentence’</span> instead of a password!
-
-
-.footnote[Here is some extra information about password managers by the [Federal Office for Information Security 🇩🇪](https://www.bsi.bund.de/EN/Themen/Verbraucherinnen-und-Verbraucher/Informationen-und-Empfehlungen/Cyber-Sicherheitsempfehlungen/Accountschutz/Sichere-Passwoerter-erstellen/Passwort-Manager/passwort-manager_node.html)]
+.footnote[Hier sind einige zusätzliche Informationen über Passwort-Manager vom [Bundesamt für Sicherheit in der Informationstechnik 🇩🇪](https://www.bsi.bund.de/EN/Themen/Verbraucherinnen-und-Verbraucher/Informationen-und-Empfehlungen/Cyber-Sicherheitsempfehlungen/Accountschutz/Sichere-Passwoerter-erstellen/Passwort-Manager/passwort-manager_node.html)]
 ]
 
 .pull-right[
@@ -872,51 +862,51 @@ Does anyone know the difference between .i-pink[data protection] and .i-pink[dat
 ]
 
 ---
-# Secure back-ups
+# Sichere Back-ups
 
 .pull-left[
-## Risks:
-- Technical defects
-- Catastrophes
-- Theft
-- Forgetfulness
+## Risiken:
+- Technische Defekte
+- Katastrophen
+- Diebstahl
+- Vergesslichkeit
 
-## Strategies
-- Storage on secure servers with automatic regular backup
-- Backup important files in at least three copies on spatially separated data carriers
+## Strategien
+- Speicherung auf sicheren Servern mit automatischer regelmäßiger Sicherung
+- Sicherung wichtiger Dateien in mindestens drei Kopien auf räumlich getrennten Datenträgern
 ]
 
 --
 
 .pull-right[
-## Backup setup (3-2-1 rule)
-- At least **3** copies of a file
-- On at least **2** different media
-- At least **1** of which is remote
+## Einrichtung der Datensicherung (3-2-1-Regel)
+- Mindestens **3** Kopien einer Datei
+- Auf mindestens **2** verschiedenen Medien
+- Mindestens **1** davon ist remote
 
-**Test data recovery at the beginning and at regular intervals**
+**Testen Sie die Datenwiederherstellung zu Beginn und in regelmäßigen Abständen**
 
-## Protect your (sensitive) data:
-- Hardware (e.g. separate lockable room)
-- File encryption
-- Password security
-- At least two people should have access to your data
+## Schützen Sie Ihre (sensiblen) Daten:
+- Hardware (z.B. separater abschließbarer Raum)
+- Dateiverschlüsselung
+- Passwortsicherheit
+- Mindestens zwei Personen sollten Zugang zu Ihren Daten haben
 
 ]
 
-.footnote[Here is some extra information about data backup by the [Federal Office for Information Security 🇩🇪](https://www.bsi.bund.de/EN/Themen/Verbraucherinnen-und-Verbraucher/Informationen-und-Empfehlungen/Cyber-Sicherheitsempfehlungen/Daten-sichern-verschluesseln-und-loeschen/Datensicherung-und-Datenverlust/datensicherung-und-datenverlust_node.html)]
+.footnote[Hier finden Sie zusätzliche Informationen zur Datensicherung vom [Bundesamt für Sicherheit in der Informationstechnik 🇩🇪](https://www.bsi.bund.de/EN/Themen/Verbraucherinnen-und-Verbraucher/Informationen-und-Empfehlungen/Cyber-Sicherheitsempfehlungen/Daten-sichern-verschluesseln-und-loeschen/Datensicherung-und-Datenverlust/datensicherung-und-datenverlust_node.html)]
 
 ---
 
-# Why this matters to us?
+# Warum ist das für uns wichtig?
 
-## Let's take a look at a couple of cases
+## Schauen wir uns ein paar Fälle an
 
-- .b-pink[What happened?]
+- .b-pink[Was ist passiert?]
 
-- .b-pink[Why was it a problem?]
+- .b-pink[Warum war das ein Problem?]
 
-- .b-pink[What should have happened?]
+- .b-pink[Was hätte geschehen sollen?]
 
 [UK Information Commissioner's Office (ICO)](https://ico.org.uk/for-organisations/report-a-breach/personal-data-breach/personal-data-breach-examples/)
 
@@ -924,7 +914,7 @@ Does anyone know the difference between .i-pink[data protection] and .i-pink[dat
 class: inverse, center, middle
 name: questions
 
-# Questions?
+# Fragen?
 <html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
 
 
