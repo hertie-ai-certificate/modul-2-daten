@@ -70,7 +70,7 @@ library(fontawesome)
 class: inverse, center, middle
 name: descriptives
 
-# Deskriptiven Statistik verstehen
+# Deskriptive Statistik verstehen
 <html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
 
 

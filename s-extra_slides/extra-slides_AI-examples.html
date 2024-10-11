@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Tag 3</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Simon Munzert" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+    <link rel="stylesheet" href="../simons-touch.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Tag 3
+]
+.subtitle[
+## Extra Session: KI Beispiele
+]
+.author[
+### Simon Munzert
+]
+.institute[
+### Hertie School
+]
+
+---
+
+
+&lt;style type="text/css"&gt;
+@media print { # print out incremental slides; see https://stackoverflow.com/questions/56373198/get-xaringan-incremental-animations-to-print-to-pdf/56374619#56374619
+  .has-continuation {
+    display: block !important;
+  }
+}
+&lt;/style&gt;
+
+
+
+
+# Inhaltsverzeichnis
+
+&lt;br&gt;&lt;br&gt;
+
+1. [HireVue](#a)
+
+2. [ClearView.ai](#b)
+
+3. [EAB Navigate](#c)
+
+4. [Upstart Lending Prediction](#d)
+
+5. [Facebook Suicide Prediction](#e)
+
+6. [Optum ImpactPro](#f)
+
+7. [Velogica](#g)
+
+8. [AFST Child Maltreatment](#h)
+---
+name: a
+#HireVue Personalgewinnung
+.pull-left[
+- Tool für die Personalgewinnung: Video-Personlichkeitstests und Games
+- **Behauptung**: HireVue Einstufung kann beruflichen Erfolg vorhersagen
+- **Belege**: kein Audit (Prüfung), nach 2020 ein Audit aber Ergebnisse nicht öffentlich
+- **Anfechtbarkeit:** Kandidat/innen haben keine Einsicht in die Bewertungskriterien oder Möglichkeit, Entscheidungen anzufechten
+- **Training der Modelle**: auf Basis von Bewertungen bereits eingestellter Mitarbeiter/innen, potenzielle Reproduktion bestehender Biases
+- BR Recherche: Bücherregale, seltene Vokabeln, und das Tragen einer Brille führen zu besseren Scores [(siehe Harlan/Schnuck, 2021)](https://interaktiv.br.de/ki-bewerbung/en/)
+
+`Source` [Harwell, 2019; ](https://www.washingtonpost.com/technology/2019/10/22/ai-hiring-face-scanning-algorithm-increasingly- decides- whether- you- deserve- job/) [Wang et al., 2023: S. 28](https://predictive- optimization.cs.princeton.edu/)
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/s-extra_A_HireVue.png" width=1000&gt;
+&lt;/div&gt;
+[Bildquelle](https://marketplace.icims.com/en-US/apps/119432/video-interviewing-video-assessment-solution-by-hirevue)
+]
+
+---
+name: b
+# Clearview.ai
+.pull-left[
+- Tool für Gesichtserkennung beliebiger Personen anhand von Trainingsdaten aus Social Media, Zeitungen, Online-Plattformen, PayPal Transaktionen, etc.
+- **Behauptung:** 99,85% Accuracy bei Stichprobe von 12 Millionen Fahndungsfotos [(s. Homepage)](www.clearview.ai)
+- **Belege:** Gutes Testergebnis beim US Nationalen Institut für Standards und Technologie
+- **Anfechtbarkeit:** Tool ist weder offen zugänglich, noch können Nutzer/innen ihre Fotos entfernen.
+- **Training der Modelle:** Web Scraping von Online-Plattformen, Webseiten und Medien ohne Einverständnis der Nutzer/innen
+- New York Times Recherche: Staatliche Behörden benutzen Clearview.ai auch während Gerichtsverfahren weiter [(Hill, 2020)](https://www.nytimes.com/2020/01/18/technology/clearview-privacy-facial-recognition.html)
+
+`Source` [Kashmir Hill, 2024](https://www.penguinrandomhouse.com/books/691288/your-face-belongs-to-us-by-kashmir-hill/)
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/s-extra_B_Clearview.ai.jpeg" width=1000&gt;
+&lt;/div&gt;
+[Bildquelle](www.clearview.ai)
+]
+---
+name: c
+# EAB Navigate
+.pull-left[
+- Risiko für Studienabbruch vorhersagen anhand persönlicher Daten, akademischen Leistungen, App-Aktivitäten und Kreditverläufen von Studierenden
+- **Behauptung**: Wahrscheinlichkeit des akademischen Erfolgs vorhersagen
+- **Belege**: kein Audit (Prüfung), nach 2020 ein Audit aber Ergebnisse nicht öffentlich
+- **Anfechtbarkeit:** Studierende wissen nicht, welche Modelle verwendet werden 
+- **Training der Modelle**: auf Basis von bereits erfolgreicher Studierenden, Tool drängte insb. schwarze Studierenden aus MINT Fächern
+
+`Source` [Feathers, 2021; ](https://themarkup.org/machine-learning/2021/03/02/major-universities-are-using-race-as-a-high-impact-predictor-of-student-success) [Wang et al., 2023: S. 30](https://predictive- optimization.cs.princeton.edu/)
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/s-extra_C_EAB-Navigate.png" width=1000&gt;
+&lt;/div&gt;
+[Bildquelle](https://www.kennesaw.edu/careers/students/al-appointment-scheduling.php)
+]
+---
+name: d
+# Upstart Lending Prediction
+.pull-left[
+- Kreditwürdigkeit vorhersagen basierend auf u.a. Ausbildungshintergrund und früheren Kredithistorien
+- **Behauptung**: genauer als traditionelle Kreditbewertungsmodelle und soll „fair“ sein
+- **Belege**: CFPB (Verbraucherschutz Finanzbehörde) zog "No Action" Schreiben für Upstart zurück nachdem der Fairness Test der CFPB nicht abgewartet wurde
+- **Anfechtbarkeit:** keine Angabe über genutze Modelle
+- **Training der Modelle**: nutzt historische Daten von Kreditnehmern, Risiko der Nachbildung existierender Bias und Demografie in der Datenstichprobe
+
+`Source` [Upstart, 2018; ](https://www.upstart.com/blog/upstarts- commitment- to- fair- lending) [Wang et al., 2023: S. 31](https://predictive- optimization.cs.princeton.edu/)
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/s-extra_D_Upstart.jpeg" width=1000&gt;
+&lt;/div&gt;
+[Bildquelle](https://www.badcredit.org/news/upstart-offers-ai-powered-loans-that-move-beyond-credit-scores/)
+]
+---
+name: e
+# Facebook Suicide Prediction
+.pull-left[
+- Selbstmordrisiko vorhersagen mit Nutzerdaten und Interaktionen auf Facebook
+- **Behauptung**: Vorhersage von Suizidgefährdung zur Prävention
+- **Belege**: keine konkreten Genauigkeitszahlen oder Details veröffentlicht [(s. Facebook Blogpost)](https://engineering.fb.com/2018/02/21/ml-applications/under-the-hood-suicide-prevention-tools-powered-by-ai/)
+- **Anfechtbarkeit:** keine Zustimmung durch Nutzer/innen, keine Einsicht welche Daten verwendet wurden
+- **Training der Modelle**: insb. Facebook-Kommentare und Meldungen, potenzielle Verzerrungen durch unterschiedliche Nutzergruppen und Sprachbarrieren
+`Source` [Murellio et al., 2018; ](https://engineering.fb.com/2018/02/21/ml-applications/under-the-hood-suicide-prevention-tools-powered-by-ai/) [Wang et al., 2023: S. 31](https://predictive- optimization.cs.princeton.edu/)
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/s-extra_E_FacebookS.jpeg" width=1000&gt;
+&lt;/div&gt;
+[Bildquelle](https://www.reuters.com/business/media-telecom/google-facebook-pledged-millions-local-news-was-it-enough-2021-06-10/)
+]
+---
+name: f
+# Optum ImpactPro
+.pull-left[
+- Medizinisches Risiko vorhersagen mit früheren Patientendaten mit Optum ImpactPro
+- **Behauptung**: Vorhersage ermöglicht präventive Maßnahmen und Reduktion langfristiger Kosten 
+- **Belege**: keine Belege für Fairness oder Genauigkeit; ethnischer Bias [(s. Obermeyer, 2019)](https://doi.org/10. 1126/science.aax2342)
+- **Anfechtbarkeit:** Patienten können Ergebnisse und Trainingsdaten nicht herausfordern
+- **Training der Modelle**: Training anhand historischer Patientendaten, wodurch bestehende Bias erlernt wurden (z.B. schlechtere Gesundheitsversorgung für schwarze Menschen)
+
+`Source` [Optum, 2021; ](https://www.optum.com/content/dam/optum3/optum/en/resources/white-papers/wf4785959-impact-pro-white-paper.pdf)[Obermeyer, 2019; ](https://doi.org/10. 1126/science.aax2342) [Wang et al., 2023: S. 33](https://predictive- optimization.cs.princeton.edu/)
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/s-extra_F_OptumImpact.jpeg" width=1000&gt;
+&lt;/div&gt;
+[Bildquelle](https://www.modernhealthcare.com/technology/optum-algorithm-used-flag-high-risk-patients-found-have-unintentional-racial-bias)
+]
+---
+name: g
+# Velogica
+.pull-left[
+- Lebensversicherungsrisiken vorhersagen mit historischen Kundendaten mit Velogica
+- **Behauptung**: Effiziente und schnelle Risikoeinschätzung zur Berechnung von Prämien
+- **Belege**: keine öffentlich zugänglichen Details zur Genauigkeit der Modelle trotz Behauptung einer Validierung
+- **Anfechtbarkeit:** keine Transparenz oder Möglichkeit die Entscheidungsfindung zu hinterfragen
+- **Training der Modelle**: basiert auf Daten von bereits versicherten Personen, potenziell nicht repräsentativ für untypische oder bisher unterversorgte Gruppen
+
+`Source` [SCOR, 2020; ](https://www.scor.com/en/expert-views/power-predictive-models) [Wang et al., 2023: S. 35](https://predictive- optimization.cs.princeton.edu/)
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/s-extra_G_Velogica.png" width=1000&gt;
+&lt;/div&gt;
+[Bildquelle](https://www.insurtechexpress.com/scor-velogica/)
+]
+---
+name: h
+# AFST Child Maltreatment
+.pull-left[
+- Risiko für Kindesmisshandlung vorhersagen mit dem Allegheny Family Screening Tool (AFST)
+- **Behauptung**: präzise Vorhersage, welche Kinder wahrscheinlich misshandelt werden, um Ermittlungen einzuleiten
+- **Belege**: hohe Genauigkeit behauptet, später durch Überprüfung auf [Datenlecks](https://proceedings.mlr.press/v81/ chouldechova18a.html) revidiert; keine Details zur kontinuierlichen Überprüfung
+- **Anfechtbarkeit:** keine Einsicht in die Funktionsweise des Modells
+- **Training der Modelle**: basierend auf vorhandenen Daten öffentlicher Dienste, was zu einer Überrepräsentation von Familien mit öffentliche Unterstützung führt
+`Source` [Chouldechova et al., 2018; ](https://proceedings.mlr.press/v81/ chouldechova18a.html) [Wang et al., 2023: S. 26](https://predictive- optimization.cs.princeton.edu/)
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/s-extra_H_AFST.jpeg" width=1000&gt;
+&lt;/div&gt;
+[Bildquelle](https://paproviders.org/2022-rcpa-conference-together-a-thank-you-to-our-exhibitors/exhibitor-allegheny-family-network-square-icon-500-x-500/)
+]
+---
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9",
+"hash": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<style>
+  .logo {
+    background-image: url("../hertieschool-neg.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 1.5em;
+    right: 1em;
+    width: 150px;
+    height: 128px;
+    z-index: 0;
+  }
+</style>
+  
+  <script>
+  document
+.querySelectorAll(
+  '.remark-slide-content' +
+    ':not(.title-slide)' +
+    ':not(.inverse)' +
+	
+    // add additional classes to exclude here, e.g.
+  // ':not(.inverse)' +
+    ':not(.hide-logo)'
+)
+.forEach(el => {
+  el.innerHTML += '<div class="logo"></div>';
+});
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
