@@ -61,15 +61,12 @@ library(fontawesome)
 
 <br><br>
 
-1. [Web data for data science](#webdata)
+1. [Die Proliferation von Webdaten](#webdata)
 
-2. [Scraping static webpages with R](#scrapingstatic)
+2. [Web scraping](#scrapingstatic)
 
-3. [Web scraping: good practice](#goodpractice)
+3. [Web APIs](#apibasics)
 
-4. [Web APIs: the basics](#apibasics)
-
-5. [Summary](#summary)
 
 
 
@@ -78,65 +75,64 @@ library(fontawesome)
 class: inverse, center, middle
 name: webdata
 
-# Web data for data science
+# Die Proliferation von Webdaten
 
 <html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
 
 
 ---
-# What is web data?
-
-<br>
-<div align="center">
-<img src="pics/upworthy-paper.png" height=440>
-<img src="pics/cld-paper.png" height=440>
-</div>
-
-
----
-# What is web data? (cont.)
-
-<br>
-<div align="center">
-<img src="pics/facebook-contagion-paper.png" height=440>
-<img src="pics/pnas-paper.png" height=440>
-</div>
-
----
-# What is web data? (cont.)
+# Was sind Webdaten?
 
 .pull-left[
 
-### So what is web data, really?
+## Beispiele
 
-- Not all data you get from the web is "web data".
-- Web data is **data that is created on, for, or via the web**. By that definition, a survey dataset that you download from a data repository is not web data.
-- On the other hand, survey data collected online (i.e., web/mobile questionnaires) is web data but we don't consider it in today's session.
-- Examples of web data: 
-  - Online news articles
-  - Social media network structures
-  - Crowdsourced databases (e.g., Wikidata)
-  - Server logs (e.g., viewership statistics)
-  - Data from surveys, experiments, clickworkers
-  - Just any website
-  
+- Nicht alle Daten, die im Web verfügbar sind, sind „Webdaten“.
+- Webdaten sind **Daten, die im, für oder über das Web erstellt werden**. Nach dieser Definition ist ein Umfragedatensatz, den Sie aus einem Datenspeicher herunterladen, keine Webdaten.
+- Andererseits sind online erfasste Umfragedaten (d. h. Web-/Mobilfragebögen) Webdaten, die wir in der heutigen Sitzung jedoch nicht berücksichtigen.
+- Beispiele für Webdaten: 
+  - Online-Nachrichtenartikel
+  - Netzwerkstrukturen in sozialen Medien
+  - Crowdsourced-Datenbanken (z. B. Wikidata)
+  - Serverprotokolle (z. B. Statistiken über die Zuschauerzahlen)
+  - Daten aus Umfragen, Experimenten, Clickworkern
+  - Einfach jede beliebige Website
 ]
 
 --
 
 .pull-right[
+<div align="center">
+<img src="../pics/2023InternetMinuteSized.jpg" height=400>
+</div>
 
-### And why is web data attractive?
-
-- Data is abundant online.
-- Human behavior increasingly takes place online.
-- Countless services track human behavior.
-- Getting data from the web is cheap and often quick.
-- An analysis workflow that involves web data can often be easily updated.
-- The vast majority of web data was not created with a data analysis purpose in mind. This fact is often a feature, not a bug.
-
+`Quelle` [eDiscoveryToday, LTMG](https://ediscoverytoday.com/2023/04/20/2023-internet-minute-infographic-by-ediscovery-today-and-ltmg-ediscovery-trends/
+)
 ]
 
+
+
+
+
+
+
+<br>
+<div align="center">
+<img src="../pics/upworthy-paper.png" height=440>
+<img src="../pics/cld-paper.png" height=440>
+</div>
+
+
+
+
+---
+# What is web data? (cont.)
+
+<br>
+<div align="center">
+<img src="../pics/facebook-contagion-paper.png" height=440>
+<img src="../pics/pnas-paper.png" height=440>
+</div>
 
 
 ---
@@ -158,7 +154,7 @@ name: webdata
 .pull-right-center[
 <div align="center">
 <br>
-<img src="pics/webtechnologies.png" width=500>
+<img src="../pics/webtechnologies.png" width=500>
 </div>
 `Credit` [ADCR](http://r-datacollection.com/)
 ]
@@ -170,7 +166,7 @@ name: webdata
 class: inverse, center, middle
 name: scrapingstatic
 
-# Scraping static webpages with R
+# Web scraping
 
 <html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
 
@@ -195,7 +191,7 @@ name: scrapingstatic
 .pull-right-center[
 <div align="center">
 <br>
-<img src="pics/webtechnologies.png" width=500>
+<img src="../pics/webtechnologies.png" width=500>
 </div>
 `Credit` [ADCR](http://r-datacollection.com/)
 ]
@@ -229,7 +225,7 @@ name: scrapingstatic
 .pull-right-center[
 <br>
 <div align="center">
-<img src="pics/web-scraping-vs-web-crawling.png" width=500>
+<img src="../pics/web-scraping-vs-web-crawling.png" width=500>
 </div>
 `Credit` [prowebscraping.com](http://prowebscraping.com/web-scraping-vs-web-crawling/)
 ]
@@ -256,7 +252,7 @@ name: scrapingstatic
 .pull-right[
 <br><br><br>
 <div align="center">
-<img src="pics/scraping-workflow.png" width=550>
+<img src="../pics/scraping-workflow.png" width=550>
 </div>
 ]
 
@@ -286,7 +282,7 @@ There are three key `rvest` verbs that you need to learn.<sup>1</sup>
 .pull-right-small-center[
 <div align="center">
 <br>
-<img src="pics/rvest.png" height=250>
+<img src="../pics/rvest.png" height=250>
 </div>
 ]
 
@@ -302,11 +298,11 @@ There are three key `rvest` verbs that you need to learn.<sup>1</sup>
 
 .pull-right-vwide[
 <div align="center">
-<img src="pics/wiki-philosophers-1.png" height=250>
-<img src="pics/wiki-philosophers-2.png" height=250>
+<img src="../pics/wiki-philosophers-1.png" height=250>
+<img src="../pics/wiki-philosophers-2.png" height=250>
 <br>
-<img src="pics/wiki-philosophers-3.png" height=250>
-<img src="pics/wiki-philosophers-4.png" height=210>
+<img src="../pics/wiki-philosophers-3.png" height=250>
+<img src="../pics/wiki-philosophers-4.png" height=210>
 </div>
 ]
 
@@ -406,7 +402,7 @@ philosopher_names_clean[1:5]
 # SelectorGadget: example
 
 <video width="980" height="551" controls>
-  <source src="pics/selectorgadget-nytimes.mp4" type="video/mp4">
+  <source src="../pics/selectorgadget-nytimes.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 
@@ -458,10 +454,10 @@ Well...
 # Scraping HTML tables
 
 <div align="center">
-<img src="pics/html-table-1.png" height=250>
-<img src="pics/html-table-2.png" height=250>
+<img src="../pics/html-table-1.png" height=250>
+<img src="../pics/html-table-2.png" height=250>
 <br>
-<img src="pics/html-table-3.png" height=300>
+<img src="../pics/html-table-3.png" height=300>
 </div>
 
 
@@ -512,10 +508,10 @@ html_table(x,
 
 .pull-right-wide[
 <div align="center">
-<img src="pics/wiki-spaceflights-2.png" height=250>
-<img src="pics/wiki-spaceflights-3.png" height=250>
+<img src="../pics/wiki-spaceflights-2.png" height=250>
+<img src="../pics/wiki-spaceflights-3.png" height=250>
 <br>
-<img src="pics/wiki-spaceflights-4.png" width=300>
+<img src="../pics/wiki-spaceflights-4.png" width=300>
 </div>
 ]
 
@@ -541,14 +537,6 @@ spaceflights <- tables[[1]]
 spaceflights
 ```
 
-
----
-class: inverse, center, middle
-name: goodpractice
-
-# Web scraping: good practice
-
-<html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
 
 
 
@@ -709,7 +697,7 @@ headlines <- rvest_session %>%
 # Scraping etiquette (cont.)
 
 <div align="center">
-<img src="pics/scraping-etiquette.png" height=540>
+<img src="../pics/scraping-etiquette.png" height=540>
 </div>
 
 
@@ -739,7 +727,7 @@ name: apibasics
 - Often, APIs provide data in JSON, XML (can be any format though).
 
 <div align="center">
-<img src="pics/Image_1.jpeg" height=150>
+<img src="../pics/Image_1.jpeg" height=150>
 </div>
 `Credit` [Brian Cooksey](https://zapier.com/learn/apis/chapter-1-introduction-to-apis/)
 ]
@@ -770,7 +758,7 @@ name: apibasics
 - API usage implies mutual agreement about data collection.
 
 <div align="center">
-<img src="pics/restaurant-order.png" height=200>
+<img src="../pics/restaurant-order.png" height=200>
 </div>
 
 
@@ -817,11 +805,11 @@ name: apibasics
 .pull-right-vsmall[
 <br>
 <div align="center">
-<img src="pics/Image_8.png" height=80><br>
-<img src="pics/Image_4.png" height=80><br>
-<img src="pics/Image_5.png" height=80><br>
-<img src="pics/wikimedia-foundation.png" height=80><br>
-<img src="pics/yt_1200.png" height=80><br>
+<img src="../pics/Image_8.png" height=80><br>
+<img src="../pics/Image_4.png" height=80><br>
+<img src="../pics/Image_5.png" height=80><br>
+<img src="../pics/wikimedia-foundation.png" height=80><br>
+<img src="../pics/yt_1200.png" height=80><br>
 </div>
 ]
 
@@ -837,7 +825,7 @@ name: apibasics
 - The API is free to use and requires no registration. (There's also a pro service for commercial use though.)
 
 <div align="center">
-<img src="pics/ipapi-1.png" height=200>
+<img src="../pics/ipapi-1.png" height=200>
 </div>
 ]
 
@@ -846,7 +834,7 @@ name: apibasics
 
 <br>
 <div align="center">
-<img src="pics/ipapi-2.png" height=400>
+<img src="../pics/ipapi-2.png" height=400>
 </div>
 ]
 
@@ -858,7 +846,7 @@ name: apibasics
 
 <br>
 <div align="center">
-<img src="pics/ipapi-3.png" width=490>
+<img src="../pics/ipapi-3.png" width=490>
 </div>
 ]
 
@@ -867,7 +855,7 @@ name: apibasics
 
 <br>
 <div align="center">
-<img src="pics/ipapi-4.png" width=490>
+<img src="../pics/ipapi-4.png" width=490>
 </div>
 ]
 
@@ -966,7 +954,7 @@ httr::content(response, as = "text") %>%
 2. **No.** Build your own API client.
 
 <div align="center">
-<img src="pics/r-client-meme.png" width=200>
+<img src="../pics/r-client-meme.png" width=200>
 </div>
 ]
 
@@ -1025,14 +1013,14 @@ ip_df
 The *New York Times* provides several APIs for developers at [https://developer.nytimes.com/](https://developer.nytimes.com/). In order to use them, we have to register as a developer (for free) and register our app. Then, we can use that key to call one of the APIs.
 
 <div align="center">
-<img src="pics/nytimes-apis.png" width=500>
+<img src="../pics/nytimes-apis.png" width=500>
 </div>
 ]
 
 .pull-right[
 <br>
 <div align="center">
-<img src="pics/nytimes-apis-2.png" width=500>
+<img src="../pics/nytimes-apis-2.png" width=500>
 </div>
 ]
 
@@ -1130,14 +1118,14 @@ name: json
 - Import of JSON data into R is relatively straightforward with the `jsonlite` package
 
 <div align="center">
-<img src="pics/jsonlogo.png" height=150>
+<img src="../pics/jsonlogo.png" height=150>
 </div>
 ]
 
 .pull-right-center[
 <br><br>
 <div align="center">
-<img src="pics/json-statham.jpg" height=350>
+<img src="../pics/json-statham.jpg" height=350>
 </div>
 ]
 
@@ -1244,17 +1232,6 @@ x <- '[1, "foo", null, false]'
 fromJSON(x)
 ```
 ]
-
-
-
-
----
-class: inverse, center, middle
-name: summary
-
-# Summary
-
-<html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
 
 
 

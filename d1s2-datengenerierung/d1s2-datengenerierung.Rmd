@@ -58,30 +58,253 @@ library(fontawesome)
 
 <br><br>
 
-1. [Das Problem mit der Repräsentativität](#sampling)
+1. [Woher kommen die Daten?](#datageneration)
 
-2. [Das Big-Data-Paradoxon](#bigdataparadox)
+2. [Was bei der Datengenerierung schiefgehen kann](#dataflaws)
 
-3. [Garbage in, garbage out](#garbageingarbageout)
+    2.1 [Das Problem mit der Repräsentativität](#sampling)
 
-4. [Übung](#exercise)
+    2.2 [Fehlerhafte Messung](#measurement)
+    
+    2.3 [Ethische und rechtliche Fails](#ethicfails)
+
 
 
 
 ---
 class: inverse, center, middle
-name: correlation
+name: datageneration
+
+# Woher kommen die Daten?
+<html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
+
+
+---
+# AI-Produkte und ihre Datenbasis
+
+| **AI-Tool/Anwendung**       | **Funktion**                                              | **(vermutete) Datenquellen**                                              |
+|----------------------------|-----------------------------------------------------------|--------------------------------------------------------------|
+| **ChatGPT (OpenAI)**        | Sprachmodell für Textgenerierung, Dialoge, Programmierung  | Trainingsdaten: Bücher, Websites, Foren, diverse Texte |
+| **Stable Diffusion**        | Open-Source-Bildgenerator                                 | Laion-Datenbank, Bilder aus dem Internet                      |
+| **Alexa (Amazon)**          | Sprachbasierter Assistent für Smart Home                  | Amazon-Datenbank, Web-Suchen, Nutzerinteraktionen             |
+| **DeepMind AlphaFold**      | Proteinstrukturvorhersage                                 | Biochemische Datenbanken, Forschungspublikationen             |
+| **Perspective API**      | Automatisierte Erkennung und Blockierung unerwünschter Inhalte | Nutzerdaten, Social-Media-Inhalte, Richtlinien für Inhalte      |
+| **Patternizr**     | Vorhersage von Straftaten, Einsatzplanung der Polizei      | Polizeidaten, historische Kriminalitätsdaten, geografische Daten |
+
+
+---
+# AI-Anwendungen und ihre Datenbasis
+
+| **AI-Tool/Anwendung**       | **Funktion**                                              | **(vermutete) Datenquellen**                                              |
+|----------------------------|-----------------------------------------------------------|--------------------------------------------------------------|
+| **Health Prediction**       | Vorhersage von Krankheitsverläufen, Prävention            | Elektronische Krankenakten, Genomdaten, Forschungsdaten         |
+| **Opinion Mining**          | Analyse und Extraktion von Meinungen aus Texten (z. B. Social Media) | Social-Media-Beiträge, Kundenrezensionen, Blogs                 |
+| **Übersetzungstools**       | Automatische Übersetzung von Texten und Sprache           | Trainingsdaten aus zweisprachigen Texten, Webseiten, Dokumenten |
+| **Medizinische Diagnostik** | KI-gestützte Analyse von Patienteninformationen, Bilddaten (z. B. Röntgenbilder) | Krankenakten, medizinische Bilder, Forschungsliteratur          |
+| **Autonomes Fahren**        | Selbststeuerung von Fahrzeugen unter realen Bedingungen    | Sensordaten (Kameras, Radar, Lidar), Verkehrsdaten, Karten      |
+
+
+
+---
+# Human in the loop
+
+.pull-left[
+
+## Menschlicher Input für KI-Modelle
+
+- **Menschliche Expertise** ist oft unverzichtbar, um Daten zu generieren, zu annotieren und zu validieren.
+- **Menschliche Expertise** ist auch unverzichtbar, um die Qualität von Daten zu beurteilen und zu verbessern.
+
+## Beispiele
+
+- **Crowdsourcing**: z. B. Amazon Mechanical Turk
+- **Content Moderation**: z. B. Facebook, Twitter
+- **CAPTCHA** ("Completely Automated Public Turing test to tell Computers and Humans Apart): z. B. Google reCAPTCHA 
+
+]
+
+.pull-right[
+<div align="center">
+<img src="../pics/mturk-1.png" width=450>
+<img src="../pics/recaptcha-text.jpeg" width=450>
+</div>
+]
+
+
+---
+# Clickworking und Crowdsourcing
+
+.pull-left[
+
+## Clickworking-Plattformen
+
+- Plattformen designt für Mikrojobs, z. B. Texterstellung, Datenerfassung, Kategorisierung
+- Beispiele: Amazon Mechanical Turk, Clickworker, Upwork, Prolific
+- [Clickworker](https://www.clickworker.com/clickworker-crowd/): ca. 6 Mio. registrierte Clickworker weltweit
+- [Amazon Mechanical Turk](https://en.wikipedia.org/wiki/Amazon_Mechanical_Turk): 100Tsde. registrierte Worker, nur ein Bruchteil aktiv
+
+## Ethische Fragen
+
+- **Fairness**: Bezahlung, Arbeitsbedingungen
+- **Ausbeutung benachteiligter Gruppen**: z. B. Clickworker in Entwicklungsländern
+- **Datenschutz**: Schutz sensibler Daten
+- **Transparenz**: Offenlegung von Auftraggebern, Zweck der Datenerhebung
+]
+
+.pull-right[
+<div align="center">
+<img src="../pics/mturk.jpg" width=200>
+<img src="../pics/Upwork-logo.png" width=200>
+<img src="../pics/prolific-logo-colour.jpg" width=200>
+<img src="../pics/clickworker.png" width=200>
+<img src="../pics/mturk-tagging.gif" width=450>
+</div>
+]
+
+
+---
+class: exercise, center, middle
+
+# Übung
+
+.content-box-white[
+Wie sieht das Leben eines Clickworkers aus?
+
+Zum Ausprobieren: 
+
+[Amazon Mechanical Turk (Sandbox; benötigt Amazon-Account)](https://workersandbox.mturk.com/)
+]
+
+
+---
+# Prozessproduzierte vs. aktiv generierte Daten
+
+.pull-left[
+## Prozessproduzierte Daten
+
+- Daten, die als Nebenprodukt von Prozessen generiert werden
+- Beispiele: Transaktionsdaten (z. B. E-Commerce), Log-Daten (z. B. Website-Clicks), Emails,  **Verwaltungsakten**
+- Ein Großteil der Daten, die in KI-Anwendungen verwendet werden, sind prozessproduzierte Daten
+
+<div align="center">
+<img src="../pics/wiki-elster.png" height=270>
+</div>
+]
+
+.pull-right[
+## Aktiv generierte Daten
+
+- Daten, zu einem bestimmten Zweck erhoben
+- Beispiele: Umfragen, Experimente, Beobachtungen (z. B. manuelle Zählungen), Formulare
+- Aktiv generierte Daten sind oft teurer und aufwendiger zu erheben, aber passgenauer für bestimmte Fragestellungen
+
+<div align="center">
+<img src="../pics/berlin-internetwache.png" height=300>
+</div>
+]
+
+
+---
+# Prozessproduzierte vs. aktiv generierte Daten
+
+<table>
+    <thead>
+        <tr>
+            <th>Datenart</th>
+            <th>Vorteile</th>
+            <th>Nachteile</th>
+            <th>Nützlichkeit für KI-Anwendungen</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Prozessproduzierte Daten</td>
+            <td>
+                <ul>
+                    <li>Kontinuierlich und in großem Umfang verfügbar</li>
+                    <li>Realistische, nicht-beeinflusste Daten</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Daten oft unstrukturiert oder unvollständig</li>
+                    <li>Keine Kontrolle über Erhebungsmethode</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Gut für die Vorhersage von Verhaltensmustern (z. B. Nutzerverhalten)</li>
+                    <li>Anfällig für systematische Verzerrungen, falls nicht repräsentativ</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Aktiv erhobene Daten</td>
+            <td>
+                <ul>
+                    <li>Präzise Daten, speziell für den Anwendungsfall</li>
+                    <li>Gute Dokumentation der Erhebungsmethoden</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Aufwand und Kosten der Datenerhebung hoch</li>
+                    <li>Risiko von Verzerrungen durch Antwortverhalten (z. B. Bias)</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Nützlich für gezielte Analysen oder Modellanpassungen</li>
+                    <li>Verzerrungen durch menschliche Subjektivität möglich</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+---
+class: inverse, center, middle
+name: dataflaws
+
+# Was bei der Datengenerierung und Verarbeitung schiefgehen kann
+<html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
+
+
+---
+# Datengenerierungs-Fails
+
+| **Kategorie**               | **Probleme**                                                                                                                                                                       | **Beispiele**                                                                                                                                                    |
+|-----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Datenerfassung**           | <ul><li>Unvollständige Daten</li><li>Verzerrte Stichproben</li><li>Messfehler</li></ul>                                                   | <ul><li>Sensoren fallen temporär aus, und es fehlen Daten aus bestimmten Zeiträumen</li><li>Befragungen schließen bestimmte Altersgruppen aus</li><li>Falsche Standortdaten durch GPS-Ausfälle</li></ul> |
+| **Datenverarbeitung**        | <ul><li>Veraltete Daten</li><li>Falsch klassifizierte Daten</li><li>Daten-Duplikate</li><li>Datenrauschen</li></ul>                          | <ul><li>Veraltete Bevölkerungsdaten beeinflussen Planungen für neue Schulen</li><li>Automatische Tagging-Systeme klassifizieren Inhalte falsch</li><li>Dopplungen in Kundenlisten verfälschen Marketing-Analysen</li></ul> |
+| **Datenverwaltung**          | <ul><li>Fehlende Datenethik</li></ul>                                                                                                      | <ul><li>Datensammlung ohne Einwilligung der Nutzer</li><li>Diskriminierung durch unethische Datenverwendung in HR-Systemen</li></ul>                                                                           |
+| **Datenintegration**         | <ul><li>Inkompatible Datenformate</li></ul>                                                                                                 | <ul><li>Daten aus verschiedenen Datenbanken (z. B. Excel und SQL) lassen sich nicht ohne Weiteres integrieren</li><li>Unterschiedliche Zeitzonenformate in einer globalen Analyse</li></ul>                    |
+| **Datenanalyse**             | <ul><li>Bias in Trainingsdaten</li></ul>                                                                                                    | <ul><li>Historische Datensätze zu Straftaten enthalten rassistische Vorurteile, die in einem KI-System zur Kriminalitätsvorhersage reproduziert werden</li></ul>                                                |
+| **Datenmanagement**          | <ul><li>Schlechte Datenorganisation</li><li>Fehlende Metadaten</li></ul>                                                                    | <ul><li>Keine klare Benennung oder Strukturierung der Datenfelder</li><li>Wichtige Informationen zur Datenherkunft oder -bedeutung fehlen in der Dokumentation</li></ul>                                       |
+| **Datenqualitätssicherung**  | <ul><li>Mangelhafte Validierung</li><li>Keine Überprüfung von Ausreißern</li></ul>                                                           | <ul><li>Keine automatisierten Prüfungen zur Erkennung von Fehlern</li><li>Ausreißer bleiben unentdeckt und verfälschen das Ergebnis</li></ul>                                                                  |
+| **Datenaufbewahrung**        | <ul><li>Unzureichende Archivierung</li><li>Verlust von Daten</li></ul>                                                                      | <ul><li>Alte Daten werden unsachgemäß gelöscht oder nicht gesichert</li><li>Fehlende Backups führen zu Verlust von historischen Daten</li></ul>                                                                |
+
+
+
+
+
+---
+class: inverse, center, middle
+name: sampling
 
 # Das Problem mit der Repräsentativität
 <html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
 
 
 ---
-# Getäuscht durch „Repräsentativität“
+# Zweifelhafte „Repräsentativität“
 
 .pull-left[
 <div align="center">
-<img src="../pics/survey-intelligence.png" width=450>
+<img src="../pics/survey-intelligence.png" width=500>
 </div>
 
 `Quelle` [Robin Andrews, IFLScience](https://www.iflscience.com/editors-blog/survey-finds-most-americans-think-that-they-have-above-average-intelligence/)
@@ -90,11 +313,10 @@ name: correlation
 
 .pull-right[
 <div align="center">
-<img src="../pics/eu-summertime.png" width=450>
+<img src="../pics/eu-summertime.png" width=500>
 </div>
 
 `Quelle` [Maxime Schlee, Politico](https://www.politico.eu/article/80-percent-of-eu-citizens-want-to-scrap-daylight-savings-report-summertime-directive/)
-
 ]
 
 
@@ -195,7 +417,7 @@ Eine Stichprobe ist repräsentativ, wenn sie so gezogen wird, dass sie **statist
 ]
 
 ---
-# Schlechte Stichproben: gelernte Lektionen
+# Schlechte Stichproben: lessons learned
 
 
 .pull-left[
@@ -220,454 +442,168 @@ Eine Stichprobe ist repräsentativ, wenn sie so gezogen wird, dass sie **statist
 
 ---
 class: inverse, center, middle
-name: bigdataparadox
+name: measurement
 
-# Das Big-Data-Paradoxon
+# Fehlerhafte Messung
 <html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
 
 
+---
+# Regression vs. classification
 
+.pull-left[
+## Regression
+- Predicts a continuous outcome
+- Example: Predicting house prices, GDP growth, temperature
+
+## Classification
+- Predicts a categorical outcome
+- Example: Predicting whether a person will default on a loan, whether an email is spam, whether a patient has a disease
+
+]
+
+--
+
+.pull-right[
+## Classifcation problems in the wild
+
+Classification problems occur often, perhaps even more so than regression problems, e.g.:
+
+1. A woman arrives at the emergency room with a set of symptoms. Which condition does she have?
+2. An online banking service must be able to determine whether or not a transaction is fraudulent, on the basis of the user’s IP address, past transaction history, and so forth.
+3. On the basis of DNA sequence data for a number of patients with and without a given disease, a biologist would like to figure out which DNA mutations are deleterious (disease-causing) and which are not.
+
+Decision-making problems often are classification problems!
+]
 
 ---
-# Was ist Big Data?
-
-<div align="center">
-<img src="../pics/big-data-5vs.png" height=480>
-</div>
-
-
----
-# Umgeben von massiven Datenmengen<sup>1</sup>
+# Supervised and unsupervised learning
 
 .pull-left-wide2[
-<div align="center">
-<img src="../pics/ids-global-datasphere.png" height=360>
-</div>
+## Supervised learning
+- The algorithm learns from labeled data, i.e., data with known outcomes
+- The algorithm is trained on a training dataset and evaluated on a test dataset
+- The goal is to the predict unobserved outcomes
 
-`Quelle` Reinsel et al., 2017, ["Data Age 2025"](https://www.seagate.com/files/www-content/our-story/trends/files/Seagate-WP-DataAge2025-March-2017.pdf)
+## Unsupervised learning
+- The algorithm learns from unlabeled data
+- There are inputs but no supervising output; we can still learn about relationships and structure from such data
 
-.footnote[<div class="font80"><sup>1</sup>Die Zahlen sind mit Vorsicht zu genießen. SIe sind fundamental schwer zu messen; deshalb weichen veröffentlichte Daten teilweise um ein Vielfaches voneinander ab.</div>]
+## Analogies
+- Supervised: Child in school learns math (with teacher’s input)
+- Unsupervised: Child at home plays with toys (without teacher’s input)
 ]
 
+
 .pull-right-small2[
-
-<div align="center">
-<img src="../pics/2023InternetMinuteSized.jpg" height=400>
+<div align="center"><br><br>
+<img src="../pics/supervised-unsupervised-tasks.png" height=300>
 </div>
-
-`Quelle` [eDiscoveryToday, LTMG](https://ediscoverytoday.com/2023/04/20/2023-internet-minute-infographic-by-ediscovery-today-and-ltmg-ediscovery-trends/
-)
 ]
 
 
 ---
-# Das Zeitalter von Big Data - Große Trends
+# Training, validation and test dataset
+
+<div align="center">
+<img src="../pics/data_splitting.png" height=550>
+</div>
+
+
+
+---
+# Overfitting
+
+<div align="center">
+<img src="../pics/age-hairiness-1.png" height=550>
+</div>
+
+---
+# Overfitting
+
+<div align="center">
+<img src="../pics/age-hairiness-2.png" height=550>
+</div>
+
+---
+# Overfitting
+
+<div align="center">
+<img src="../pics/age-hairiness-3.png" height=550>
+</div>
+
+---
+# Overfitting
+
+<div align="center">
+<img src="../pics/age-hairiness-4.png" height=550>
+</div>
+
+---
+# Overfitting
+
+<div align="center">
+<img src="../pics/age-hairiness-5.png" height=550>
+</div>
+
+---
+# Overfitting
+
+<div align="center">
+<img src="../pics/age-hairiness-6.png" height=550>
+</div>
+
+---
+# Overfitting
+
+<div align="center">
+<img src="../pics/age-hairiness-7.png" height=550>
+</div>
+
+
+---
+# Overfitting in classification
+
+<div align="center">
+<img src="../pics/brown-dogs.png" width=700>
+</div>
+
+---
+# Overfitting in classification
+
+<div align="center">
+<img src="../pics/brown-dogs.png" width=700>
+<img src="../pics/white-dogs.png" width=700>
+</div>
+
+
+---
+# Overfitting in classification
+
+<div align="center">
+<img src="../pics/overfitting-wiki.png" width=400>
+</div>
+
+**Explained:** The green line represents an overfitted model and the black line represents a regularized model. While the green line best follows the training data, it is too dependent on that data and it is likely to have a higher error rate on new unseen data, compared to the black line.
+
+
+---
+# Overfitting, ultimately explained
 
 <br><br>
 
-1. Massive erzeugung von **vom Menschen erzeugten Daten** insbesondere im digitalen Bereich
-
-2. Verwendung von **neuen Datentypen**: Text, Video, digitale Spuren
-
-3.  **Rechen- und Speicherkosten** sind drastisch gesunken
-
-4.  Mainstreaming von **maschinellem Lernen** und **KI**-Technologien
-
-5. (begrenzte) **Demokratisierung des Zugangs** zu großen Datenbeständen
-
-6.  **Verlagerung der Forschungsavantgarde** von der akademischen Welt zur Industrie
-
-
-
-
----
-# Ein frühes Big-Data-Disaster
-
 <div align="center">
-<img src="../pics/literary-digest-1.png" height=520>
+<img src="../pics/overfitting.png" width=600>
 </div>
-
----
-# Wahlumfrage 1936 der Zeitschrift Literary Digest 
-
-.pull-left[
-## Hintergrund
-
-- Die Wochenzeitschrift *Literary Digest* hatte die Ergebnisse aller Präsidentschaftswahlen zwischen 1920 und 1932 anhand von Umfragen korrekt vorhergesagt.
-- Die Umfrage von 1936 unter 10 Millionen Wählerinnen und Wählern ergab einen deutlichen Sieg des republikanischen Kandidaten Alfred Landon
-
-## Nachwehen
-
-- Landon verlor erdrutschartig gegen Franklin D. Roosevelt, der 46 von 48 Bundesstaaten für sich entschied und 60,8% der Wählerstimmen erhielt.
-- Das Ergebnis wurde von George Gallup mit einem Sample von 50.000 Personen richtig vorhergesagt.
-- Die Zeitschrift ging 1938 in Konkurs.
-]
-
-.pull-right[
-<br>
-<div align="center">
-<img src="../pics/fdr-happy.jpeg" height=480>
-</div>
-]
-
-
----
-# Wahlumfrage 1936 der Zeitschrift Literary Digest
-
-<div align="center">
-<img src="../pics/literary-digest-2.png" height=520>
-</div>
-
----
-# Wahlumfrage 1936 der Zeitschrift Literary Digest
-
-.pull-left[
-## Anatomie eines Debakels
-
-1. **Stichprobenrahmen**: (1) eigene Leser, (2) registrierte Autobesitzer, (3) registrierte Telefonnutzer
-2. **Datenerhebung**: Jeder bekam einen Musterstimmzettel zugeschickt und wurde gebeten, den markierten Stimmzettel zurückzugeben
-3. **Rücklaufquote**: 2,4 Mio. von 10 Mio.
-
-**Stichprobenverzerrung** als Folge von **coverage error** und **non-reponse**: Überrepräsentation von wohlhabenderen Personen mit einer Präferenz für Landon
-
-<br><br><br><br><br>
-`Quelle` [Peverill Squire, 1988, Public Opinion Quarterly](https://www.jstor.org/stable/2749114)
-]
-
-.pull-right[
-<div align="center">
-<img src="../pics/literary-digest-squire-1.png" width=350>
-<img src="../pics/literary-digest-squire-2.png" width=350>
-<img src="../pics/literary-digest-squire-3.png" width=350>
-</div>
-]
-
----
-# Umfrage-basierte Evidenz ist mit Vorsicht zu genießen
-
-<div align="center">
-<br><br><br><br>
-<img src="../pics/calvin-hobbes-messing-data.png" width=800>
-</div>
-
-
-
----
-# Ein modernes Big-Data-Umfrage-Desaster
- 
-.pull-left[
-<div align="center">
-<img src="../pics/bradley-unrepresentative-big-surveys-vaccine-1.png" height=480>
-</div>
-]
-
-.pull-right[
-<div align="center"><br><br>
-<img src="../pics/bradley-unrepresentative-big-surveys-vaccine-2.png" height=340>
-</div>
-]
-
-
----
-# Ein modernes Big Data Umfrage-Desaster
-
-.pull-left-wide[
-<div align="center"><br><br><br>
-<img src="../pics/bradley-unrepresentative-big-surveys-vaccine-3.png" width=720>
-</div>
-]
-
-.pull-right-small[
-<div align="center"><br><br>
-<img src="../pics/bradley-unrepresentative-big-surveys-vaccine-4.png" width=350>
-</div>
-]
-
-
-
----
-# Das Big-Data-Paradoxon
-
-.pull-left[
-> „Wenn verzerrte Stichproben groß sind, sind sie doppelt irreführend: Sie erzeugen Konfidenzintervalle mit falschen Mitteln und erheblich unterschätzter Unsicherheit. Dies ist das **Big-Data-Paradoxon**: Je umfangreicher die Daten sind, desto sicherer täuschen wir uns selbst, wenn wir die Verzerrungen bei der Datenerhebung nicht berücksichtigen.“
-
-<div align="right">Bradley et al. (2021), <i>Nature</i></div>
-
-> „Die 'Größe' solcher Big Data (für Rückschlüsse auf die Population) sollte an der relativen Größe f = n/N der Stichprobe zur Population gemessen werden, nicht an der absoluten Größe n der Stichprobe.
-
-<div align="right">Xiao-Li Meng (2018), <i>The Annals of Applied Statistics</i></div>
-
-]
-
---
-
-.pull-right[
-## Korrektur endlicher Grundgesamtheiten zur Rettung?
-
-- Die Intuition sagt uns, dass die Wahrscheinlichkeit eines Fehlers geringer sein sollte, wenn der Stichprobenumfang im Verhältnis zum Umfang der Grundgesamtheit groß ist.
-- Das stimmt auch, aber der Zugewinn ist relativ langsam.
-- Der endliche Populationskorrekturfaktor für den Standardfehler einer interessierenden Größe ist zum Beispiel gegeben durch $\sqrt{\frac{N-n}{N-1}}$. 
-
-## Beispiel
-
-- Wir führen eine Umfrage bei 100k Personen in einer Bevölkerung von 3,7 Mio. durch.
-- Für $N=3.7m$ und $n=100k$ ist dies $\sqrt{0.973}$.
-]
 
 
 
 ---
 class: inverse, center, middle
-name: garbageingarbageout
+name: ethicfails
 
-# Garbage in, Garbage out
-<html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
-
-
----
-# Garbage in, Garbage out
-
-.pull-left[
-## Das GIGO Prinzip
-- Die Qualität der Informationen, die ein Modell produziert (z.B. Vorhersagen), kann nicht besser sein als die Qualität der Informationen, die in das Modell eingespeist werden.
-- Dieser Grundsatz ist wird umso relevanter in Big-Data-Kontexten, wenn Daten unzureichend validiert oder Datenqualität schlicht nicht gegeben ist.
-- Das Problem verschärft sich potentiell in ML-Anwendungen, wenn Modelle komplex und intransparent sind.
-]
-
-.pull-right[
-<div align="center"><br><br>
-<img src="../pics/gigo.png" width=480>
-</div>
-]
-
-
-
----
-# Beispiel: Google Flu Trends
-
-<div align="center">
-<img src="../pics/google-flu-nature.png" width=600>
-</div>
-
-`Quelle` Ginsberg et al., 2009, [Nature](https://www.nature.com/articles/nature07634)
-
----
-# Beispiel: Google Flu Trends
-
-<div align="center">
-<img src="../pics/google-flu-trends-screenshot-1.jpg" width=480><br>
-<img src="../pics/google-flu-trends-screenshot-2.jpg" width=480>
-</div>
-
-
----
-# Beispiel: Google Flu Trends
-
-
-.pull-left-wide2[
-<div align="center">
-<img src="../pics/google-flu-parable-1.png" width=650>
-</div>
-
-`Quelle` Lazer et al., 2014, [Science](https://science.sciencemag.org/content/343/6176/1203)
-
-]
-
-.pull-right-small2[
-<div align="center"><br>
-<img src="../pics/google-flu-parable-2.png" width=500>
-</div>
-]
-
-
----
-# Beispiel: Erkennen von Straftätern durch Gesichtsdaten
-
-<div align="center">
-<img src="../pics/criminal-faces-1.png" width=600>
-</div>
-
-
----
-# Beispiel: Erkennen von Straftätern durch Gesichtsdaten
-
-<div align="center">
-<img src="../pics/criminal-faces-2.png" width=600>
-</div>
-
-
----
-# Beispiel: Erkennen von Straftätern durch Gesichtsdaten
-
-<div align="center"><br>
-<img src="../pics/criminal-faces-3.png" width=500>
-<img src="../pics/criminal-faces-4.png" width=500>
-</div>
-
-
-
----
-# Garbage in, Garbage out: Lessons learned
-
-.pull-left[
-1. **Messung-** und **Selektions-Fragen** sind bei der Big-Data-Analyse nach wie vor entscheidend.
-
-2. Trauen Sie **Messungen** nicht, die nicht **richtig validiert** wurden.
-
-3. Achten Sie darauf, was in ein Modell einfließt (der **Input**: Fälle, Variablen/Merkmale).
-
-4. Achten Sie auf eine angemessene **Out-of-Sample-Validierung** von Modellen.
-
-5. Vorsicht bei **unkritischer Nutzung von Online-/Sozialen Medien** als Datenquelle.
-]
-
-.pull-right-center[
-<div align="center">
-<img src="../pics/xkcd-2295-garbage_math.png" width=300>
-</div>
-`Quelle` XKCD, [2295](https://xkcd.com/2295/), ([hier erklärt](https://www.explainxkcd.com/wiki/index.php/2295:_Garbage_Math))
-]
-
-
----
-class: inverse, center, middle
-name: exercise
-
-# Übung
-<html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
-
-
----
-# Umgang mit Evidenz als Detektivarbeit
-
-.pull-left-wide[
-## Der Ansatz
-
-- Auswertung von Daten ist wie Detektivarbeit
-- Wir müssen die **Evidenz genau unter die Lupe nehmen**, um herauszufinden, ob der Verdächtige - der vermutete Zusammenhang, der deskriptive Befund - tatsächlich hält, was er verspricht
-- Dazu müssen wir versuchen **Alternativerklärungen auszuschließen**
-
-## Die Ausstattung
-
-- **Unsere Toolbox:** Kritisches Denken, Beobachtung (Datenerhebung), Wahrnehmung (Messung), externes Wissen, statistische Methoden
-- Ohne qualitative Beurteilung sind die quantitativen Werkzeuge häufig ohne Wert
-]
-
-
-.pull-right-small[
-<div align="center">
-<br>
-<img src="../pics/sherlock-rathbone.jpeg" height=400>
-</div>
-]
-
----
-# Ein paar einfache Fälle
-
-<br>
-
-.pull-left[
-## Drückende Schuhe (?)
-
-> Umfrageergebnisse zeigen, dass Menschen, die mit Schuhen schlafen, viel häufiger mit Kopfschmerzen aufwachen.
-
-## Gezuckerte Getränke führen zu Fettleibigkeit (?)
-
-> Personen, die regelmäßig zuckerhaltige Getränke konsumieren, haben einen 30% höheren BMI.
-
-]
-
-.pull-right[
-
-
-## Lock-downs haben COVID-19-bedingte Tode herbeigeführt (?)
-
-> Europäische Länder, die strengere und längere Lock-downs hatten, hatten höhere COVID-19-Todesraten.
-
-
-## UN-Friedensmissionen schützen die Zivilbevölkerung nicht (?)
-
-> UN-Friedensmissionen in Bürgerkriegsszenarien sind stark positiv mit höheren Todesraten unter Zivilisten korreliert
-
-]
-
-
----
-# Daten-Tatort: Sind bestimmte Musikgenres tödlicher als andere?
-
-.pull-left[
-<div align="center">
-<img src="../pics/musician_mortality.jpeg" height=430>
-</div>
-
-`Quelle` [The Conversation](https://theconversation.com/music-to-die-for-how-genre-affects-popular-musicians-life-expectancy-36660), `Hintergrund (mit Autoren-Replik)` [Calling Bullshit](https://callingbullshit.org/case_studies/case_study_musician_mortality.html)
-]
-
-.pull-right[
-> [Study author Dianna Kenny] found that musicians from older genres – including blues, jazz, country and gospel – have similar lifespans to American people their own age. The life expectancy for R&B musicians is slightly lower, while the life expectancy for newer genres like rock, techno, punk, metal, rap and hip hop is significantly shorter."
-
-<div align="right">Ana Swanson, <a href="https://www.washingtonpost.com/news/wonk/wp/2015/04/15/the-causes-of-musicians-deaths-by-genre/">Washington Post</a></div>
-
-> "It's a cautionary tale to some degree," Kenny told the Washington Post. "People who go into rap music or hip hop or punk, they're in a much more occupational hazard profession compared to war. We don't lose half our army in a battle."
-
-<div align="right">Dianna Kenny, <a href="https://www.washingtonpost.com/news/morning-mix/wp/2015/03/25/over-half-of-dead-hip-hop-artists-were-murdered-study-finds/">quoted by Washington Post</a></div>
-]
-
-
----
-# Weitere Evidenz
-
-.pull-left[
-<div align="center">
-<img src="../pics/musician_mortality2.jpeg" height=450>
-</div>
-]
-
---
-
-.pull-right[
-## Some issues
-
-1. **Sanity check:** Sind manche Genres wirklich so tödlich? Sterben z. B. Rap-Musiker wirklich mit einem Durchschnittsalter von ~30 Jahren?
-2. **Datenzensierung:** Einige Genres sind jünger als andere, und die Auswertung setzt voraus, dass die Musiker bereits gestorben sind. Die meisten Rap- und Hip-Hop-Stars sind heute noch am Leben - Lebensdauer unbekannt!
-3. **Bedingte Wahrscheinlichkeiten:** Die Wahrscheinlichkeiten der einzelnen Todesursachen hängen davon ab, dass der Tod zum Zeitpunkt der Untersuchung bereits eingetreten ist.
-4) (Kleineres Problem) Liniendiagramm für kategoriale Daten?  [Keine gute Idee.](https://www.jmp.com/en_gb/statistics-knowledge-portal/exploratory-data-analysis/line-graph.html#:~:text=Line%20graphs%20do%20not%20make,might%20have%20a%20defined%20order.)
-]
-
-
----
-# Lösung des Falles
-
-.pull-left[
-
-|                       	| Evidenz und Schlüsse                           	|
-|-----------------------	|----------------------------------------------------	|
-| **Der Tatort**   	| Musikgenre korreliert mit Todesalter                 	|
-| **Die Verdächtigen**    	| Lifestyle (z.B. Drogenkonsum), Alter des Genres, unvollständige Datenerhebung |
-| **Die Tatwaffe** 	| Konfundierung durch Daten-Zensur                              	|
-
-> "In other words, it's not that rap stars will likely die young; it's that the rap stars who have died certainly died young because rap hasn't been around long enough for it to be otherwise." <div align="right">Carl Bergstrom and Jevin West, <a href="https://callingbullshit.org/case_studies/case_study_musician_mortality.html">Calling Bullshit</a><sup>1</sup></div>
-
-<div class="font50"><br><br><sup>1</sup>Note that (1) the author, Dianna Kenny, has provided a nice and plausible response and that (2) a <a href="http://dx.doi.org/10.21091/mppa.2016.1007">more rigorous study</a> seems to provide evidence consistent with the original patterns.</div>
-]
-
-.pull-right-center[
-<div align="center">
-<br>
-<b>Inspector Lestrade:</b><br>
-<img src="../pics/tikz/tikz-024.png" width=400>
-<br>
-<b>Sherlock:</b><br>
-<img src="../pics/tikz/tikz-025.png" width=400>
-</div>
-]
-
-
-
-
-
-
-
+# Ethische und rechtliche Fails
+<html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>    
 
 
 
