@@ -1,62 +1,51 @@
----
-title: "Tag 2: Big Data, Good Data? Die kritische Nutzung von Daten"
-subtitle: "Session 7: Kommunikation von und mit Daten"
-author: "Simon Munzert"
-institute: "Hertie School"
-output:
-  xaringan::moon_reader:
-    includes:
-      after_body: "../add_hertie_logo.html"
-      in_header: "../my_header.html"
-    css: [default,'../simons-touch.css', metropolis, metropolis-fonts] 
-    lib_dir: libs
-    nature:
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
-      ratio: '16:9'
-      hash: true
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Tag 2: Big Data, Good Data? Die kritische Nutzung von Daten</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Simon Munzert" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+    <link rel="stylesheet" href="../simons-touch.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Tag 2: Big Data, Good Data? Die kritische Nutzung von Daten
+]
+.subtitle[
+## Session 7: Kommunikation von und mit Daten
+]
+.author[
+### Simon Munzert
+]
+.institute[
+### Hertie School
+]
+
 ---
 
-```{css, echo=FALSE} 
+
+&lt;style type="text/css"&gt;
 @media print { # print out incremental slides; see https://stackoverflow.com/questions/56373198/get-xaringan-incremental-animations-to-print-to-pdf/56374619#56374619
   .has-continuation {
     display: block !important;
   }
 }
-```
+&lt;/style&gt;
 
-```{r setup, include=FALSE}
-# figures formatting setup
-options(htmltools.dir.version = FALSE)
-library(knitr)
-opts_chunk$set(
-  prompt = T,
-  fig.align="center", #fig.width=6, fig.height=4.5, 
-  # out.width="748px", #out.length="520.75px",
-  dpi=300, #fig.path='Figs/',
-  cache=T, #echo=F, warning=F, message=F
-  engine.opts = list(bash = "-l")
-  )
 
-## Next hook based on this SO answer: https://stackoverflow.com/a/39025054
-knit_hooks$set(
-  prompt = function(before, options, envir) {
-    options(
-      prompt = if (options$engine %in% c('sh','bash')) '$ ' else 'R> ',
-      continue = if (options$engine %in% c('sh','bash')) '$ ' else '+ '
-      )
-})
-
-library(tidyverse)
-library(hrbrthemes)
-library(fontawesome)
-```
 
 
 # Überblick
 
-<br>
+&lt;br&gt;
 
 
 1. [Warum Datenvisualisierung?](#whyviz)
@@ -76,7 +65,7 @@ background-color: #000000
 
 # Was sehen Sie hier?
 
-<!-- Source: https://daten.odis-berlin.de/de/dataset/detailnetz_strassenabschnitte/ -->
+&lt;!-- Source: https://daten.odis-berlin.de/de/dataset/detailnetz_strassenabschnitte/ --&gt;
 
 
 ---
@@ -87,14 +76,14 @@ background-color: #000000
 # So besser?
 
 
-<!-- ############################################ -->
+&lt;!-- ############################################ --&gt;
 ---
 class: inverse, center, middle
 name: whyviz
 
 # Warum Datenvisualisierung?
 
-<html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
 
 
 ---
@@ -109,9 +98,9 @@ name: whyviz
 - Entscheidungsträger sind meist an **Mustern** und **Regelmäßigkeiten** interessiert, nicht an einzelnen und genauen Werten.
 - Zwei Möglichkeiten, quantitative Informationen sinnvoll zu nutzen:
 
-<div align="center">
-<img src="../pics/d5-s1-table-vs-patterns.png" width=300>
-</div>
+&lt;div align="center"&gt;
+&lt;img src="../pics/d5-s1-table-vs-patterns.png" width=300&gt;
+&lt;/div&gt;
 ]
 
 --
@@ -125,8 +114,8 @@ name: whyviz
 - Visualisierung setzt **wenig oder keine Annahmen** über die Natur der Daten voraus.
 - Visualisierung erleichtert die Interaktion zwischen Entscheidungsträger und Daten - **sie ist ein Mittel zur Hypothesenbildung und Entscheidungsfindung**.
 
-<i>"Die entscheidende Frage ist, wie man die Daten am besten in etwas umwandelt, das Menschen verstehen können, um optimale Entscheidungen zu treffen." </i>
-[Colin Ware, 2013](https://books.google.de/books?id=qFmS95vf6H8C&pg=PA5)
+&lt;i&gt;"Die entscheidende Frage ist, wie man die Daten am besten in etwas umwandelt, das Menschen verstehen können, um optimale Entscheidungen zu treffen." &lt;/i&gt;
+[Colin Ware, 2013](https://books.google.de/books?id=qFmS95vf6H8C&amp;pg=PA5)
 ]
 
 
@@ -134,10 +123,10 @@ name: whyviz
 # Broad Street Cholera-Ausbruch 1854 
 
 .pull-left[
-<div align="center">
-<br>
-<img src="../pics/d5-s1-snow-cholera-map.jpeg" width=500>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/d5-s1-snow-cholera-map.jpeg" width=500&gt;
+&lt;/div&gt;
 ]
 
 --
@@ -147,9 +136,9 @@ name: whyviz
 - Der [Choleraausbruch in der Broad Street](https://en.wikipedia.org/wiki/1854_Broad_Street_cholera_outbreak) in Soho, London, im Jahr 1854 wurde von dem Arzt John Snow untersucht, um dessen Ursachen zu erforschen (Hypothesen: keimverseuchtes Wasser vs. Übertragung durch die Luft).
 - Die Keimtheorie war damals noch nicht etabliert, aber die Karte zeigte, dass sich die Fälle in der Nähe einer verunreinigten Pumpe häuften (allerdings nicht die einzige Quelle für verseuchtes Wasser).
 
-<div align="center">
-<img src="../pics/d5-s1-john-snow-pub.jpeg" width=220>
-</div>
+&lt;div align="center"&gt;
+&lt;img src="../pics/d5-s1-john-snow-pub.jpeg" width=220&gt;
+&lt;/div&gt;
 ]
 
 
@@ -157,48 +146,48 @@ name: whyviz
 # Abbildungen vs. Tabellen
 
 .pull-left[
-- Die Tabelle auf der rechten Seite enthält die Datensätze I bis IV, die jeweils aus elf $(x,y)$-Punkten bestehen.
-- .hlred[Studieren Sie die Tabelle sorgfältig]. Wie verhalten sich $x$ und $y$ sowie ihr Verhältnis zueinander in den verschiedenen Datensätzen?
+- Die Tabelle auf der rechten Seite enthält die Datensätze I bis IV, die jeweils aus elf `\((x,y)\)`-Punkten bestehen.
+- .hlred[Studieren Sie die Tabelle sorgfältig]. Wie verhalten sich `\(x\)` und `\(y\)` sowie ihr Verhältnis zueinander in den verschiedenen Datensätzen?
 ]
 
 .pull-right[
-<br>
-<div align="center">
-<img src="../pics/d5-s1-anscombe-table-1.png" width=600>
-</div>
+&lt;br&gt;
+&lt;div align="center"&gt;
+&lt;img src="../pics/d5-s1-anscombe-table-1.png" width=600&gt;
+&lt;/div&gt;
 ]
 
 ---
 # Abbildungen vs. Tabellen
 
 .pull-left[
-- Die Tabelle auf der rechten Seite enthält die Datensätze I bis IV, die jeweils aus elf $(x,y)$-Punkten bestehen.
-- .hlred[Studieren Sie die Tabelle sorgfältig]. Wie verhalten sich $x$ und $y$ sowie ihr Verhältnis zueinander in den verschiedenen Datensätzen?
+- Die Tabelle auf der rechten Seite enthält die Datensätze I bis IV, die jeweils aus elf `\((x,y)\)`-Punkten bestehen.
+- .hlred[Studieren Sie die Tabelle sorgfältig]. Wie verhalten sich `\(x\)` und `\(y\)` sowie ihr Verhältnis zueinander in den verschiedenen Datensätzen?
 - Es zeigt sich, dass alle Datensätze nahezu identische einfache deskriptive Statistiken in Bezug auf Mittelwert, Standardabweichung, Korrelation und lineare Anpassung aufweisen!
 ]
 
 .pull-right[
-<br>
-<div align="center">
-<img src="../pics/d5-s1-anscombe-table-2.png" width=600>
-</div>
+&lt;br&gt;
+&lt;div align="center"&gt;
+&lt;img src="../pics/d5-s1-anscombe-table-2.png" width=600&gt;
+&lt;/div&gt;
 ]
 
 ---
 # Abbildungen vs. Tabellen
 
 .pull-left[
-- Die Tabelle auf der rechten Seite enthält die Datensätze I bis IV, die jeweils aus elf $(x,y)$-Punkten bestehen.
-- .hlred[Studieren Sie die Tabelle sorgfältig]. Wie verhalten sich $x$ und $y$ sowie ihr Verhältnis zueinander in den verschiedenen Datensätzen?
+- Die Tabelle auf der rechten Seite enthält die Datensätze I bis IV, die jeweils aus elf `\((x,y)\)`-Punkten bestehen.
+- .hlred[Studieren Sie die Tabelle sorgfältig]. Wie verhalten sich `\(x\)` und `\(y\)` sowie ihr Verhältnis zueinander in den verschiedenen Datensätzen?
 - Es zeigt sich, dass alle Datensätze nahezu identische einfache deskriptive Statistiken in Bezug auf Mittelwert, Standardabweichung, Korrelation und lineare Anpassung aufweisen!
 - .hlred[Die grafische Darstellung der Daten zeigt sehr unterschiedliche Verteilungen] und widerspricht der Heuristik, dass "numerische Berechnungen genau sind, aber Grafiken grob sind". ([Anscombe 1973](https://www.tandfonline.com/doi/abs/10.1080/00031305.1973.10478966)).
 ]
 
 .pull-right[
-<br>
-<div align="center">
-<img src="../pics/d5-s1-anscombe-plot.png" width=600>
-</div>
+&lt;br&gt;
+&lt;div align="center"&gt;
+&lt;img src="../pics/d5-s1-anscombe-plot.png" width=600&gt;
+&lt;/div&gt;
 ]
 
 
@@ -213,9 +202,9 @@ name: whyviz
 - Ob wir nun räumliche oder zeitliche Veränderungen bewerten, große Datenbanken durchsuchen, Variablen anpassen und kontrollieren, Experimente entwerfen, Mehrfachregressionen festlegen oder so ziemlich jede Art von evidenzbasierter Argumentation durchführen, der wesentliche Punkt ist, intelligente und angemessene Vergleiche anzustellen.
 - Daher sollten visuelle Darstellungen, wenn sie das Denken unterstützen sollen, Vergleiche zeigen."
 
-<div align="right">
-Edward Tufte, <a href="http://atc.berkeley.edu/201/readings/Tufte_BE_2006.pdf">Beautiful Evidence</a>, p.127.
-</div>
+&lt;div align="right"&gt;
+Edward Tufte, &lt;a href="http://atc.berkeley.edu/201/readings/Tufte_BE_2006.pdf"&gt;Beautiful Evidence&lt;/a&gt;, p.127.
+&lt;/div&gt;
 ]
 
 --
@@ -227,18 +216,18 @@ Edward Tufte, <a href="http://atc.berkeley.edu/201/readings/Tufte_BE_2006.pdf">B
 - Lassen Sie sich immer verschiedene Darstellungen derselben Daten zeigen - sie können unterschiedliche Aspekte offenbaren.
 - Die Erstellung von Visualisierungen ist fast immer ein **iterativer Prozess** - die erste Grafik ist selten auch die endgültige.
 
-<div align="center">
-<img src="../pics/d5-s1-fuckingowl.png" height=250>
-</div>
+&lt;div align="center"&gt;
+&lt;img src="../pics/d5-s1-fuckingowl.png" height=250&gt;
+&lt;/div&gt;
 ]
 
 
 ---
 # Visualisierung als iterativer Prozess
 
-<div align="center">
-<img src="../pics/d5-s1-evol-ggplot-1.gif" width=800>
-</div>
+&lt;div align="center"&gt;
+&lt;img src="../pics/d5-s1-evol-ggplot-1.gif" width=800&gt;
+&lt;/div&gt;
 `Quelle und Code` [Cedric Scherer](https://www.cedricscherer.com/2019/05/17/the-evolution-of-a-ggplot-ep.-1/)
 
 
@@ -251,10 +240,10 @@ Datenvisualisierung ist eine Schlüsselkompetenz für die Vermittlung von Erkenn
 
 .pull-right[
 
-<div align="center">
-<br>
-<img src="../pics/d5-s1-data-science-flow.png" width=450>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/d5-s1-data-science-flow.png" width=450&gt;
+&lt;/div&gt;
 ]
 
 ---
@@ -271,10 +260,10 @@ Datenvisualisierung ist eine Schlüsselkompetenz für die Vermittlung von Erkenn
 
 .pull-right[
 
-<div align="center">
-<br>
-<img src="../pics/d5-s1-data-science-wrangle.png" width=450>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/d5-s1-data-science-wrangle.png" width=450&gt;
+&lt;/div&gt;
 ]
 
 ---
@@ -291,18 +280,18 @@ Datenvisualisierung ist eine Schlüsselkompetenz für die Vermittlung von Erkenn
 
 .pull-right[
 
-<div align="center">
-<br>
-<img src="../pics/d5-s1-data-science-wrangle.png" width=450>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/d5-s1-data-science-wrangle.png" width=450&gt;
+&lt;/div&gt;
 
-<div align="center">
-<br>
-<img src="../pics/d5-s1-anscombe-plot-outliers.png" width=450>
-</div>
-<div align="center" style="font-size:16px;">
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/d5-s1-anscombe-plot-outliers.png" width=450&gt;
+&lt;/div&gt;
+&lt;div align="center" style="font-size:16px;"&gt;
 Scatter plots to identify outliers in bivariate relationships.
-</div>
+&lt;/div&gt;
 ]
 
 
@@ -324,10 +313,10 @@ Datenvisualisierung ist eine Schlüsselkompetenz für die Vermittlung von Erkenn
 
 .pull-right[
 
-<div align="center">
-<br>
-<img src="../pics/d5-s1-data-science-explore.png" width=450>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/d5-s1-data-science-explore.png" width=450&gt;
+&lt;/div&gt;
 
 ]
 
@@ -350,18 +339,18 @@ Datenvisualisierung ist eine Schlüsselkompetenz für die Vermittlung von Erkenn
 
 .pull-right[
 
-<div align="center">
-<br>
-<img src="../pics/d5-s1-data-science-explore.png" width=450>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/d5-s1-data-science-explore.png" width=450&gt;
+&lt;/div&gt;
 
-<div align="center">
-<br>
-<img src="../pics/d5-s1-forensic-correlations2-1.png" width=250>
-</div>
-<div align="center" style="font-size:16px;">
-Correlogram to visualize amount of association <br> between pairs of variables
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/d5-s1-forensic-correlations2-1.png" width=250&gt;
+&lt;/div&gt;
+&lt;div align="center" style="font-size:16px;"&gt;
+Correlogram to visualize amount of association &lt;br&gt; between pairs of variables
+&lt;/div&gt;
 ]
 
 
@@ -380,10 +369,10 @@ Datenvisualisierung ist eine Schlüsselkompetenz für die Vermittlung von Erkenn
 
 .pull-right[
 
-<div align="center">
-<br>
-<img src="../pics/d5-s1-data-science-model.png" width=450>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/d5-s1-data-science-model.png" width=450&gt;
+&lt;/div&gt;
 
 ]
 
@@ -402,45 +391,18 @@ Datenvisualisierung ist eine Schlüsselkompetenz für die Vermittlung von Erkenn
 
 .pull-right[
 
-<div align="center">
-<br>
-<img src="../pics/d5-s1-data-science-model.png" width=450>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/d5-s1-data-science-model.png" width=450&gt;
+&lt;/div&gt;
 
-<div align="center">
-<br>
-<img src="../pics/d5-s1-blue-jays-male-graded-conf-band-1.png" width=350>
-</div>
-<div align="center" style="font-size:16px;">
-Raw data and trend line with confidence bands<br>to visualize uncertainty of fit</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/d5-s1-blue-jays-male-graded-conf-band-1.png" width=350&gt;
+&lt;/div&gt;
+&lt;div align="center" style="font-size:16px;"&gt;
+Raw data and trend line with confidence bands&lt;br&gt;to visualize uncertainty of fit&lt;/div&gt;
 ]
-
----
-# Visualisierung im Data-Science-Workflow
-
-.pull-left[
-Datenvisualisierung ist eine Schlüsselkompetenz für die Vermittlung von Erkenntnissen aus Daten. Sie ist in jedem Schritt des Workflows von Bedeutung.
-
-**Modellieren**
-- Hypothesen testen
-- Zusammenfassen von (mehrfachen) Modellschätzungen
-- Visualisierung der Unsicherheit
-- Robustheits-/Sensitivitätsanalysen berichten
-
-**Kommunizieren**
-- Präsentation von Rohdaten/aufbereiteten Daten
-- Darstellung der Auswirkungen von Modellergebnissen
-]
-
-.pull-right[
-
-<div align="center">
-<br>
-<img src="../pics/d5-s1-data-science-communicate.png" width=450>
-</div>
-
-]
-
 
 ---
 # Visualisierung im Data-Science-Workflow
@@ -461,17 +423,44 @@ Datenvisualisierung ist eine Schlüsselkompetenz für die Vermittlung von Erkenn
 
 .pull-right[
 
-<div align="center">
-<br>
-<img src="../pics/d5-s1-data-science-communicate.png" width=450>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/d5-s1-data-science-communicate.png" width=450&gt;
+&lt;/div&gt;
 
-<div align="center">
-<br>
-<img src="../pics/d5-s1-map-airfields.png" width=320>
-</div>
-<div align="center" style="font-size:16px;">
-Choroplethenkarte mit der Lage der zivilen Flugplätze im Deutschen Reich, 1932. Die Verwaltungsbezirke sind entsprechend der Entfernung ihres Schwerpunkts zum nächstgelegenen Flugplatz schattiert</div>
+]
+
+
+---
+# Visualisierung im Data-Science-Workflow
+
+.pull-left[
+Datenvisualisierung ist eine Schlüsselkompetenz für die Vermittlung von Erkenntnissen aus Daten. Sie ist in jedem Schritt des Workflows von Bedeutung.
+
+**Modellieren**
+- Hypothesen testen
+- Zusammenfassen von (mehrfachen) Modellschätzungen
+- Visualisierung der Unsicherheit
+- Robustheits-/Sensitivitätsanalysen berichten
+
+**Kommunizieren**
+- Präsentation von Rohdaten/aufbereiteten Daten
+- Darstellung der Auswirkungen von Modellergebnissen
+]
+
+.pull-right[
+
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/d5-s1-data-science-communicate.png" width=450&gt;
+&lt;/div&gt;
+
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/d5-s1-map-airfields.png" width=320&gt;
+&lt;/div&gt;
+&lt;div align="center" style="font-size:16px;"&gt;
+Choroplethenkarte mit der Lage der zivilen Flugplätze im Deutschen Reich, 1932. Die Verwaltungsbezirke sind entsprechend der Entfernung ihres Schwerpunkts zum nächstgelegenen Flugplatz schattiert&lt;/div&gt;
 ]
 
 
@@ -490,14 +479,14 @@ class: exercise, center, middle
 
 
 
-<!-- ############################################ -->
+&lt;!-- ############################################ --&gt;
 ---
 class: inverse, center, middle
 name: plottypes
 
 # Arten der Datenvisualisierung
 
-<html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
 
 
 ---
@@ -546,14 +535,14 @@ Ein häufiger Fehler bei der Visualisierung ist, dass .hlred[Plot-Typen für Zwe
 .pull-left[
 ### Visualisierung von Mengen
 
-<div align="center">
-<br>
-<img src="../pics/amounts-1.png" width=500>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/amounts-1.png" width=500&gt;
+&lt;/div&gt;
 
-<div align="center">
-<img src="../pics/amounts_multi-1.png" width=500>
-</div>
+&lt;div align="center"&gt;
+&lt;img src="../pics/amounts_multi-1.png" width=500&gt;
+&lt;/div&gt;
 ]
 
 --
@@ -561,14 +550,14 @@ Ein häufiger Fehler bei der Visualisierung ist, dass .hlred[Plot-Typen für Zwe
 .pull-right[
 
 ### Visualisierung von Verteilungen
-<div align="center">
-<br>
-<img src="../pics/single-distributions-1.png" width=500>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/single-distributions-1.png" width=500&gt;
+&lt;/div&gt;
 
-<div align="center">
-<img src="../pics/multiple-distributions-1.png" width=500>
-</div>
+&lt;div align="center"&gt;
+&lt;img src="../pics/multiple-distributions-1.png" width=500&gt;
+&lt;/div&gt;
 ]
 
 
@@ -578,18 +567,18 @@ Ein häufiger Fehler bei der Visualisierung ist, dass .hlred[Plot-Typen für Zwe
 .pull-left[
 ### Visualisierung von Proportionen
 
-<div align="center">
-<br>
-<img src="../pics/proportions-1.png" width=500>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/proportions-1.png" width=500&gt;
+&lt;/div&gt;
 
-<div align="center">
-<img src="../pics/proportions-comp-1.png" width=500>
-</div>
+&lt;div align="center"&gt;
+&lt;img src="../pics/proportions-comp-1.png" width=500&gt;
+&lt;/div&gt;
 
-<div align="center">
-<img src="../pics/proportions-multi-1.png" width=500>
-</div>
+&lt;div align="center"&gt;
+&lt;img src="../pics/proportions-multi-1.png" width=500&gt;
+&lt;/div&gt;
 ]
 
 
@@ -598,18 +587,18 @@ Ein häufiger Fehler bei der Visualisierung ist, dass .hlred[Plot-Typen für Zwe
 .pull-right[
 
 ### Visualisierung von x-y-Beziehungen
-<div align="center">
-<br>
-<img src="../pics/basic-scatter-1.png" width=500>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/basic-scatter-1.png" width=500&gt;
+&lt;/div&gt;
 
-<div align="center">
-<img src="../pics/xy-binning-1.png" width=500>
-</div>
+&lt;div align="center"&gt;
+&lt;img src="../pics/xy-binning-1.png" width=500&gt;
+&lt;/div&gt;
 
-<div align="center">
-<img src="../pics/xy-lines-1.png" width=500>
-</div>
+&lt;div align="center"&gt;
+&lt;img src="../pics/xy-lines-1.png" width=500&gt;
+&lt;/div&gt;
 ]
 
 
@@ -619,18 +608,18 @@ Ein häufiger Fehler bei der Visualisierung ist, dass .hlred[Plot-Typen für Zwe
 .pull-left[
 ### Visualisierung von Unsicherheit
 
-<div align="center">
-<br>
-<img src="../pics/errorbars-1.png" width=500>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/errorbars-1.png" width=500&gt;
+&lt;/div&gt;
 
-<div align="center">
-<img src="../pics/confidence-dists-1.png" width=500>
-</div>
+&lt;div align="center"&gt;
+&lt;img src="../pics/confidence-dists-1.png" width=500&gt;
+&lt;/div&gt;
 
-<div align="center">
-<img src="../pics/confidence-bands-1.png" width=500>
-</div>
+&lt;div align="center"&gt;
+&lt;img src="../pics/confidence-bands-1.png" width=500&gt;
+&lt;/div&gt;
 ]
 
 
@@ -639,10 +628,10 @@ Ein häufiger Fehler bei der Visualisierung ist, dass .hlred[Plot-Typen für Zwe
 .pull-right[
 
 ### Visualisierung räumlicher Daten
-<div align="center">
-<br>
-<img src="../pics/geospatial-1.png" width=500>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/geospatial-1.png" width=500&gt;
+&lt;/div&gt;
 ]
 
 
@@ -663,10 +652,10 @@ Ein häufiger Fehler bei der Visualisierung ist, dass .hlred[Plot-Typen für Zwe
 
 
 .pull-right[
-<div align="center">
-<br>
-<img src="../pics/movie-rankings-1.png" width=500>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/movie-rankings-1.png" width=500&gt;
+&lt;/div&gt;
 ]
 
 
@@ -685,10 +674,10 @@ Ein häufiger Fehler bei der Visualisierung ist, dass .hlred[Plot-Typen für Zwe
 ]
 
 .pull-right[
-<div align="center">
-<br>
-<img src="../pics/liquor-small-multiples.png" width=500>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/liquor-small-multiples.png" width=500&gt;
+&lt;/div&gt;
 ]
 
 
@@ -708,43 +697,43 @@ Ein häufiger Fehler bei der Visualisierung ist, dass .hlred[Plot-Typen für Zwe
 ]
 
 .pull-right[
-<div align="center">
-<br>
-<img src="../pics/liquor-map.gif" width=400>
-<img src="../pics/liquor-skewed-map.png" width=400>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/liquor-map.gif" width=400&gt;
+&lt;img src="../pics/liquor-skewed-map.png" width=400&gt;
+&lt;/div&gt;
 ]
 
 
 
 
-<!-- ############################################ -->
+&lt;!-- ############################################ --&gt;
 ---
 class: inverse, center, middle
 name: clickvscode
 
 # Klick- und codebasierte Visualisierungstools
 
-<html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
 
 ---
  
 # Klick- und codebasierte Visualisierungstools
 
-.pull-left[<br>
-<div align="center">
-<img src="../pics/d5-s2-tableau.png" height=150>
-</div>
+.pull-left[&lt;br&gt;
+&lt;div align="center"&gt;
+&lt;img src="../pics/d5-s2-tableau.png" height=150&gt;
+&lt;/div&gt;
 
 ## Klick-basierte Tools
 
 Diese Tools sind **benutzerfreundliche Anwendungen**, für die man keine Programmierkenntnisse braucht. Sie *klicken einfach auf Schaltflächen*, *ziehen Elemente* und *wählen Optionen aus, um Visualisierungen zu erstellen*. Diese Anwendungen sind ideal, wenn Sie schnell Diagramme und Grafiken erstellen möchten, ohne sich in die Feinheiten der Programmierung einarbeiten zu müssen. "Malen-nach-Zahlen"-Tools.
 ]
 
-.pull-right[<br>
-<div align="center">
-<img src="../pics/d5-s2-code-based.jpeg" height=150>
-</div>
+.pull-right[&lt;br&gt;
+&lt;div align="center"&gt;
+&lt;img src="../pics/d5-s2-code-based.jpeg" height=150&gt;
+&lt;/div&gt;
 
 ## Code-basierte Tools
 Tools für **Künstler, die lieber von Grund auf malen.** Anstatt auf Schaltflächen zu klicken, skripten Sie Grafiken *in einer Programmiersprache* wie `Python` oder `R`, um Ihre Visualisierungen zu erstellen. Das bedeutet große **Flexibilität** und **Kontrolle** über jedes Detail. Steile Programmierlernkurve - eher nur für Profis.
@@ -817,7 +806,7 @@ class: midtext
 .pull-left[
 1. **Immer zuerst einen Plan entwickeln**.
 
-2. Bevorzugen Sie programmatische Lösungen, um reproduzierbar zu bleiben (d.h. <code>R/Python</code> vor Excel).
+2. Bevorzugen Sie programmatische Lösungen, um reproduzierbar zu bleiben (d.h. &lt;code&gt;R/Python&lt;/code&gt; vor Excel).
 
 3. Für konzeptionelle Diagramme (nicht: Datenvisualisierung!) können andere Werkzeuge gut geeignet sein (z.B. Powerpoint oder sogar handgezeichnete Figuren).
 
@@ -827,23 +816,23 @@ class: midtext
 ]
 
 .pull-right[
-<div align="center">
-<img src="../pics/d5-s2-excel97-chart.png" width=280>
-<br><br>
-<img src="../pics/d5-s2-sequencing_costs.png" width=380>
-</div>
+&lt;div align="center"&gt;
+&lt;img src="../pics/d5-s2-excel97-chart.png" width=280&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;img src="../pics/d5-s2-sequencing_costs.png" width=380&gt;
+&lt;/div&gt;
 ]
 
 
 
 
-<!-- ############################################ -->
+&lt;!-- ############################################ --&gt;
 ---
 class: inverse, center, middle
 name: dashboards
 
 # Interaktive Kommunikation mit Dashboards
-<html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
 
 
 ---
@@ -865,16 +854,16 @@ name: dashboards
 ]
 
 .pull-right-small-center[
-<div align="center">
-<br>
-<img src="../pics/mg-dashboard.jpeg" width="350"/>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/mg-dashboard.jpeg" width="350"/&gt;
+&lt;/div&gt;
 `Credit` [Tim Green](https://commons.wikimedia.org/wiki/File:MG_interior_%2829094966463%29.jpg)
 
-<div align="center">
-<br>
-<img src="../pics/dashboard-example-1.png" width="350"/>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/dashboard-example-1.png" width="350"/&gt;
+&lt;/div&gt;
 `Credit` [HelicalInsight OpenSourceBI](https://commons.wikimedia.org/wiki/File:Marketing_dashboard.png)
 ]
 
@@ -894,10 +883,10 @@ name: dashboards
 ]
 
 .pull-right-center[
-<div align="center">
-<br><br><br>
-<img src="../pics/business-intelligence.jpeg" width="500"/>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;img src="../pics/business-intelligence.jpeg" width="500"/&gt;
+&lt;/div&gt;
 `Credit` [towardsdatascience.com](https://towardsdatascience.com/5-most-popular-business-intelligence-bi-tools-in-2019-4e060b98039a)
 ]
 
@@ -906,10 +895,10 @@ name: dashboards
 # Dashboards in freier Wildbahn
 
 .pull-center[
-<div align="center">
-<br>
-<img src="../pics/lime-recruitment-kpis-dashboard-geckoboard.png" width="800"/>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/lime-recruitment-kpis-dashboard-geckoboard.png" width="800"/&gt;
+&lt;/div&gt;
 `Credit` [geckoboard.com](https://www.geckoboard.com/dashboard-examples/company/company-dashboard/)
 ]
 
@@ -917,10 +906,10 @@ name: dashboards
 # Dashboards in freier Wildbahn
 
 .pull-center[
-<div align="center">
-<br>
-<img src="../pics/telesales-dashboard.png" width="600"/>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/telesales-dashboard.png" width="600"/&gt;
+&lt;/div&gt;
 `Credit` [Stephen Few](http://perceptualedge.com/articles/Whitepapers/Dashboard_Design.pdf)
 ]
 
@@ -928,10 +917,10 @@ name: dashboards
 # Dashboards in freier Wildbahn
 
 .pull-center[
-<div align="center">
-<br>
-<img src="../pics/london-dashboard.png" width="600"/>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/london-dashboard.png" width="600"/&gt;
+&lt;/div&gt;
 `Credit` [idashboards.com](https://www.matillion.com/resources/blog/dashboard-examples-the-good-the-bad-and-the-ugly)
 ]
 
@@ -966,11 +955,11 @@ name: dashboards
 ---
 # Durchdachte Gestaltung und Nutzung des Dashboards
 
-.footnote[<sup>1</sup>Quelle: [Stephen Few/Perceptual Edge](http://perceptualedge.com/articles/misc/Dashboard_Design_Requirements_Questionnaire.pdf)
+.footnote[&lt;sup&gt;1&lt;/sup&gt;Quelle: [Stephen Few/Perceptual Edge](http://perceptualedge.com/articles/misc/Dashboard_Design_Requirements_Questionnaire.pdf)
 ]
 
 .pull-left[
-## Checkliste<sup>1</sup>
+## Checkliste&lt;sup&gt;1&lt;/sup&gt;
 
 1. Geht es um ein Monitoring, bei dem Ihre Daten/Metriken häufig aktualisiert werden müssen?
 
@@ -999,9 +988,9 @@ name: dashboards
 # Dashboards in freier Wildbahn: COVID-19-Edition
 
 .pull-left-center[
-<div align="center">
-<img src="../pics/covid-dashboard-nyt2.png" width="500"/>
-</div>
+&lt;div align="center"&gt;
+&lt;img src="../pics/covid-dashboard-nyt2.png" width="500"/&gt;
+&lt;/div&gt;
 `Quelle` [NY Times](https://www.nytimes.com/interactive/2021/us/covid-cases-deaths-tracker.html
 )
 ]
@@ -1009,10 +998,10 @@ name: dashboards
 --
 
 .pull-right-center[
-<div align="center">
-<br>
-<img src="../pics/covid-dashboard-owid.png" width="600"/>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/covid-dashboard-owid.png" width="600"/&gt;
+&lt;/div&gt;
 `Quelle` [Our World in Data](https://ourworldindata.org/explorers/coronavirus-data-explorer?zoomToSelection=true)
 ]
 
@@ -1021,20 +1010,20 @@ name: dashboards
 # Dashboards in freier Wildbahn: COVID-19-Edition
 
 .pull-left-small-center[
-<div align="center">
-<br>
-<img src="../pics/covid-dashboard-sz.png" width="250"/>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/covid-dashboard-sz.png" width="250"/&gt;
+&lt;/div&gt;
 `Quelle` [SZ Online](https://www.sueddeutsche.de/wissen/corona-zahlen-1.4844448)
 ]
 
 --
 
 .pull-right-wide-center[
-<div align="center">
-<br>
-<img src="../pics/covid-dashboard-zeit.png" width="700"/>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/covid-dashboard-zeit.png" width="700"/&gt;
+&lt;/div&gt;
 `Quelle` [ZEIT Online](https://www.zeit.de/wissen/corona-karte-deutschland-aktuelle-zahlen-landkreise)
 ]
 
@@ -1044,28 +1033,28 @@ name: dashboards
 
 .pull-left[
 .pull-left-vwide[
-### <tt>flexdashboard</tt> package
+### &lt;tt&gt;flexdashboard&lt;/tt&gt; package
 - Übersicht [hier](https://pkgs.rstudio.com/flexdashboard).
 - Gut für die einfache Erstellung von Dashboards
 - Einfach ein Dokument, das wie ein Dashboard aussieht
 - Kann interaktiven Code nur client-seitig ausführen (in eingebettetem JavaScript)
 ]
 .pull-right-vsmall[
-<br>
-<div align="center">
-<img src="../pics/flexdashboard.png" height="120"/>
-</div>
+&lt;br&gt;
+&lt;div align="center"&gt;
+&lt;img src="../pics/flexdashboard.png" height="120"/&gt;
+&lt;/div&gt;
 ]
-<br>
-<div align="center">
-<img src="../pics/flexdashboard-example-1.png" height="120"/>
-<img src="../pics/flexdashboard-example-2.png" height="120"/>
-</div>
+&lt;br&gt;
+&lt;div align="center"&gt;
+&lt;img src="../pics/flexdashboard-example-1.png" height="120"/&gt;
+&lt;img src="../pics/flexdashboard-example-2.png" height="120"/&gt;
+&lt;/div&gt;
 ]
 
 .pull-right[
 .pull-left-vwide[
-### <tt>shiny</tt> package
+### &lt;tt&gt;shiny&lt;/tt&gt; package
 - Übersicht [hier](https://shiny.rstudio.com/).
 - Komplexer zu programmieren, aber die bessere Option für komplexe Anwendungen.
 - Kann jedes Layout implementieren.
@@ -1073,16 +1062,16 @@ name: dashboards
 - Das Paket [shinydashboard](https://rstudio.github.io/shinydashboard/) bietet eine weitere Möglichkeit, Dashboards mit Shiny zu erstellen.
 ]
 .pull-right-vsmall[
-<br>
-<div align="center">
-<img src="../pics/shiny.png" height="120"/>
-</div>
+&lt;br&gt;
+&lt;div align="center"&gt;
+&lt;img src="../pics/shiny.png" height="120"/&gt;
+&lt;/div&gt;
 ]
-<br>
-<div align="center">
-<img src="../pics/shiny-example-1.png" height="120"/>
-<img src="../pics/shiny-example-2.png" height="120"/>
-</div>
+&lt;br&gt;
+&lt;div align="center"&gt;
+&lt;img src="../pics/shiny-example-1.png" height="120"/&gt;
+&lt;img src="../pics/shiny-example-2.png" height="120"/&gt;
+&lt;/div&gt;
 ]
 
 
@@ -1115,108 +1104,108 @@ name: dashboards
 
 
 
-<!-- ############################################ -->
+&lt;!-- ############################################ --&gt;
 ---
 class: inverse, center, middle
 name: goodpractices
 
 # Übung: Best (and worst) practices
 
-<html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
 
 ---
 
 # Was ist hier los?
 
-<div align="center">
-<img src="../pics/d5-s2-tucker-carlson.jpeg" height=500>
-</div>
+&lt;div align="center"&gt;
+&lt;img src="../pics/d5-s2-tucker-carlson.jpeg" height=500&gt;
+&lt;/div&gt;
 
 ---
 
 # Was ist hier los?
 
-<div align="center">
-<img src="../pics/d5-s2-violent-crime.jpeg" height=500>
-</div>
+&lt;div align="center"&gt;
+&lt;img src="../pics/d5-s2-violent-crime.jpeg" height=500&gt;
+&lt;/div&gt;
 
 ---
 
 # Was ist hier los?
 
-<div align="center">
-<img src="../pics/d5-s2-smartphone-share.png" height=500>
-</div>
+&lt;div align="center"&gt;
+&lt;img src="../pics/d5-s2-smartphone-share.png" height=500&gt;
+&lt;/div&gt;
 
 ---
 
 # Was ist hier los?
 
-<div align="center">
-<img src="../pics/gun-deaths.jpeg" height=500>
-</div>
+&lt;div align="center"&gt;
+&lt;img src="../pics/gun-deaths.jpeg" height=500&gt;
+&lt;/div&gt;
 
 
 ---
 
 # Todsünde der Datenvisualisierung: Achsentrunkierung
 
-<div align="center">
-<img src="../pics/d5-s2-retirement-wrong.png" height=380><br>
-<b>Misleading</b>
-</div>
+&lt;div align="center"&gt;
+&lt;img src="../pics/d5-s2-retirement-wrong.png" height=380&gt;&lt;br&gt;
+&lt;b&gt;Misleading&lt;/b&gt;
+&lt;/div&gt;
 
 
 ---
 # Besser
 
-<div align="center">
-<img src="../pics/d5-s2-retirement-right.png" height=380><br>
+&lt;div align="center"&gt;
+&lt;img src="../pics/d5-s2-retirement-right.png" height=380&gt;&lt;br&gt;
 .t-good[**Better**]
-</div>
+&lt;/div&gt;
 
 ---
 
 # Todsünde der Datenvisualisierung: Doppelte Achsen
 
-<div align="center">
-<img src="../pics/d5-s2-dualaxis.png" height=360><br>
-<b>Misleading</b>
-</div>
+&lt;div align="center"&gt;
+&lt;img src="../pics/d5-s2-dualaxis.png" height=360&gt;&lt;br&gt;
+&lt;b&gt;Misleading&lt;/b&gt;
+&lt;/div&gt;
 
 ---
 # Besser
 
-<div align="center">
-<img src="../pics/d5-s2-dualaxis-4.png" height=380><br>
+&lt;div align="center"&gt;
+&lt;img src="../pics/d5-s2-dualaxis-4.png" height=380&gt;&lt;br&gt;
 .t-good[**Better**]
-</div>
+&lt;/div&gt;
 
 
 ---
 # Auch besser
 
-<div align="center">
-<img src="../pics/d5-s2-dualaxis-5.png" height=380><br>
+&lt;div align="center"&gt;
+&lt;img src="../pics/d5-s2-dualaxis-5.png" height=380&gt;&lt;br&gt;
 .t-good[**Better**]
-</div>
+&lt;/div&gt;
 
 
 ---
 # Todsünde der Datenvisualisierung: sinnlose 3D-Elemente
 
-<div align="center">
-<img src="../pics/d5-s2-titanic-3d.png" height=360><br>
-<b>Misleading</b>
-</div>
+&lt;div align="center"&gt;
+&lt;img src="../pics/d5-s2-titanic-3d.png" height=360&gt;&lt;br&gt;
+&lt;b&gt;Misleading&lt;/b&gt;
+&lt;/div&gt;
 
 ---
 # Besser
 
-<div align="center">
-<img src="../pics/d5-s2-titanic-2d.png" height=360><br>
+&lt;div align="center"&gt;
+&lt;img src="../pics/d5-s2-titanic-2d.png" height=360&gt;&lt;br&gt;
 .t-good[**Better**]
-</div>
+&lt;/div&gt;
 
 
 ---
@@ -1250,8 +1239,8 @@ class: smalltext
 # Diskussion in Gruppen
 
 .pull-left[
-<br>
-<span style="font-weight:bold;text-align:center;color:#2b7282;">Let's take a couple of minutes in pairs:</span> 
+&lt;br&gt;
+&lt;span style="font-weight:bold;text-align:center;color:#2b7282;"&gt;Let's take a couple of minutes in pairs:&lt;/span&gt; 
 
 
 
@@ -1272,12 +1261,179 @@ class: smalltext
 ]
 
 .pull-right[
-<div align="center">
-<br>
-<img src="../pics/d5-s2-fed-expenditure.png" width=500>
-</div>
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/d5-s2-fed-expenditure.png" width=500&gt;
+&lt;/div&gt;
 ]
     
 
 
 
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9",
+"hash": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<style>
+  .logo {
+    background-image: url("../hertieschool-neg.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 1.5em;
+    right: 1em;
+    width: 150px;
+    height: 128px;
+    z-index: 0;
+  }
+</style>
+  
+  <script>
+  document
+.querySelectorAll(
+  '.remark-slide-content' +
+    ':not(.title-slide)' +
+    ':not(.inverse)' +
+	
+    // add additional classes to exclude here, e.g.
+  // ':not(.inverse)' +
+    ':not(.hide-logo)'
+)
+.forEach(el => {
+  el.innerHTML += '<div class="logo"></div>';
+});
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
