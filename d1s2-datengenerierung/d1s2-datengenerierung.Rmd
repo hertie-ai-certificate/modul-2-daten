@@ -64,7 +64,7 @@ library(fontawesome)
 
     2.1 [Das Problem mit der Repräsentativität](#sampling)
 
-    2.2 [Fehlerhafte Messung](#measurement)
+    2.2 [Problematische Messung](#measurement)
     
     2.3 [Ethische und rechtliche Fails](#ethicfails)
 
@@ -218,7 +218,7 @@ Zum Ausprobieren:
     </thead>
     <tbody>
         <tr>
-            <td>Prozessproduzierte Daten</td>
+            <td><b>Prozessproduzierte Daten</b></td>
             <td>
                 <ul>
                     <li>Kontinuierlich und in großem Umfang verfügbar</li>
@@ -239,7 +239,7 @@ Zum Ausprobieren:
             </td>
         </tr>
         <tr>
-            <td>Aktiv erhobene Daten</td>
+            <td><b>Aktiv erhobene Daten</b></td>
             <td>
                 <ul>
                     <li>Präzise Daten, speziell für den Anwendungsfall</li>
@@ -274,19 +274,22 @@ name: dataflaws
 
 
 ---
-# Datengenerierungs-Fails
+# Beispiele für Datengenerierungs-Fails
 
-| **Kategorie**               | **Probleme**                                                                                                                                                                       | **Beispiele**                                                                                                                                                    |
-|-----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Datenerfassung**           | <ul><li>Unvollständige Daten</li><li>Verzerrte Stichproben</li><li>Messfehler</li></ul>                                                   | <ul><li>Sensoren fallen temporär aus, und es fehlen Daten aus bestimmten Zeiträumen</li><li>Befragungen schließen bestimmte Altersgruppen aus</li><li>Falsche Standortdaten durch GPS-Ausfälle</li></ul> |
-| **Datenverarbeitung**        | <ul><li>Veraltete Daten</li><li>Falsch klassifizierte Daten</li><li>Daten-Duplikate</li><li>Datenrauschen</li></ul>                          | <ul><li>Veraltete Bevölkerungsdaten beeinflussen Planungen für neue Schulen</li><li>Automatische Tagging-Systeme klassifizieren Inhalte falsch</li><li>Dopplungen in Kundenlisten verfälschen Marketing-Analysen</li></ul> |
-| **Datenverwaltung**          | <ul><li>Fehlende Datenethik</li></ul>                                                                                                      | <ul><li>Datensammlung ohne Einwilligung der Nutzer</li><li>Diskriminierung durch unethische Datenverwendung in HR-Systemen</li></ul>                                                                           |
-| **Datenintegration**         | <ul><li>Inkompatible Datenformate</li></ul>                                                                                                 | <ul><li>Daten aus verschiedenen Datenbanken (z. B. Excel und SQL) lassen sich nicht ohne Weiteres integrieren</li><li>Unterschiedliche Zeitzonenformate in einer globalen Analyse</li></ul>                    |
-| **Datenanalyse**             | <ul><li>Bias in Trainingsdaten</li></ul>                                                                                                    | <ul><li>Historische Datensätze zu Straftaten enthalten rassistische Vorurteile, die in einem KI-System zur Kriminalitätsvorhersage reproduziert werden</li></ul>                                                |
-| **Datenmanagement**          | <ul><li>Schlechte Datenorganisation</li><li>Fehlende Metadaten</li></ul>                                                                    | <ul><li>Keine klare Benennung oder Strukturierung der Datenfelder</li><li>Wichtige Informationen zur Datenherkunft oder -bedeutung fehlen in der Dokumentation</li></ul>                                       |
-| **Datenqualitätssicherung**  | <ul><li>Mangelhafte Validierung</li><li>Keine Überprüfung von Ausreißern</li></ul>                                                           | <ul><li>Keine automatisierten Prüfungen zur Erkennung von Fehlern</li><li>Ausreißer bleiben unentdeckt und verfälschen das Ergebnis</li></ul>                                                                  |
-| **Datenaufbewahrung**        | <ul><li>Unzureichende Archivierung</li><li>Verlust von Daten</li></ul>                                                                      | <ul><li>Alte Daten werden unsachgemäß gelöscht oder nicht gesichert</li><li>Fehlende Backups führen zu Verlust von historischen Daten</li></ul>                                                                |
+| **Kategorie**                          | **Probleme**                                                                                                                                                                       | **Beispiele**                                                                                                                                                    |
+|----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Unvollständige Daten**               | <ul><li>Fehlende Datenpunkte durch technische Ausfälle</li><li>Daten werden nur für bestimmte Zeiträume erhoben</li></ul>         | <ul><li>Sensoren fallen zeitweise aus, sodass Verkehrsdaten für einige Tage fehlen</li><li>Wichtige Umfragedaten werden nicht erhoben, weil bestimmte Fragen übersprungen wurden</li></ul> |
+| **Selection Bias (Verzerrte Stichproben)** | <ul><li>Stichprobe nicht repräsentativ für die Zielpopulation</li><li>Ungeeignete Auswahlkriterien für Datenquellen</li></ul> | <ul><li>Online-Umfragen schließen ältere Menschen ohne Internetzugang aus</li><li>Ein KI-Modell wird nur mit Daten von Großstädten trainiert, was ländliche Regionen vernachlässigt</li></ul> |
+| **Fehlerhafte Messung**                | <ul><li>Messgeräte liefern ungenaue Daten</li><li>Menschliche Fehler bei manueller Datenerfassung</li></ul>        | <ul><li>GPS-Tracking liefert falsche Standortdaten in Gebieten mit schlechtem Empfang</li><li>Manuelle Zählungen von Besuchern eines Events führen zu Doppelzählungen</li></ul> |
 
+
+---
+# Beispiele für Datengenerierungs-Fails
+
+| **Kategorie**                          | **Probleme**                                                                                                                                                                       | **Beispiele**                                                                                                                                                    |
+|----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Probleme beim Datenimport**          | <ul><li>Inkompatible Formate erschweren den Import</li><li>Fehler bei der Zuordnung von Datenfeldern während des Imports</li></ul> | <ul><li>Daten aus verschiedenen Quellen sind unterschiedlich formatiert (z. B. unterschiedliche Datumsformate)</li><li>Digitalisierung von Papierakten erfolgt qualitativ unzureichend über OCR (auch Messproblem)</li></ul> |
+| **Ethische und rechtliche Probleme**   | <ul><li>Daten werden ohne Einwilligung erhoben</li><li>Sensible Daten werden ohne angemessene Schutzmaßnahmen erfasst</li></ul> | <ul><li>Datensammlung in einer Smart City ohne Zustimmung der Bürger</li><li>Gesundheitsdaten werden ohne ausreichenden Schutz gesammelt, was zu Datenschutzverletzungen führen kann</li></ul> |
 
 
 
@@ -444,8 +447,38 @@ Eine Stichprobe ist repräsentativ, wenn sie so gezogen wird, dass sie **statist
 class: inverse, center, middle
 name: measurement
 
-# Fehlerhafte Messung
+# Problematische Messung
 <html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
+
+
+
+---
+# Messung
+
+Messung ist gleichzeitig Grundlage (Input) für als auch Output von AI-Anwendungen.
+
+Beispiele
+
+Menschliches Verhalten - und damit auch Daten - sind oft schwer zu messen.
+Präferenzen schwierig zu messen, instabil
+Manche Features sehr gut zu messen, stabiler als gedacht (z.B. Gesichtsgeometrie)
+Messfehler können systematisch sein, z.B. durch soziale Erwünschtheit
+Messfehler können zufällig sein, z.B. durch technische Probleme
+
+Beispiele:
+- Vorhersage von Life outcomes
+- Vorhersage von politischen Präferenzen
+- Vorhersage von Kaufverhalten
+- Vorhersage von Krankheitsverläufen
+- Vorhersage von Kriminalität
+- Gesichtserkennung
+- Spracherkennung
+- OCR
+
+Konkrete Beispiele aus Snakeoil
+
+Reliabilität vs. Validität
+
 
 
 ---
@@ -502,64 +535,6 @@ Decision-making problems often are classification problems!
 ]
 
 
----
-# Training, validation and test dataset
-
-<div align="center">
-<img src="../pics/data_splitting.png" height=550>
-</div>
-
-
-
----
-# Overfitting
-
-<div align="center">
-<img src="../pics/age-hairiness-1.png" height=550>
-</div>
-
----
-# Overfitting
-
-<div align="center">
-<img src="../pics/age-hairiness-2.png" height=550>
-</div>
-
----
-# Overfitting
-
-<div align="center">
-<img src="../pics/age-hairiness-3.png" height=550>
-</div>
-
----
-# Overfitting
-
-<div align="center">
-<img src="../pics/age-hairiness-4.png" height=550>
-</div>
-
----
-# Overfitting
-
-<div align="center">
-<img src="../pics/age-hairiness-5.png" height=550>
-</div>
-
----
-# Overfitting
-
-<div align="center">
-<img src="../pics/age-hairiness-6.png" height=550>
-</div>
-
----
-# Overfitting
-
-<div align="center">
-<img src="../pics/age-hairiness-7.png" height=550>
-</div>
-
 
 ---
 # Overfitting in classification
@@ -567,6 +542,7 @@ Decision-making problems often are classification problems!
 <div align="center">
 <img src="../pics/brown-dogs.png" width=700>
 </div>
+
 
 ---
 # Overfitting in classification
@@ -574,26 +550,6 @@ Decision-making problems often are classification problems!
 <div align="center">
 <img src="../pics/brown-dogs.png" width=700>
 <img src="../pics/white-dogs.png" width=700>
-</div>
-
-
----
-# Overfitting in classification
-
-<div align="center">
-<img src="../pics/overfitting-wiki.png" width=400>
-</div>
-
-**Explained:** The green line represents an overfitted model and the black line represents a regularized model. While the green line best follows the training data, it is too dependent on that data and it is likely to have a higher error rate on new unseen data, compared to the black line.
-
-
----
-# Overfitting, ultimately explained
-
-<br><br>
-
-<div align="center">
-<img src="../pics/overfitting.png" width=600>
 </div>
 
 

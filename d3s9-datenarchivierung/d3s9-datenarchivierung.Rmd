@@ -1,7 +1,7 @@
 ---
 title: "Tag 3: Auf dem Weg zur datenbewussten Organisation"
 subtitle: "Session 9: Datenarchivierung und Veröffentlichung"
-author: "Sebastian Ramirez-Ruiz"
+author: "Simon Munzert"
 institute: "Hertie School"
 output:
   xaringan::moon_reader:
@@ -67,6 +67,13 @@ bib <-  RefManageR::ReadBib("grateful-refs.bib")
 ```
 
 
+# Excel-Beispiel
+
+Debugging-Session -> COVID/Excel UK
+
+
+
+---
 # Was die Leute denken, wie die Arbeit mit Daten aussieht...
 
 <div align="center">

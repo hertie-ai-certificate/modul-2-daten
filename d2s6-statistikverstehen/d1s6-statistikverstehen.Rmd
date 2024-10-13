@@ -762,14 +762,14 @@ name: classification
 
 
 ---
-# AI performance in knowledge tests
+# AI-Performanz in Wissenstests
 
 <div align="center">
 <img src="../pics/ai-performance-knowledge-tests-vs-training-computation.svg" height=550>
 </div>
 
 ---
-# AI capabilities vs. human performance
+# AI-Fähigkeiten vs. menschliche Performanz
 
 <div align="center">
 <img src="../pics/test-scores-ai-capabilities-relative-human-performance.svg" height=550>
@@ -777,67 +777,66 @@ name: classification
 
 
 ---
-# ML performance benchmarking in the wild
-
-<div align="center">
-<img src="../pics/performance-hate-speech.png" height=500>
-</div>
-
-`Source` Oueslati, 2024, Watching the Watchers: A Comparative Audit of Cloud‑Based Commercial Content Moderation Services.
-
-
----
-# ML performance benchmarking in the wild
+# ML-Performanz-Benchmarking: Beispiel
 
 <div align="center">
 <img src="../pics/performance-gpt.png" height=500>
 </div>
 
-`Source` Wiik, 2024, GPT-4o vs. GPT-4 vs. Gemini 1.5 — Performance Analysis (Accuracy).
+`Quelle` Wiik, 2024, GPT-4o vs. GPT-4 vs. Gemini 1.5 — Performance Analysis (Accuracy).
 
 
 
 ---
-# Assessing classification performance
+# ML-Performanz-Benchmarking: Beispiel 2
+
+<div align="center">
+<img src="../pics/performance-hate-speech.png" height=500>
+</div>
+
+`Quelle` Oueslati, 2024, Watching the Watchers: A Comparative Audit of Cloud‑Based Commercial Content Moderation Services.
+
+
+
+
+---
+# Bestimmung der Performanz eines binären Klassifizierers
 
 .pull-left[
-## Accuracy
+## Accuracy ("Korrektklassifizierungsrate")
 
-- Accuracy = $\frac{\text{Number of correct predictions}}{\text{Total number of predictions}} = \frac{TP + TN}{TP + TN + FP + FN}$
-- Error rate: $1 - \text{Accuracy}$
+- Accuracy = $\frac{\text{Anzahl der richtigen Vorhersagen}}{\text{Gesamtzahl der Vorhersagen}} = \frac{TP + TN}{TP + TN + FP + FN}$
+- Falschklassifikationsrate: $1 - \text{Accuracy}$
 
-## Usefulness
-- Accuracy is a simple and intuitive metric.
-- But it can be misleading, especially in imbalanced datasets where the classes are not evenly represented.
-- Example: In a dataset with 90% of class A and 10% of class B, a model that predicts all instances as class A will have an accuracy of 90%, but it will not be useful for predicting class B instances.
+## Nützlichkeit
+- Die Accuracy ist eine einfache und intuitive Metrik.
+- Sie kann jedoch irreführend sein, insbesondere in unausgewogenen Datensätzen, in denen die Klassen nicht gleichmäßig vertreten sind.
+- Beispiel: In einem Datensatz mit 90% der Klasse A und 10% der Klasse B hat ein Modell, das alle Fälle als Klasse A vorhersagt, eine Genauigkeit von 90%, ist aber für die Vorhersage von Fälle der Klasse B nicht nützlich.
 ]
 
 --
 
 .pull-right[
-## Example
+## Beispiel
 
 <div align="center"><br>
 <img src="../pics/confusion-matrix-recidivism.png" width=500>
 </div>
 
-What is the **accuracy** of our recidivism classifier?
+Wie hoch ist die **Accuracy** unseres Rückfall-Klassifizierers?
 ]
 
 
-
-
-
 ---
-# Assessing classification performance
+# Bestimmung der Performanz eines binären Klassifizierers
 
 .pull-left[
-## Precision
+## Präzision
 
-- Precision = $\frac{\text{Number of true positive predictions}}{\text{Number of positive predictions}} = \frac{TP}{TP + FP}$
+- Präzision = $\frac{\text{Anzahl der echten positiven Vorhersagen}}{\text{Anzahl der positiven Vorhersagen}} = \frac{TP}{TP + FP}$
 
-## Usefulness
-- Precision focuses on the accuracy of positive predictions and is useful when the cost of false positives is high.
+## Nützlichkeit
+- Die Präzision konzentriert sich auf die Genauigkeit der positiven Vorhersagen und ist nützlich, wenn die Kosten für falsch positive Vorhersagen hoch sind.
 ]
 
 --
@@ -851,15 +850,15 @@ What is the **accuracy** of our recidivism classifier?
 
 
 ---
-# Assessing classification performance
+# Bestimmung der Performanz eines binären Klassifizierers
 
 .pull-left[
-## Precision
+## Präzision
 
-- Precision = $\frac{\text{Number of true positive predictions}}{\text{Number of positive predictions}} = \frac{TP}{TP + FP}$
+- Präzision = $\frac{\text{Anzahl der echten positiven Vorhersagen}}{\text{Anzahl der positiven Vorhersagen}} = \frac{TP}{TP + FP}$
 
-## Usefulness
-- Precision focuses on the accuracy of positive predictions and is useful when the cost of false positives is high.
+## Nützlichkeit
+- Die Präzision konzentriert sich auf die Genauigkeit der positiven Vorhersagen und ist nützlich, wenn die Kosten für falsch positive Vorhersagen hoch sind.
 ]
 
 .pull-right[
@@ -869,23 +868,25 @@ What is the **accuracy** of our recidivism classifier?
 <img src="../pics/confusion-matrix-recidivism.png" width=500>
 </div>
 
-What is the **precision** of our recidivism classifier?
+Wie hoch ist die **Präzision** unseres Rückfall-Klassifizierers?
 ]
 
 
 ---
-# Assessing classification performance
+# Bestimmung der Performanz eines binären Klassifizierers
 
 .pull-left[
-## Recall (Sensitivity)
-- Recall = $\frac{\text{Number of true positive predictions}}{\text{Number of true positives}} = \frac{TP}{TP + FN}$
-- "True positive rate"
+## Recall (Sensitivität)
+- Recall = $\frac{\text{Anzahl der wahren positiven Vorhersagen}}{\text{Anzahl der wahren positiven Werte}} = \frac{TP}{TP + FN}$
+- „True-Positive-Rate“
 
-## Usefulness
-- Recall focuses on capturing all positive instances and is important when the cost of false negatives is high.
-- Example: In a medical diagnosis, recall is important to ensure that all patients with a disease are correctly identified.
-- The complementary measure is specificity (true negative rate; e.g. how many healthy people are identified as not having the condition)
+## Nützlichkeit
+- Der Recall konzentriert sich auf die Erfassung aller positiven Werte und ist wichtig, wenn die Kosten für Falsch-negativ-Vorhersagen hoch sind.
+- **Beispiel:** Bei einer medizinischen Diagnose ist der Recall wichtig, um sicherzustellen, dass alle Patienten mit einer Krankheit korrekt identifiziert werden.
+- Das ergänzende Maß ist die Spezifität (Rate der echten Negativbefunde; z. B. wie viele gesunde Personen als nicht erkrankt identifiziert werden).
 ]
+
+--
 
 .pull-right[
 <div align="center">
@@ -896,43 +897,44 @@ What is the **precision** of our recidivism classifier?
 
 
 ---
-# Assessing classification performance
+# Bestimmung der Performanz eines binären Klassifizierers
 
 .pull-left[
-## Recall (Sensitivity)
-- Recall = $\frac{\text{Number of true positive predictions}}{\text{Number of true positives}} = \frac{TP}{TP + FN}$
-- "True positive rate"
+## Recall (Sensitivität)
+- Recall = $\frac{\text{Anzahl der wahren positiven Vorhersagen}}{\text{Anzahl der wahren positiven Werte}} = \frac{TP}{TP + FN}$
+- „True-Positive-Rate“
 
-## Usefulness
-- Recall focuses on capturing all positive instances and is important when the cost of false negatives is high.
-- Example: In a medical diagnosis, recall is important to ensure that all patients with a disease are correctly identified.
-- The complementary measure is specificity (true negative rate; e.g. how many healthy people are identified as not having the condition)
+## Nützlichkeit
+- Der Recall konzentriert sich auf die Erfassung aller positiven Werte und ist wichtig, wenn die Kosten für Falsch-negativ-Vorhersagen hoch sind.
+- **Beispiel:** Bei einer medizinischen Diagnose ist der Recall wichtig, um sicherzustellen, dass alle Patienten mit einer Krankheit korrekt identifiziert werden.
+- Das ergänzende Maß ist die Spezifität (Rate der echten Negativbefunde; z. B. wie viele gesunde Personen als nicht erkrankt identifiziert werden).
 ]
 
 .pull-right[
-## Example
+## Beispiel
 
 <div align="center"><br>
 <img src="../pics/confusion-matrix-recidivism.png" width=500>
 </div>
 
-What is the **recall** of our recidivism classifier?
+Wie hoch ist der **Recall** unseres Rückfall-Klassifizierers?
 ]
 
 
 
 ---
-# Assessing classification performance
+# Bestimmung der Performanz eines binären Klassifizierers
 
 .pull-left[
-## F1 score
+
+## F1-Score
 - F1 score = $2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}} = \frac{2TP}{2TP + FP + FN}$
-- F1 score is the harmonic mean of precision and recall.
+- Der F1-Score ist das harmonische Mittel aus Präzision und Recall.
 
 
-## Usefulness
-- It provides a balance between precision and recall, especially when there is an imbalance between the classes.
-- F1 score ranges from 0 to 1, where 1 indicates perfect precision and recall, and 0 indicates poor performance.
+## Nützlichkeit
+- Der F1-Score berichtet eine Balance zwischen Präzision und Recall, was insbesondere dann hilfreich ist, wenn ein Ungleichgewicht zwischen den Klassen besteht.
+- Der F1-Score reicht von 0 bis 1, wobei 1 für perfekte Präzision und Recall und 0 für eine schlechte Leistung steht.
 ]
 
 .pull-right[
@@ -942,59 +944,60 @@ What is the **recall** of our recidivism classifier?
 <img src="../pics/Harmonic_mean_3D_plot_from_0_to_100.png" width=350>
 </div>
 
-Normalised harmonic mean plot where x is precision, y is recall and the vertical axis is F1 score, in % points
+Abbildung des normalisierten harmonischen Mittels, wobei x die Präzision, y den Recall und die vertikale Achse den F1-Score in %-Punkten darstellt.
 
-`Source` [Andong87](https://commons.wikimedia.org/w/index.php?curid=24020909) 
+`Quelle` [Andong87](https://commons.wikimedia.org/w/index.php?curid=24020909) 
 ]
 
 
 ---
-# Assessing classification performance
+# Bestimmung der Performanz eines binären Klassifizierers
 
 .pull-left[
-## F1 score
+## F1-Score
 - F1 score = $2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}} = \frac{2TP}{2TP + FP + FN}$
-- F1 score is the harmonic mean of precision and recall.
+- Der F1-Score ist das harmonische Mittel aus Präzision und Recall.
 
 
-## Usefulness
-- It provides a balance between precision and recall, especially when there is an imbalance between the classes.
-- F1 score ranges from 0 to 1, where 1 indicates perfect precision and recall, and 0 indicates poor performance.
+## Nützlichkeit
+- Der F1-Score berichtet eine Balance zwischen Präzision und Recall, was insbesondere dann hilfreich ist, wenn ein Ungleichgewicht zwischen den Klassen besteht.
+- Der F1-Score reicht von 0 bis 1, wobei 1 für perfekte Präzision und Recall und 0 für eine schlechte Leistung steht.
 ]
 
 .pull-right[
-## Example
+## Beispiel
 
 <div align="center"><br>
 <img src="../pics/confusion-matrix-recidivism.png" width=500>
 </div>
 
-What is the **F1 score** of our recidivism classifier?
+Wie hoch ist der **F1-Score** unseres Rückfall-Klassifizierers?
 ]
 
 
 
 ---
-# Why performance metrics can matter
+# Weshalb die Wahl der Metrik den Unterschied machen kann
 
-## Scenario
+## Szenario
 
-- **Outcome:** Recidivism where individual recidivates (1) or not (0)
-- **False Positive (FP):** Model predicts an individual will recidivate when they actually do not. 
-- **False Negative (FN):** Model predicts an individual will not recidivate when they actually do.
-  - This could result in individuals who are at risk, being released without proper intervention, potentially leading to repeat offenses.
-
-## Assigning costs
-
-- What are downstream costs of FP and FN?
-- At which level do the costs apply - individual, societal, ...?
+- **Outcome:** Rückfälligkeit, wenn die Person rückfällig wird (1) oder nicht (0)
+- **Falsch positiv (FP):** Das Modell sagt voraus, dass eine Person rückfällig wird, wenn sie es tatsächlich nicht wird. 
+- **Falsch Negativ (FN):** Das Modell sagt voraus, dass eine Person nicht rückfällig wird, obwohl sie es tatsächlich wird.
 
 
-## Ethical and economic reasoning
+## Kosten
 
-- How should we weigh the costs of FP and FN?
-- What should we prioritize in our model - reducing FP, FN, or balancing both?
+- Was sind die nachgelagerten Kosten von FP und FN?
+- FP könnte dazu führen, dass einer Person Maßnahmen auferlegt werden, die nicht notwendig wären
+- FN könnte dazu führen, dass gefährdete Personen ohne angemessene Intervention entlassen werden, was möglicherweise zu erneuten Straftaten führt.
+- Auf welcher Ebene fallen die Kosten an - individuell, gesellschaftlich, ...?
 
+
+## Ethische und wirtschaftliche Überlegungen
+
+- Wie sollten wir die Kosten von FP und FN abwägen?
+- Was sollte in unserem Modell Vorrang haben - die Verringerung von FP, FN oder ein Kompromiss zwischen beiden?
 
 
 

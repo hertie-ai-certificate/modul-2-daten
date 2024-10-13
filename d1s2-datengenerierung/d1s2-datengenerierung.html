@@ -53,7 +53,7 @@ class: center, middle, inverse, title-slide
 
     2.1 [Das Problem mit der Repräsentativität](#sampling)
 
-    2.2 [Fehlerhafte Messung](#measurement)
+    2.2 [Problematische Messung](#measurement)
     
     2.3 [Ethische und rechtliche Fails](#ethicfails)
 
@@ -207,7 +207,7 @@ Zum Ausprobieren:
     &lt;/thead&gt;
     &lt;tbody&gt;
         &lt;tr&gt;
-            &lt;td&gt;Prozessproduzierte Daten&lt;/td&gt;
+            &lt;td&gt;&lt;b&gt;Prozessproduzierte Daten&lt;/b&gt;&lt;/td&gt;
             &lt;td&gt;
                 &lt;ul&gt;
                     &lt;li&gt;Kontinuierlich und in großem Umfang verfügbar&lt;/li&gt;
@@ -228,7 +228,7 @@ Zum Ausprobieren:
             &lt;/td&gt;
         &lt;/tr&gt;
         &lt;tr&gt;
-            &lt;td&gt;Aktiv erhobene Daten&lt;/td&gt;
+            &lt;td&gt;&lt;b&gt;Aktiv erhobene Daten&lt;/b&gt;&lt;/td&gt;
             &lt;td&gt;
                 &lt;ul&gt;
                     &lt;li&gt;Präzise Daten, speziell für den Anwendungsfall&lt;/li&gt;
@@ -263,19 +263,22 @@ name: dataflaws
 
 
 ---
-# Datengenerierungs-Fails
+# Beispiele für Datengenerierungs-Fails
 
-| **Kategorie**               | **Probleme**                                                                                                                                                                       | **Beispiele**                                                                                                                                                    |
-|-----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Datenerfassung**           | &lt;ul&gt;&lt;li&gt;Unvollständige Daten&lt;/li&gt;&lt;li&gt;Verzerrte Stichproben&lt;/li&gt;&lt;li&gt;Messfehler&lt;/li&gt;&lt;/ul&gt;                                                   | &lt;ul&gt;&lt;li&gt;Sensoren fallen temporär aus, und es fehlen Daten aus bestimmten Zeiträumen&lt;/li&gt;&lt;li&gt;Befragungen schließen bestimmte Altersgruppen aus&lt;/li&gt;&lt;li&gt;Falsche Standortdaten durch GPS-Ausfälle&lt;/li&gt;&lt;/ul&gt; |
-| **Datenverarbeitung**        | &lt;ul&gt;&lt;li&gt;Veraltete Daten&lt;/li&gt;&lt;li&gt;Falsch klassifizierte Daten&lt;/li&gt;&lt;li&gt;Daten-Duplikate&lt;/li&gt;&lt;li&gt;Datenrauschen&lt;/li&gt;&lt;/ul&gt;                          | &lt;ul&gt;&lt;li&gt;Veraltete Bevölkerungsdaten beeinflussen Planungen für neue Schulen&lt;/li&gt;&lt;li&gt;Automatische Tagging-Systeme klassifizieren Inhalte falsch&lt;/li&gt;&lt;li&gt;Dopplungen in Kundenlisten verfälschen Marketing-Analysen&lt;/li&gt;&lt;/ul&gt; |
-| **Datenverwaltung**          | &lt;ul&gt;&lt;li&gt;Fehlende Datenethik&lt;/li&gt;&lt;/ul&gt;                                                                                                      | &lt;ul&gt;&lt;li&gt;Datensammlung ohne Einwilligung der Nutzer&lt;/li&gt;&lt;li&gt;Diskriminierung durch unethische Datenverwendung in HR-Systemen&lt;/li&gt;&lt;/ul&gt;                                                                           |
-| **Datenintegration**         | &lt;ul&gt;&lt;li&gt;Inkompatible Datenformate&lt;/li&gt;&lt;/ul&gt;                                                                                                 | &lt;ul&gt;&lt;li&gt;Daten aus verschiedenen Datenbanken (z. B. Excel und SQL) lassen sich nicht ohne Weiteres integrieren&lt;/li&gt;&lt;li&gt;Unterschiedliche Zeitzonenformate in einer globalen Analyse&lt;/li&gt;&lt;/ul&gt;                    |
-| **Datenanalyse**             | &lt;ul&gt;&lt;li&gt;Bias in Trainingsdaten&lt;/li&gt;&lt;/ul&gt;                                                                                                    | &lt;ul&gt;&lt;li&gt;Historische Datensätze zu Straftaten enthalten rassistische Vorurteile, die in einem KI-System zur Kriminalitätsvorhersage reproduziert werden&lt;/li&gt;&lt;/ul&gt;                                                |
-| **Datenmanagement**          | &lt;ul&gt;&lt;li&gt;Schlechte Datenorganisation&lt;/li&gt;&lt;li&gt;Fehlende Metadaten&lt;/li&gt;&lt;/ul&gt;                                                                    | &lt;ul&gt;&lt;li&gt;Keine klare Benennung oder Strukturierung der Datenfelder&lt;/li&gt;&lt;li&gt;Wichtige Informationen zur Datenherkunft oder -bedeutung fehlen in der Dokumentation&lt;/li&gt;&lt;/ul&gt;                                       |
-| **Datenqualitätssicherung**  | &lt;ul&gt;&lt;li&gt;Mangelhafte Validierung&lt;/li&gt;&lt;li&gt;Keine Überprüfung von Ausreißern&lt;/li&gt;&lt;/ul&gt;                                                           | &lt;ul&gt;&lt;li&gt;Keine automatisierten Prüfungen zur Erkennung von Fehlern&lt;/li&gt;&lt;li&gt;Ausreißer bleiben unentdeckt und verfälschen das Ergebnis&lt;/li&gt;&lt;/ul&gt;                                                                  |
-| **Datenaufbewahrung**        | &lt;ul&gt;&lt;li&gt;Unzureichende Archivierung&lt;/li&gt;&lt;li&gt;Verlust von Daten&lt;/li&gt;&lt;/ul&gt;                                                                      | &lt;ul&gt;&lt;li&gt;Alte Daten werden unsachgemäß gelöscht oder nicht gesichert&lt;/li&gt;&lt;li&gt;Fehlende Backups führen zu Verlust von historischen Daten&lt;/li&gt;&lt;/ul&gt;                                                                |
+| **Kategorie**                          | **Probleme**                                                                                                                                                                       | **Beispiele**                                                                                                                                                    |
+|----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Unvollständige Daten**               | &lt;ul&gt;&lt;li&gt;Fehlende Datenpunkte durch technische Ausfälle&lt;/li&gt;&lt;li&gt;Daten werden nur für bestimmte Zeiträume erhoben&lt;/li&gt;&lt;/ul&gt;         | &lt;ul&gt;&lt;li&gt;Sensoren fallen zeitweise aus, sodass Verkehrsdaten für einige Tage fehlen&lt;/li&gt;&lt;li&gt;Wichtige Umfragedaten werden nicht erhoben, weil bestimmte Fragen übersprungen wurden&lt;/li&gt;&lt;/ul&gt; |
+| **Selection Bias (Verzerrte Stichproben)** | &lt;ul&gt;&lt;li&gt;Stichprobe nicht repräsentativ für die Zielpopulation&lt;/li&gt;&lt;li&gt;Ungeeignete Auswahlkriterien für Datenquellen&lt;/li&gt;&lt;/ul&gt; | &lt;ul&gt;&lt;li&gt;Online-Umfragen schließen ältere Menschen ohne Internetzugang aus&lt;/li&gt;&lt;li&gt;Ein KI-Modell wird nur mit Daten von Großstädten trainiert, was ländliche Regionen vernachlässigt&lt;/li&gt;&lt;/ul&gt; |
+| **Fehlerhafte Messung**                | &lt;ul&gt;&lt;li&gt;Messgeräte liefern ungenaue Daten&lt;/li&gt;&lt;li&gt;Menschliche Fehler bei manueller Datenerfassung&lt;/li&gt;&lt;/ul&gt;        | &lt;ul&gt;&lt;li&gt;GPS-Tracking liefert falsche Standortdaten in Gebieten mit schlechtem Empfang&lt;/li&gt;&lt;li&gt;Manuelle Zählungen von Besuchern eines Events führen zu Doppelzählungen&lt;/li&gt;&lt;/ul&gt; |
 
+
+---
+# Beispiele für Datengenerierungs-Fails
+
+| **Kategorie**                          | **Probleme**                                                                                                                                                                       | **Beispiele**                                                                                                                                                    |
+|----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Probleme beim Datenimport**          | &lt;ul&gt;&lt;li&gt;Inkompatible Formate erschweren den Import&lt;/li&gt;&lt;li&gt;Fehler bei der Zuordnung von Datenfeldern während des Imports&lt;/li&gt;&lt;/ul&gt; | &lt;ul&gt;&lt;li&gt;Daten aus verschiedenen Quellen sind unterschiedlich formatiert (z. B. unterschiedliche Datumsformate)&lt;/li&gt;&lt;li&gt;Digitalisierung von Papierakten erfolgt qualitativ unzureichend über OCR (auch Messproblem)&lt;/li&gt;&lt;/ul&gt; |
+| **Ethische und rechtliche Probleme**   | &lt;ul&gt;&lt;li&gt;Daten werden ohne Einwilligung erhoben&lt;/li&gt;&lt;li&gt;Sensible Daten werden ohne angemessene Schutzmaßnahmen erfasst&lt;/li&gt;&lt;/ul&gt; | &lt;ul&gt;&lt;li&gt;Datensammlung in einer Smart City ohne Zustimmung der Bürger&lt;/li&gt;&lt;li&gt;Gesundheitsdaten werden ohne ausreichenden Schutz gesammelt, was zu Datenschutzverletzungen führen kann&lt;/li&gt;&lt;/ul&gt; |
 
 
 
@@ -433,8 +436,30 @@ Eine Stichprobe ist repräsentativ, wenn sie so gezogen wird, dass sie **statist
 class: inverse, center, middle
 name: measurement
 
-# Fehlerhafte Messung
+# Problematische Messung
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
+
+
+Menschliches Verhalten - und damit auch Daten - sind oft schwer zu messen.
+Präferenzen schwierig zu messen, instabil
+Manche Features sehr gut zu messen, stabiler als gedacht (z.B. Gesichtsgeometrie)
+Messfehler können systematisch sein, z.B. durch soziale Erwünschtheit
+Messfehler können zufällig sein, z.B. durch technische Probleme
+
+Beispiele:
+- Vorhersage von Life outcomes
+- Vorhersage von politischen Präferenzen
+- Vorhersage von Kaufverhalten
+- Vorhersage von Krankheitsverläufen
+- Vorhersage von Kriminalität
+- Gesichtserkennung
+- Spracherkennung
+- OCR
+
+Konkrete Beispiele aus Snakeoil
+
+Reliabilität vs. Validität
+
 
 
 ---
