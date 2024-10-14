@@ -55,9 +55,6 @@ library(fontawesome)
 
 
 # Inhaltsverzeichnis
-
-<br><br>
-
 1. [HireVue](#a)
 
 2. [ClearView.ai](#b)
@@ -73,6 +70,12 @@ library(fontawesome)
 7. [Velogica](#g)
 
 8. [AFST Child Maltreatment](#h)
+
+9. [Epic Blutvergiftung Vorhersage](#i)
+
+10. [Google Kindesmissbrauch Prävention](#j)
+
+11. [Shotspotter](#k)
 ---
 name: a
 #HireVue Personalgewinnung
@@ -84,7 +87,7 @@ name: a
 - **Training der Modelle**: auf Basis von Bewertungen bereits eingestellter Mitarbeiter/innen, potenzielle Reproduktion bestehender Biases
 - BR Recherche: Bücherregale, seltene Vokabeln, und das Tragen einer Brille führen zu besseren Scores [(siehe Harlan/Schnuck, 2021)](https://interaktiv.br.de/ki-bewerbung/en/)
 
-`Source` [Harwell, 2019; ](https://www.washingtonpost.com/technology/2019/10/22/ai-hiring-face-scanning-algorithm-increasingly- decides- whether- you- deserve- job/) [Wang et al., 2023: S. 28](https://predictive- optimization.cs.princeton.edu/)
+`Source` [Harwell, 2019; ](https://www.washingtonpost.com/technology/2019/10/22/ai-hiring-face-scanning-algorithm-increasingly- decides- whether- you- deserve- job/) [Wang et al., 2023: S. 28](https://predictive-optimization.cs.princeton.edu/)
 ]
 
 .pull-right[
@@ -229,3 +232,60 @@ name: h
 [Bildquelle](https://paproviders.org/2022-rcpa-conference-together-a-thank-you-to-our-exhibitors/exhibitor-allegheny-family-network-square-icon-500-x-500/)
 ]
 ---
+name: i
+# Epic Blutvergiftung Vorhersage
+.pull-left[
+- Risiko für Blutvergiftung vorhersagen mit dem Epic Sepsis Tool
+- **Behauptung**: KI Vorhersage 6 Stunden vor Klinikpersonal möglich
+- **Belege**: keine peer-review Studien, Forscher der University of Michigan zeigten in einer [Validierungsstudie](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2781307) 2021 eine tatsächliche Accuracy von nur 63% (etwas besser als Zufall)
+- **Anfechtbarkeit:** keine technischen Daten geteilt
+- **Training der Modelle**: basierend auf vorhandenen Daten der Firma Epic (mitunter größte US Gesundheitsdatenbank)
+
+`Source` [Wong et al., 2021; ](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2781307) [Narayanan/Kapoor, 2024: S. 228](https://http://aisnakeoil.com/)
+]
+
+.pull-right[
+<div align="center">
+<img src="../pics/s-extra_I_EPIC.jpeg" width=1000>
+</div>
+[Bildquelle](https://www.orientsoftware.com/blog/epic-emr-system//)
+]
+---
+name: j
+# Google Kindesmissbrauch Prävention
+.pull-left[
+- Google Photos Kindesmissbrauch Prävention, Sperren von Accounts der Täter
+- **Behauptung**: Content Moderation mit KI, Kindesmissbrauch über Google Photos erkennen
+- **Belege**: keine Angaben zu Accuracy des Tools
+- **Anfechtbarkeit:** Google Nutzer/innen kennen Kriterien nicht oder können Missklassifikation anfechten
+- [NYT Recherche:](https://www.nytimes.com/2022/08/21/technology/google-surveillance-toddler-photo.html) Familienvater fotografierte geschwollenen Intimbereich seines Babys für den Hausarzt, Missklassifikation als Kindesmissbrauch und Zugang zu allen Google Services, Google SIM Karte und Google beruflicher Account gesperrt
+
+
+`Source` [Hill, 2022; ](https://www.nytimes.com/2022/08/21/technology/google-surveillance-toddler-photo.html) [Narayanan/Kapoor, 2024: S. 181, 194](https://http://aisnakeoil.com/)
+]
+
+.pull-right[
+<div align="center">
+<img src="../pics/s-extra_J_GooglePhotos.jpeg" width=1000>
+</div>
+[Bildquelle](www.photos.google.com)
+]
+---
+name: k
+# ShotSpotter 
+.pull-left[
+- Erkennung von Pistolenschüssen an öffentlichen Plätzen und in Gebäuden
+- **Behauptung**: KI Identifikation von Schüssen steigert öffentliche Sicherheit und verbessert Evidenz in Ermittlungsverfahren
+- **Belege**: keine externe Validierung, Belege für mögliche negative Auswirkungen des ShotSpotter Tools durch Fehlalarme und hohe Kosten, keine Reduktion an Waffenmissbrauch
+- **Anfechtbarkeit:** Hersteller SoundThinking lehnte externe Datenanfragen ab, Zivilorganisationen formierten sich gegen ShotSpotter Tool
+- **Training der Modelle**: keine Angabe
+
+`Source` [Washington D.C. Police, 2024; ](https://mpdc.dc.gov/publication/shotspotter-data-disclaimer-and-dictionary) [Narayanan/Kapoor, 2024: S. 264f.](https://http://aisnakeoil.com/)
+]
+
+.pull-right[
+<div align="center">
+<img src="../pics/s-extra_K_Shotspotter.png" width=1000>
+</div>
+[Bildquelle](https://illinoisanswers.org/2023/06/02/chicago-shotspotter-contract-cancel-brandon-johnson/)
+]
