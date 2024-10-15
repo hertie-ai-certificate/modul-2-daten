@@ -59,13 +59,11 @@ library(fontawesome)
 <br><br>
 1. [Was ist Big Data?](#whatisbigdata)
 
-2. [Chancen und Risiken von Big Data für das Gemeinwohl](#opportunities)
+2. [Das Big-Data-Paradoxon](#bigdataparadox)
 
-3. [Das Big-Data-Paradoxon](#bigdataparadox)
+3. [Garbage in, garbage out](#garbageingarbageout)
 
-4. [Garbage in, garbage out](#garbageingarbageout)
-
-5. [Übung](#exercise)
+4. [Übung](#exercise)
 
 
 
@@ -116,17 +114,6 @@ name: whatisbigdata
 5. (begrenzte) **Demokratisierung des Zugangs** zu großen Datenbeständen
 
 6.  **Verlagerung der Forschungsavantgarde** von der akademischen Welt zur Industrie
-
-
-
-
-
----
-class: inverse, center, middle
-name: opportunities
-
-# Chancen von Big Data für das Gemeinwohl
-<html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
 
 
 ---
@@ -269,7 +256,7 @@ name: bigdataparadox
 
 **Stichprobenverzerrung** als Folge von **coverage error** und **non-reponse**: Überrepräsentation von wohlhabenderen Personen mit einer Präferenz für Landon
 
-<br><br><br><br><br>
+<br><br><br>
 `Quelle` [Peverill Squire, 1988, Public Opinion Quarterly](https://www.jstor.org/stable/2749114)
 ]
 

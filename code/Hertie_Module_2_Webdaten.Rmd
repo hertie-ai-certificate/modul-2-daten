@@ -1,0 +1,219 @@
+---
+title: An R Markdown document converted from "Hertie_Module_2_Webdaten.ipynb"
+output: html_document
+---
+
+# Web Scraping und APIs
+# Daten aus dem Web sammeln mit R
+### Hertie School of Governance Berlin
+### Zertifikat: Künstliche Intelligenz, Modul 2
+### 16. - 18. Oktober 2024
+
+#### Was dieses Tutorial behandeln wird:
+- Scraping von statischen Webseiten
+- Scraping mehrerer statischer Webseiten
+- API-Aufrufe
+- Aufbau und Pflege eigener originärer Datenbestände basierend auf Webdaten
+
+#### Was wir heute nicht behandeln werden:
+- Scraping von dynamischen Webseiten
+
+#### Warum Web Scraping mit R? 🌐
+
+#### Web Scraping umfasst im Wesentlichen:
+- das Sammeln von (unstrukturierten) Daten aus dem Web, und
+- das Formatieren dieser Daten (z.B. Bereinigung, Überführung in ein tabellarisches Format).
+
+#### Warum sollte man Web Scraping betreiben?
+- Online vorhandene Datenfülle
+- Soziale Interaktionen im Netz
+- Dienste, die soziales Verhalten verfolgen
+
+Online-Daten sind ein sehr vielversprechendes Mittel, um Einsichten für Sie als Data Scientist zum Wohl der Allgemeinheit zu gewinnen. **ABER:** Online-Daten sind in der Regel für die Anzeige gedacht und nicht für einen (sauberen) Download!
+Glücklicherweise können wir mit R den gesamten Prozess des Herunterladens, Parsens und Nachbearbeitens automatisieren, um unsere Projekte leicht reproduzierbar zu machen.
+
+#### Los geht's!
+# (A) Text von einer Webseite scrapen
+
+```{r}
+# Schritt 1: Packages laden
+library(rvest)
+library(stringr)
+library(tidyverse)
+```
+
+```{r}
+# Schritt 2: Web URL festlegen
+parsed_url <- rvest::read_html("https://de.wikipedia.org/wiki/Datenpanne")
+```
+
+```{r}
+# Schritt 3: Angabe wo sich auf der Webseite die Information befindet
+parsed_url |>
+  rvest::html_element(xpath = '//*[@id="mw-content-text"]/div[1]/p[10]') |>
+  rvest::html_text()
+```
+
+##### **Ergebnis:** Wikipedia Artikel zu Datenpannen in Deutschland, Untersektion "Rechtliche Situation in Deutschland".
+
+
+**Zu beachten:** Zu Demonstrationszwecken werden wir in diesem Tutorial den Seitenquelltext direkt von der Live-Webseite parsen. Sie sollten wissen, dass es zur Gewährleistung der Reproduzierbarkeit am besten wäre, die HTML-Datei lokal herunterzuladen. Auf diese Weise können Sie Probleme vermeiden, die durch Änderungen im Inhalt oder in der Struktur der Quelle entstehen könnten.
+
+# (B) Tabellen von Webseiten scrapen
+
+# B.1 Datendiebstahl
+
+```{r}
+# Schritt 1: Packages laden
+install.packages("janitor")
+library(janitor)
+```
+
+```{r}
+url_p <- rvest::read_html("https://de.wikipedia.org/wiki/Liste_von_Datendiebstählen")
+datendieb_table_raw <- rvest::html_table(url_p, header = T) |> # extrahiert alle <table> Elemente von der Seite
+  purrr::pluck(1) |> # Tabelle an n-ter Stelle (1)
+  janitor::clean_names() # data cleaning der Tabellennamen
+datendieb_table_raw #Tabelle könnte hier schon ausgegeben werden
+```
+
+```{r}
+datendieb_table_raw$data_num <- str_extract(datendieb_table_raw$betroffene_datensatze_in_tsd, "[[:digit:].]+") %>% str_replace("\\.", "") %>% as.numeric()
+summary(datendieb_table_raw$data_num)
+hist(datendieb_table_raw$data_num)
+```
+
+# B.2 Spotify Hits
+
+```{r}
+url_p <- rvest::read_html("https://en.wikipedia.org/w/index.php?title=List_of_Spotify_streaming_records&oldid=1249839087")
+spotify_table_raw <- rvest::html_table(url_p, header = T) |> # extrahiert alle <table> Elemente von der Seite
+  purrr::pluck(1) |> # Tabelle an n-ter Stelle (1)
+  janitor::clean_names() # data cleaning der Tabellennamen
+#spotify_table_raw #Tabelle könnte hier schon ausgegeben werden
+```
+
+```{r}
+spotify_table <- spotify_table_raw |>
+  dplyr::mutate(song = stringr::str_remove_all(song, '\"'), #Anführungszeichen von Liedtiteln entfernen
+                streams_billions = as.numeric(streams_billions) #stream_billions als numerische Variable
+                ) |>
+  dplyr::slice(1:100) |> # drop dangling row with "As of date"
+  dplyr::select(-ref)
+head(spotify_table)
+```
+
+```{r}
+# Einfache Visualisierung der Künstler mit >3,5 Milliarden Streams
+ggplot(data = subset(spotify_table, streams_billions > 3.5), aes(x = streams_billions, y = artist_s)) +
+  geom_col() +
+  labs(title = "Streaming Records per Year",
+       x = "Streams (Billions)",
+       y = "Artist")
+```
+
+# B.3 Datendiebstähle öffentliche Verwaltung
+
+```{r}
+url_p <- rvest::read_html("https://en.wikipedia.org/wiki/List_of_data_breaches")
+cyber_table_raw <- rvest::html_table(url_p, header = T) |> # extrahiert alle <table> Elemente von der Seite
+  purrr::pluck(1) |> # Tabelle an n-ter Stelle (1)
+  janitor::clean_names() # data cleaning der Tabellennamen
+cyber_table_raw #Tabelle könnte hier schon ausgegeben werden
+```
+
+```{r}
+# Filter cyber_table_raw für year=2024
+cyber_table_raw |>
+  dplyr::filter(year == 2024)
+```
+
+**Ergebnis:** Fünf Cyberangriffe auf öffentliche Verwaltungen sind in diesem Jahr in der Quelle beschrieben worden. Davon befinden sich 4 in UK und ein Fall in Australien.
+
+# B.4 Deutsche Staatsschulden (Bundesbank)
+
+```{r}
+url_p <- rvest::read_html("https://www.bundesbank.de/de/presse/pressenotizen/deutsche-staatsschulden-928466")
+bundesbank_table_raw <- rvest::html_table(url_p, header = T) |> # extrahiert alle <table> Elemente von der Seite
+  purrr::pluck(1) |> # Tabelle an n-ter Stelle (1)
+  janitor::clean_names() # data cleaning der Tabellennamen
+bundesbank_table_raw #Tabelle könnte hier schon ausgegeben werden
+```
+
+```{r}
+# Datenformatierung, Data Cleaning
+bundesbank_table_raw$jahr <- as.integer(bundesbank_table_raw$jahr)
+bundesbank_table_raw$in_percent_des_bip <- as.numeric(gsub(",", ".", bundesbank_table_raw$in_percent_des_bip))
+```
+
+```{r}
+# Einfache Visualisierung: Deutsche Staatsverschuldung gemessen am Prozentsatz des deutschen BIPs
+ggplot(bundesbank_table_raw, aes(x = jahr, y = in_percent_des_bip)) +
+  geom_line(color = "blue") +  # Farbe der Linie festlegen
+  geom_point(color = "red") +  # Farbe der Punkte festlegen
+  scale_y_continuous(limits = c(50, 80)) + # y-Achse Limits setzten: Verändern Sie diese nach Belieben.
+  labs(title = "Deutsche Staatsverschuldung laut deutscher Bundesbank", # Beschriftung der Achsen
+       x = "Jahr",
+       y = "In Prozent des deutschen Bruttoinlandsprodukts (BIP)") +
+  theme_minimal()
+```
+
+**Ergebnis:** Der Graph zeigt die Entwicklung der deutschen Staatsverschuldung gemessen am prozentualen Anteil des deutschen Bruttoinlandprodukts (BIP).
+
+# (C) Applikation Programming Interfaces (API)
+
+APIs, auch Anwendungsprogrammierschnittstellen genannt, ermöglichen es Softwareanwendungen, miteinander zu kommunizieren und Daten auszutauschen. Im Kontext des Webs beziehen wir uns gewöhnlich auf RESTful Web APIs, die auf HTTP-Anfragen mit spezifischen Parametern reagieren und Daten zurücksenden.
+
+Um Daten von einer API zu beziehen, empfehlen wir Ihnen, folgenden Arbeitsablauf zu befolgen:
+
+1. **Lesen Sie die Dokumentation der API!**
+   - Dies ist entscheidend, um zu verstehen, wie die API funktioniert und welche Ressourcen verfügbar sind.
+
+2. **Ermitteln Sie die Basis-URL**
+   - Dies ist die Grundadresse der API, an die Anfragen gesendet werden.
+
+3. **Finden Sie die Parameter heraus, die sich auf die für Sie interessanten Ressourcen beziehen**
+   - Diese Parameter spezifizieren die Details Ihrer Anfrage, z.B. spezifische Datensätze oder die Anzahl der Ergebnisse, die zurückgegeben werden sollen.
+
+4. **Erstellen Sie eine Abfrage-URL aus der Basis-URL und den Abfrageparametern**
+   - Kombinieren Sie die Basis-URL mit den notwendigen Parametern, um die vollständige URL zu erstellen, die Ihre spezifische Anfrage darstellt.
+
+5. **Führen Sie die `GET`-Funktion auf der Abfrage-URL aus**
+   - Dies sendet die Anfrage an die API und erhält die Antwort.
+
+6. **Abhängig von der Kodierung (üblicherweise ist dies JSON), müssen Sie:**
+   - Das Ergebnis mit der `content`-Funktion parsen.
+   - Entweder `jsonlite` für JSON oder `xml2` für XML verwenden, um die erhaltenen Dateien zu parsen.
+
+Indem Sie diesen Workflow befolgen, können Sie effektiv und effizient Daten von APIs beziehen, die für Ihre Projekte oder Analysen relevant sind.
+
+```{r}
+library(httr)
+library(jsonlite)
+library(xml2)
+library(glue)
+```
+
+```{r}
+baseurl <- "https://swapi.dev/api/"
+
+query <- 'films'
+
+httr::GET(paste0(baseurl, query)) |> # Make API call
+  httr::content(as = 'text') |> # extract content as text
+  jsonlite::fromJSON() |> # convert JSON data into R object (nested list)
+  purrr::pluck(4) # extract from index inside nested list (4th place corresponding to "results" in the payload)
+```
+
+```{r}
+query <- 'people/?search=skywalker'
+
+httr::GET(paste0(baseurl, query)) |> # Make API call
+  httr::content(as = 'text') |> # extract content as text
+  jsonlite::fromJSON() |> # convert JSON data into R object (nested list)
+  purrr::pluck(4)  # extract from index inside nested list (4th place corresponding to "results" in the payload)
+```
+
+**Referenz:** Introduction to Data Science, Winter Semester 2024, Prof. Dr. Simon Munzert, Hertie School of Governance. https://github.com/intro-to-data-science-24/labs
+https://rawcdn.githack.com/intro-to-data-science-24/labs/ef7c1681527746897d8c80f8b703e8109264bc05/session-06-web-scraping/6-web-scraping.html
+

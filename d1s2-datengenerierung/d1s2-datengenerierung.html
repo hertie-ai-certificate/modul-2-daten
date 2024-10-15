@@ -55,8 +55,6 @@ class: center, middle, inverse, title-slide
 
     2.2 [Problematische Messung](#measurement)
     
-    2.3 [Ethische und rechtliche Fails](#ethicfails)
-
 
 
 
@@ -433,6 +431,23 @@ Eine Stichprobe ist repräsentativ, wenn sie so gezogen wird, dass sie **statist
 
 
 ---
+class: exercise, center, middle
+
+# Übung: Repräsentatitivität
+
+.content-box-white[
+**Diskussion in 2er-Gruppen, jeweils 2-3 Minuten**
+
+Finden Sie sich als Paar zusammen und erklären sie in 1-2 Minuten jeweils eine der Fragen.
+
+Partner 1: Was bedeutet "repräsentative Daten" oder "repräsentative Stichprobe"?
+
+Partner 2: Warum ist "repräsentative Stichprobe" meistens Quatsch?
+]
+
+
+
+---
 class: inverse, center, middle
 name: measurement
 
@@ -440,184 +455,148 @@ name: measurement
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
 
 
-Menschliches Verhalten - und damit auch Daten - sind oft schwer zu messen.
-Präferenzen schwierig zu messen, instabil
-Manche Features sehr gut zu messen, stabiler als gedacht (z.B. Gesichtsgeometrie)
-Messfehler können systematisch sein, z.B. durch soziale Erwünschtheit
-Messfehler können zufällig sein, z.B. durch technische Probleme
+---
+# Messung - gestern und heute
 
-Beispiele:
-- Vorhersage von Life outcomes
-- Vorhersage von politischen Präferenzen
-- Vorhersage von Kaufverhalten
-- Vorhersage von Krankheitsverläufen
-- Vorhersage von Kriminalität
-- Gesichtserkennung
-- Spracherkennung
-- OCR
+## 1994 (Hubble) vs. 2018 (New Horizons)
 
-Konkrete Beispiele aus Snakeoil
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/measurement-improvement-pluto1994_2018.jpeg" height=420&gt;
+&lt;/div&gt;
 
-Reliabilität vs. Validität
-
+`Quelle` [Reddit](https://www.reddit.com/r/spaceporn/duplicates/c58mni/the_first_photo_of_pluto_vs_the_last/)
 
 
 ---
-# Regression vs. classification
+# Messung - gestern und heute
+
+## US-Präsidentschaftswahlen 1948 (Dewey) vs. 2016 (Clinton)
+
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/02-dewey-truman.jpg" height=420&gt;
+&lt;img src="../pics/clinton-nyt.png" height=420&gt;
+&lt;/div&gt;
+
+---
+# Messung und AI-Anwendungen
 
 .pull-left[
-## Regression
-- Predicts a continuous outcome
-- Example: Predicting house prices, GDP growth, temperature
+## Messung ist ein zentraler Bestandteil von AI-Anwendungen
 
-## Classification
-- Predicts a categorical outcome
-- Example: Predicting whether a person will default on a loan, whether an email is spam, whether a patient has a disease
+- AI-Modelle lernen von Daten, die gemessen werden.
+- Gleichzeitig können AI-Modelle auch messen (z. B. Gesichtserkennung, Spracherkennung).
 
+✎ Messung ist gleichzeitig Grundlage (Input) für als auch Output von AI-Anwendungen.
+
+## Messfehler in AI-Anwendungen
+
+- Messfehler können systematisch sein (z. B. durch soziale Erwünschtheit).
+- Messfehler können zufällig sein (z. B. durch technische Probleme).
+- Messfehler können auch durch die AI-Anwendung selbst entstehen (z. B. durch schlechte Datenqualität).
 ]
-
---
 
 .pull-right[
-## Classifcation problems in the wild
-
-Classification problems occur often, perhaps even more so than regression problems, e.g.:
-
-1. A woman arrives at the emergency room with a set of symptoms. Which condition does she have?
-2. An online banking service must be able to determine whether or not a transaction is fraudulent, on the basis of the user’s IP address, past transaction history, and so forth.
-3. On the basis of DNA sequence data for a number of patients with and without a given disease, a biologist would like to figure out which DNA mutations are deleterious (disease-causing) and which are not.
-
-Decision-making problems often are classification problems!
-]
-
----
-# Supervised and unsupervised learning
-
-.pull-left-wide2[
-## Supervised learning
-- The algorithm learns from labeled data, i.e., data with known outcomes
-- The algorithm is trained on a training dataset and evaluated on a test dataset
-- The goal is to the predict unobserved outcomes
-
-## Unsupervised learning
-- The algorithm learns from unlabeled data
-- There are inputs but no supervising output; we can still learn about relationships and structure from such data
-
-## Analogies
-- Supervised: Child in school learns math (with teacher’s input)
-- Unsupervised: Child at home plays with toys (without teacher’s input)
-]
-
-
-.pull-right-small2[
-&lt;div align="center"&gt;&lt;br&gt;&lt;br&gt;
-&lt;img src="../pics/supervised-unsupervised-tasks.png" height=300&gt;
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/brown-dogs.png" width=450&gt;
+&lt;br&gt;
+&lt;img src="../pics/white-dogs.png" width=450&gt;
 &lt;/div&gt;
 ]
 
 
 ---
-# Training, validation and test dataset
+# Gut funktionierende Messung: Gesichtserkennung
 
+.pull-left[
+## Messung von Gesichtsmerkmalen
+
+- Gesichtsmerkmale sind oft gut messbar.
+- Gesichtsmerkmale sind oft stabil über die Zeit.
+- Massive Trainingsdaten für Gesichtserkennung verfügbar (Social Media, Fotoportale, etc.)
+
+## Beispiel: Paravision AI
+
+&gt; "In this Visa / Border test, Paravision ranks #1 globally for accuracy with an error rate that is 18% lower than the second-ranked vendor, delivering a False Negative Identification Rate of 0.22% at a False Positive Identification Rate of 0.3% across a dataset of 1,600,000 images." [Paravision AI](https://www.paravision.ai/news/paravisions-face-recognition-ranks-as-the-most-accurate-in-the-world/)
+]
+
+.pull-right[
 &lt;div align="center"&gt;
-&lt;img src="../pics/data_splitting.png" height=550&gt;
-&lt;/div&gt;
-
-
-
----
-# Overfitting
-
-&lt;div align="center"&gt;
-&lt;img src="../pics/age-hairiness-1.png" height=550&gt;
-&lt;/div&gt;
-
----
-# Overfitting
-
-&lt;div align="center"&gt;
-&lt;img src="../pics/age-hairiness-2.png" height=550&gt;
-&lt;/div&gt;
-
----
-# Overfitting
-
-&lt;div align="center"&gt;
-&lt;img src="../pics/age-hairiness-3.png" height=550&gt;
-&lt;/div&gt;
-
----
-# Overfitting
-
-&lt;div align="center"&gt;
-&lt;img src="../pics/age-hairiness-4.png" height=550&gt;
-&lt;/div&gt;
-
----
-# Overfitting
-
-&lt;div align="center"&gt;
-&lt;img src="../pics/age-hairiness-5.png" height=550&gt;
-&lt;/div&gt;
-
----
-# Overfitting
-
-&lt;div align="center"&gt;
-&lt;img src="../pics/age-hairiness-6.png" height=550&gt;
-&lt;/div&gt;
-
----
-# Overfitting
-
-&lt;div align="center"&gt;
-&lt;img src="../pics/age-hairiness-7.png" height=550&gt;
-&lt;/div&gt;
-
-
----
-# Overfitting in classification
-
-&lt;div align="center"&gt;
-&lt;img src="../pics/brown-dogs.png" width=700&gt;
-&lt;/div&gt;
-
----
-# Overfitting in classification
-
-&lt;div align="center"&gt;
-&lt;img src="../pics/brown-dogs.png" width=700&gt;
-&lt;img src="../pics/white-dogs.png" width=700&gt;
-&lt;/div&gt;
-
-
----
-# Overfitting in classification
-
-&lt;div align="center"&gt;
-&lt;img src="../pics/overfitting-wiki.png" width=400&gt;
-&lt;/div&gt;
-
-**Explained:** The green line represents an overfitted model and the black line represents a regularized model. While the green line best follows the training data, it is too dependent on that data and it is likely to have a higher error rate on new unseen data, compared to the black line.
-
-
----
-# Overfitting, ultimately explained
-
 &lt;br&gt;&lt;br&gt;
-
-&lt;div align="center"&gt;
-&lt;img src="../pics/overfitting.png" width=600&gt;
+&lt;img src="../pics/paravision-ai.jpeg" width=500&gt;
 &lt;/div&gt;
+]
+
+---
+# Clearview AI
+
+.pull-left[
+- Tool für Gesichtserkennung beliebiger Personen anhand von Trainingsdaten aus Social Media, Zeitungen, Online-Plattformen, PayPal Transaktionen, etc.
+- **Behauptung:** 99,85% Accuracy bei Stichprobe von 12 Millionen Fahndungsfotos [(s. Homepage)](www.clearview.ai)
+- **Belege:** Gutes Testergebnis beim US Nationalen Institut für Standards und Technologie
+- **Anfechtbarkeit:** Tool ist weder offen zugänglich, noch können Nutzer/innen ihre Fotos entfernen.
+- **Training der Modelle:** Web Scraping von Online-Plattformen, Webseiten und Medien ohne Einverständnis der Nutzer/innen
+- Hintergrund: NYT-Recherche: Staatliche Behörden benutzen Clearview.ai auch während Gerichtsverfahren weiter [(Hill, 2020)](https://www.nytimes.com/2020/01/18/technology/clearview-privacy-facial-recognition.html)
+
+`Quelle` [Kashmir Hill, 2024](https://www.penguinrandomhouse.com/books/691288/your-face-belongs-to-us-by-kashmir-hill/)
+]
+
+.pull-right-center[
+&lt;div align="center"&gt;
+&lt;img src="../pics/s-extra_B_Clearview.ai.jpeg" width=200&gt;
+&lt;br&gt;
+&lt;video width="300" controls autoplay&gt;
+  &lt;source src="../pics/clearview.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+&lt;/div&gt;
+
+`Quelle` [New York Times](https://www.nytimes.com/2020/01/18/technology/clearview-privacy-facial-recognition.html)
+]
+
 
 
 
 ---
-class: inverse, center, middle
-name: ethicfails
+# Nicht so gut funktionierende Messung: Hate Speech
 
-# Ethische und rechtliche Fails
-&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;    
+.pull-left-vsmall[
+## Das Problem
+
+- **Hate Speech** kann sich in verschiedenen Formen äußern.
+- **Hate Speech** ist schwer zu messen, weil es oft subtil und kontextabhhängig ist.
+- Es herrscht fundamentale Uneinigkeit darüber, was genau **Hate Speech** ist und wie es gemessen werden sollte.
+]
+
+.pull-right-vwide[
+## Beispiel: Facebook
+
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/fb-content-moderation-report-2.png" height=270&gt;
+&lt;img src="../pics/fb-content-moderation-report-1.png" height=270&gt;
+&lt;/div&gt;
+
+`Quelle` [Facebook](https://transparency.meta.com/reports/community-standards-enforcement/hate-speech/facebook/)
+]
+
+
+---
+# Menschliche Hate-Speech-Ratings
+
+&lt;div align="center"&gt;
+&lt;img src="../pics/table-messages-ranked-ger-1.png" width=700&gt;
+&lt;/div&gt;
+
+---
+# Menschliche Hate-Speech-Ratings
+
+&lt;div align="center"&gt;
+&lt;img src="../pics/table-messages-ranked-ger-2.png" width=700&gt;
+&lt;/div&gt;
+
+
 
 
 

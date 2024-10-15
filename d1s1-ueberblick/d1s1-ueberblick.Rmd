@@ -64,8 +64,6 @@ library(fontawesome)
 
 3. [(Data) Science für Public Policy](#science)
 
-3. [Data Science als Beruf](#job)
-
 4. [Ziele für dieses Modul](#goals)
 
 
@@ -153,6 +151,16 @@ Woran denken Sie zuerst, wenn sie "Daten" und "Data Science" hören?
 </div>
 ]
 
+---
+class: exercise, center, middle
+
+# Diskussion
+
+.content-box-white[
+**Was möchten Sie über Daten und Data Science lernen?**
+
+**Was sind Ihre Erwartungen an dieses Modul?**
+]
 
 
 ---
@@ -456,6 +464,25 @@ background-color: #000000
 ]
 
 
+---
+# Anforderungen in der Industrie
+
+<div align="center">
+<img src="../pics/linkedin-ds-data-skills.png" width=900>
+</div>
+
+`Quelle` Eigene Darstellung; Daten: doi.org/10.34740/kaggle/dsv/8217982; scraped „Data Scientist“ job postings from LinkedIn; n=4,342; countries: US, UK, CA, AU
+
+---
+# Anforderungen in der Industrie II
+
+<div align="center">
+<img src="../pics/linkedin-ds-other-skills.png" width=900>
+</div>
+
+`Quelle` Eigene Darstellung; Daten: doi.org/10.34740/kaggle/dsv/8217982; scraped „Data Scientist“ job postings from LinkedIn; n=4,342; countries: US, UK, CA, AU
+
+
 
 
 ---
@@ -644,7 +671,7 @@ class: exercise, center, middle
 # Übung
 
 .content-box-white[
-Was kann AI tun, was nicht?
+**Was kann AI tun, was nicht?**
 
 Whiteboard | AI-Anwendungen | Performanz | Schädlichkeit
 ]
@@ -660,67 +687,6 @@ Whiteboard | AI-Anwendungen | Performanz | Schädlichkeit
 </div>
 
 `Quelle` [Narayanan/Kapoor, AI Snake Oil, S.29](https://press.princeton.edu/books/hardcover/9780691249131/ai-snake-oil)
-
-
----
-class: inverse, center, middle
-name: job
-
-# Data Science als Beruf
-<html><div style='float:left'></div><hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/></html>
-
-
-
----
-# Berufs- und Lernfeld Data Science
-
-.pull-left[
-## Berufsbilder im Bereich Data Science sind vielfältig
-
-Data Scientist, Data Analyst, Data Engineer, Machine Learning Engineer, AI Researcher, Business Intelligence Analyst, Data Governance Specialist, Data Privacy Specialist, Data Visualization Specialist
-
-## Ausbildung
-
-- Immer mehr strukturierte Data-Science-Programme; Quereinstieg aus technischen Programmen
-- Autodidaktische Lernwege zunehmend unrealistisch; Online-Kurse i.d.R. nicht ausreichend
-- **Das Einhorn** "Umfassend ausgebildeter Data Scientist" (siehe rechts) **ist eine Illusion**
-]
-
-.pull-right-center[
-<div align="center">
-<img src="../pics/modern_data_scientist2.jpg" height=550>
-</div>
-]
-
-
----
-# Anforderungen in der Industrie
-
-<div align="center">
-<img src="../pics/linkedin-ds-data-skills.png" width=900>
-</div>
-
-`Quelle` Eigene Darstellung; Daten: doi.org/10.34740/kaggle/dsv/8217982; scraped „Data Scientist“ job postings from LinkedIn; n=4,342; countries: US, UK, CA, AU
-
----
-# Anforderungen in der Industrie II
-
-<div align="center">
-<img src="../pics/linkedin-ds-other-skills.png" width=900>
-</div>
-
-`Quelle` Eigene Darstellung; Daten: doi.org/10.34740/kaggle/dsv/8217982; scraped „Data Scientist“ job postings from LinkedIn; n=4,342; countries: US, UK, CA, AU
-
-
-
----
-# Schwerpunkte in der Ausbildung
-
-<div align="center">
-<img src="../pics/table-courses_classified.png" height=480>
-</div>
-
-`Quelle` Eigene Datenerhebung (April 2024), CSS-Master-Programme in Europa und USA
 
 
 ---
