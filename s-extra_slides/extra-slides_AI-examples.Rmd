@@ -76,6 +76,7 @@ library(fontawesome)
 10. [Google Kindesmissbrauch Prävention](#j)
 
 11. [Shotspotter](#k)
+
 ---
 name: a
 #HireVue Personalgewinnung
@@ -261,7 +262,6 @@ name: j
 - **Belege**: keine Angaben zu Accuracy des Tools
 - **Anfechtbarkeit:** Google Nutzer/innen kennen Kriterien nicht oder können Missklassifikation anfechten
 - [NYT Recherche:](https://www.nytimes.com/2022/08/21/technology/google-surveillance-toddler-photo.html) Familienvater fotografierte geschwollenen Intimbereich seines Babys für den Hausarzt, Missklassifikation als Kindesmissbrauch und Zugang zu allen Google Services, Google SIM Karte und Google beruflicher Account gesperrt
-
 
 `Source` [Hill, 2022; ](https://www.nytimes.com/2022/08/21/technology/google-surveillance-toddler-photo.html) [Narayanan/Kapoor, 2024: S. 181, 194](https://http://aisnakeoil.com/)
 ]

@@ -20,7 +20,7 @@ class: center, middle, inverse, title-slide
 # Tag 1: Der Daten-Lifecycle und: Woher kommen Daten?
 ]
 .subtitle[
-## Session 2: Datentypen und ihre Verwendung
+## Session 3: Datentypen und ihre Verwendung
 ]
 .author[
 ### Simon Munzert
@@ -47,609 +47,815 @@ class: center, middle, inverse, title-slide
 
 &lt;br&gt;&lt;br&gt;
 
-1. [Das Problem mit der Repräsentativität](#sampling)
+1. [Datentypen - ein Überblick](#datatypes)
 
-2. [Das Big-Data-Paradoxon](#bigdataparadox)
+2. [Relationale Datenstrukturen](#relationaldata)
 
-3. [Garbage in, garbage out](#garbageingarbageout)
+3. [Datentypen und Anwendungen](#datatypes)
 
-4. [Übung](#exercise)
+5. [Ihre Daten](#yourdata)
+
+
+---
+class: inverse, center, middle
+name: datatypes
+
+# Datentypen - ein Überblick
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
+
+
+---
+# Daten
+
+.pull-left[
+&lt;br&gt;
+## Was sind Daten?
+
+- Daten sind unkörperliche **Fakten**, **Zeichen** und **Symbole**.
+
+- Wir definieren sie oft nach ihrer **Quelle** (*z.B. Verwaltung, Geschichte, Medizin usw.*) und ihren **Formaten** (*z.B. Zahlen, Text, Standbilder, Geodaten, Audio, Video und Software.*) 
+
+- Daten werden als Grundlage der **Wissenshierarchie** unter der *DIKW-Pyramide* betrachtet.
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;img src="../pics/d6-s2-dikw.png" height=360&gt;
+&lt;/div&gt;
+]
+
+
+
+---
+# Grundgedanken
+
+.pull-left[
+## 1. Alles ist Daten.
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/excel-example-data.png" height=200&gt;
+&lt;img src="../pics/pages.jpg" height=200&gt;
+&lt;img src="../pics/black-dogs.png" height=180&gt;
+&lt;img src="../pics/berlin-strassenabschnitte-map.png" height=150&gt;
+&lt;img src="../pics/crosswalk.jpg" height=150&gt;
+&lt;/div&gt;
+]
+
+
+---
+# Grundgedanken
+
+.pull-left[
+## 1. Alles ist Daten.
+
+## 2. Daten sind nicht gleich Information.
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/top-100-websites-1.jpeg" width=350&gt;
+&lt;img src="../pics/lhc-cern.jpg" width=350&gt;
+&lt;/div&gt;
+]
+
+
+---
+# Grundgedanken
+
+.pull-left[
+## 1. Alles ist Daten.
+
+## 2. Daten sind nicht gleich Information.
+
+## 3. Wir können Daten klassifizieren danach, ...
+
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/top-100-websites-1.jpeg" width=350&gt;
+&lt;img src="../pics/lhc-cern.jpg" width=350&gt;
+&lt;/div&gt;
+]
+
+
+---
+# Grundgedanken
+
+.pull-left[
+## 1. Alles ist Daten.
+
+## 2. Daten sind nicht gleich Information.
+
+## 3. Wir können Daten klassifizieren danach, ...
+
+- wer sie generiert (Mensch vs. Maschine)
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/top-100-websites-1.jpeg" width=350&gt;
+&lt;img src="../pics/lhc-cern.jpg" width=350&gt;
+&lt;/div&gt;
+]
+
+
+
+---
+# Grundgedanken
+
+.pull-left[
+## 1. Alles ist Daten.
+
+## 2. Daten sind nicht gleich Information.
+
+## 3. Wir können Daten klassifizieren danach, ...
+
+- wer sie generiert (Mensch vs. Maschine)
+
+- wie bewusst sie erhoben werden (prozessgeneriert vs. aktiv erhoben)
+
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/top-100-websites-1.jpeg" width=350&gt;
+&lt;img src="../pics/lhc-cern.jpg" width=350&gt;
+&lt;/div&gt;
+]
+
+
+
+---
+# Grundgedanken
+
+.pull-left[
+## 1. Alles ist Daten.
+
+## 2. Daten sind nicht gleich Information.
+
+## 3. Wir können Daten klassifizieren danach, ...
+
+- wer sie generiert (Mensch vs. Maschine)
+
+- wie bewusst sie erhoben werden (prozessgeneriert vs. aktiv erhoben)
+
+- wie strukturiert sie sind (maschinenlesbar vs. nicht maschinenlesbar)
+    
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/top-100-websites-1.jpeg" width=350&gt;
+&lt;img src="../pics/lhc-cern.jpg" width=350&gt;
+&lt;/div&gt;
+]
+
+
+---
+# Grundgedanken
+
+.pull-left[
+## 1. Alles ist Daten.
+
+## 2. Daten sind nicht gleich Information.
+
+## 3. Wir können Daten klassifizieren danach, ...
+
+- wer sie generiert (Mensch vs. Maschine)
+
+- wie bewusst sie erhoben werden (prozessgeneriert vs. aktiv erhoben)
+
+- wie strukturiert sie sind (maschinenlesbar vs. nicht maschinenlesbar)
+
+- was sie abbilden (welche Art von Information, z.B. Text, Bild, Geodaten, Netzwerkdaten)
+
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/top-100-websites-1.jpeg" width=350&gt;
+&lt;img src="../pics/lhc-cern.jpg" width=350&gt;
+&lt;/div&gt;
+]
+
+
+---
+# Grundgedanken
+
+.pull-left[
+## 1. Alles ist Daten.
+
+## 2. Daten sind nicht gleich Information.
+
+## 3. Wir können Daten klassifizieren danach, ...
+
+- wer sie generiert (Mensch vs. Maschine)
+
+- wie bewusst sie erhoben werden (prozessgeneriert vs. aktiv erhoben)
+
+- wie strukturiert sie sind (maschinenlesbar vs. nicht maschinenlesbar)
+
+- was sie abbilden (welche Art von Information, z.B. Text, Bild, Geodaten, Netzwerkdaten)
+
+Und nach vielem mehr (Beständigkeit, Digitalisierung, etc.). Für uns eher relevant: Welche **Datentypen** sind **im Data-Science- und AI-Kontext** besonders relevant und wie wir sie verwenden?
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/top-100-websites-1.jpeg" width=350&gt;
+&lt;img src="../pics/lhc-cern.jpg" width=350&gt;
+&lt;/div&gt;
+]
+
+
+---
+# Daten vs. Datenformate
+
+
+.pull-left-wide[
+## Datenformate
+
+- [Datenformate](https://de.wikipedia.org/wiki/Datenformat) sind die **Art und Weise, wie Daten gespeichert und übertragen werden**.
+- Sie sind **nicht** dasselbe wie Datentypen.
+- Datenformate legen fest, wie Daten strukturiert und abgelegt werden, und wie sie bei ihrer Verarbeitung zu interpretieren sind.
+- Es gibt eine nahezu unerschöpfliche Masse an Datenformaten, die sich zum Beispiel in der Vielfalt von [Dateinamenserweiterungen](https://de.wikipedia.org/wiki/Liste_von_Dateinamenserweiterungen) widerspiegelt.
+
+## Wahl von Datenformaten
+
+- Datenwissenschaftler haben oft mehr oder weniger ausgeprägte Präferenzen für bestimmte Datenformate und -strukturen.
+- **Beispiel 1** (für einfach strukturierte Daten): Excel Binary File Format (.XLS) &lt; Office Open XML (.XLSX) &lt; [CSV](https://de.wikipedia.org/wiki/CSV_(Dateiformat)) 
+- **Beispiel 2** (für semistrukturierte Daten): 
+[JSON](https://de.wikipedia.org/wiki/JavaScript_Object_Notation) vs. [XML](https://de.wikipedia.org/wiki/Extensible_Markup_Language) 
+- **Beispiel 3** (für vektorielle Geodaten):  [Shapefile](https://de.wikipedia.org/wiki/Shapefile) vs. [GeoJSON](https://de.wikipedia.org/wiki/GeoJSON) 
+]
+
+.pull-right-small[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;div align="center"&gt;
+&lt;img src="../pics/file-formats.jpg" width=300&gt;
+&lt;/div&gt;
+]
+
 
 
 
 ---
 class: inverse, center, middle
-name: correlation
+name: relationaldata
 
-# Das Problem mit der Repräsentativität
+# Relationale Datenstrukturen
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
 
 
 ---
-# Getäuscht durch „Repräsentativität“
+# Die Allgegenwärtigkeit von relationalen Datenstrukturen
 
 .pull-left[
-&lt;div align="center"&gt;
-&lt;img src="../pics/survey-intelligence.png" width=450&gt;
-&lt;/div&gt;
+### Von Tabellen...
 
-`Quelle` [Robin Andrews, IFLScience](https://www.iflscience.com/editors-blog/survey-finds-most-americans-think-that-they-have-above-average-intelligence/)
-
+- Wenn Sie an Daten auf Ihrem Laptop denken, haben Sie möglicherweise ein [Spreadsheet](https://de.wikipedia.org/wiki/Tabellenkalkulation) im Kopf.
+- In der Tat arbeitet ein Großteil der klassischen "statistischen" Software (SPSS, Stata, MS Excel) standardmäßig mit Spreadsheets als Dateninput.
+- Gleichzeitig ist einer Ihrer ersten Gedanken möglicherweise auch [dateibasiert](https://en.wikipedia.org/wiki/List_of_file_formats). Die Daten werden in Dateien gespeichert, und diese Dateien werden von unserer Datenverwaltungssoftware gelesen (und erstellt).
+- In vielen Fällen ist eine **zweidimensionale Datenstruktur** sinnvoll. Wir nutzen zum Beispiel
+  - Befragte x Einstellungen
+  - Bezirke x Merkmale
+  - Beiträge in sozialen Medien x Textmerkmale
 ]
 
-.pull-right[
+.pull-right-center[
+&lt;br&gt;&lt;br&gt;
 &lt;div align="center"&gt;
-&lt;img src="../pics/eu-summertime.png" width=450&gt;
+&lt;img src="../pics/clippy-message.jpeg" height=300&gt; 
 &lt;/div&gt;
-
-`Quelle` [Maxime Schlee, Politico](https://www.politico.eu/article/80-percent-of-eu-citizens-want-to-scrap-daylight-savings-report-summertime-directive/)
-
 ]
-
 
 
 ---
-# Stichproben und Repräsentativität
 
-.pull-left[
-## Eine substantielle Definition von Repräsentativität
+# Die Allgegenwärtigkeit von mehrdimensionalen Datenstrukturen
 
-Eine Stichprobe (oder Daten im Allgemeinen) ist „repräsentativ“, wenn **die aus der Stichprobe gezogenen Schlüsse verallgemeinert werden können** auf die Grundgesamtheit von Interesse.
+.pull-left-center[
+&lt;div align="center"&gt;
+&lt;img src="../pics/legislator-structure.png" height=520&gt;
+&lt;/div&gt;
+`Credit` [saschagobel/legislatoR](https://github.com/saschagobel/legislatoR)
 ]
 
 .pull-right[
-## Eine formalere Definition
+### ... zu komplexen Datenstrukturen
 
-Eine Stichprobe ist repräsentativ, wenn sie so gezogen wird, dass sie **statistisch nicht von der interessierenden Grundgesamtheit** unterscheidbar ist.
+- Je länger man jedoch darüber nachdenkt, desto problematischer wird es, Daten systematisch in zweidimensionalen Strukturen abzulegen.
+- **Beispiele**:
+  - Befragte x Einstellungen x Länder x Zeit
+  - Bezirke x Unterbezirke Merkmale x Zeit
+  - Beiträge in sozialen Medien x Retweets x Benutzer x Benutzereigenschaften x Netzwerkmerkmale x Metadaten
+- Die Abbildung von dreidimensionalen auf zweidimensionale Strukturen ist technisch einfach machbar.
+- Bei **vielfachen heterogenen Datenquellen** wird es unübersichtlich.
+- Die Verwaltung komplexer Datenstrukturen ist nur ein Vorteil der Verwendung von **Datenbanken**.
 ]
-
-&lt;div align="center"&gt;
-&lt;img src="../pics/samples.png" height=300&gt;
-&lt;/div&gt;
-
 
 
 ---
-# Das Problem mit der „Repräsentativität“
 
-## Warum „Repräsentativität“ ein problematischer Begriff ist
+# Wann Datenbanken nützlich werden
 
-1. Ob eine Stichprobe repräsentativ ist, hängt von Ihrem Interesse ab.
-2. Man kann eine Stichprobe nicht a priori als „repräsentativ“ bezeichnen. 
-3. Die Beurteilung der Repräsentativität einer Stichprobe erfordert starke Annahmen über Ihr Wissen über die Grundgesamtheit und Ihre Messungen der Merkmale, die „repräsentativ“ sein sollten.
+.pull-left[
+### Größe und Struktur
+- Sie haben **Datenmengen, die den Arbeitsspeicher** auf Ihrem Computer übersteigen. Datenbanken sind nur durch die verfügbare Festplattengröße begrenzt (oder können auf mehrere Festplatten/Rechner verteilt werden).
+- Ihre **Datenstruktur ist komplex**. Datenbanken erlauben es, Daten mit komplexen Datenstrukturen zu speichern, abzurufen und zu untergliedern.
+- Ihre Daten sind groß und Sie müssen **häufig darauf zugreifen/daraus filtern**. Die Abfrage von Datenbanken ist schnell.
+- Sie legen Wert auf **Datenqualität** und haben klare Vorstellungen, wie Daten aussehen sollen. Mit Hilfe von Datenbanken können Sie spezifische Regeln für die Erweiterung und Aktualisierung Ihrer Datenbank definieren.
+]
 
 --
 
-.pull-left[
-
-&lt;br&gt;
-## Ein Beispiel
-
-- Sie führen eine Umfrage zur Wahlabsicht durch.
-- Wen möchten Sie repräsentieren? Die Wahlbevölkerung oder die Gesamtbevölkerung?
-- Wie erreichen Sie eine repräsentative Stichprobe? Zufallsauswahl? Gewichtung?
-
-]
-
 .pull-right[
-&lt;div align="center"&gt;
-&lt;br&gt;
-&lt;img src="../pics/interview.jpg" height=250&gt;
-&lt;/div&gt;
-]
-
----
-# "Total survey error"
-
-.pull-left[
-## Zwei grundsätzliche Fehlerquellen bei der Datensammlung
-
-- **Messfehler**: was man misst, ist nicht das, was man messen will
-- Fehler der **Repräsentation**: Die Gruppe, die Sie beobachten, ist nicht verallgemeinerbar auf die interessierende Population
-]
-
-.pull-right[
-## Total survey error framework
-
-&lt;div align="center"&gt;
-&lt;br&gt;
-&lt;img src="../pics/total-survey-error.png" height=400&gt;
-&lt;/div&gt;
-
-`Quelle` [Groves et al. 2009, Survey Methodology](https://books.google.de/books?hl=de&amp;lr=&amp;id=HXoSpXvo3s4C)
+### Zugänglichkeit und Gleichzeitigkeit
+- Sie **arbeiten gemeinsam mit anderen** an einem Datenprojekt Mit einer Datenbank haben Sie eine gemeinsame, zuverlässige Infrastruktur zur Verfügung, auf die mehrere Benutzer gleichzeitig zugreifen können.
+- Wenn mehrere Parteien beteiligt sind, können Nutzerprivilegien wichtig sein (z. B. nur Lesezugriff, Zugriff auf Teile der Daten, eingeschränkte Verwaltungsrechte usw.). Die meisten Datenbanken erlauben die **Definition unterschiedlicher Nutzungsrechte für verschiedene Benutzer**.
 ]
 
 
 ---
-# Mess- und Stichprobenfehler in freier Wildbahn
+# Codds relationales Modell für Datenbanken
 
 .pull-left[
-## Überrepräsentation und falsche Angaben in Wahlumfragen
+- Das Konzept relationaler Datenbanken baut auf dem [relational model (RM)](https://en.wikipedia.org/wiki/Relational_model) auf, das 1969/1970 von [Edgar F. "Ted" Codd](https://en.wikipedia.org/wiki/Edgar_F._Codd) vorgeschlagen wurde.
+- Codd beschrieb das RM formal, führte es aber auch mit Konzepten ein, die auch heute noch verwendet werden (Normalisierung, Schlüssel, Joins, usw.).
+- Die Grundannahme des relationalen Modells ist, dass alle Daten als Relationen (Tabellen) dargestellt werden können.
+- Informationen werden dann durch in Beziehung stehende Datenwerte dargestellt.
 
-- Umfragestatistiken überschätzen die Wahlbeteiligung oft erheblich. 
-- Zwei unterschiedliche Phänomene sind für diese Diskrepanz verantwortlich:
-    1. Überrepräsentation der tatsächlichen Wähler
-    2. Falsche Angaben zur Wahlbeteiligung durch Nichtwähler unter den Umfrageteilnehmern. 
-- Studien zur Validierung der Wahlbeteiligung helfen, das Problem auf individueller Ebene zu identifizieren.
-- Eine Verzerrung der Wahlbeteiligung kann sich auch auf Analysen nachgelagerter Variablen (z.B. Wahlverhalten) auswirken.
+&lt;div align="center"&gt;
+&lt;img src="../pics/edgar-codd.jpeg" height=150&gt;
+&lt;/div&gt;
+[Ted Codd](https://en.wikipedia.org/wiki/File:Edgar_F_Codd.jpg), Turing Award Gewinner 1981
+]
+
+
+.pull-right-center[
+&lt;div align="center"&gt;
+&lt;img src="../pics/codd-relational-model.png" height=500&gt;
+&lt;/div&gt;
+`Credit` [Communications of the ACM 13(6), 1970](https://dl.acm.org/doi/10.1145/362384.362685)
+]
+
+
+---
+# Tabellarische Daten: Beispiel
+
+.pull-left[
+### Speicherung von Daten in Tabellen
+
+- Eine einzige Tabelle stellt bereits Beziehungen her: Alle Daten in einer Zeile gehören zu demselben Datensatz.
+- Wenn wir komplexere Beziehungen darstellen wollen (z. B. das Gewicht einer Person zweimal messen oder das Gewicht ihrer Kinder ebenfalls messen), können wir Daten von einer Tabelle zur anderen in Beziehung setzen.
+
+### Beispiel
+
+- Wir haben Daten über Peter, Paul und Mary gesammelt.
+- Wir haben Informationen über Geburtstage, Telefonnummern und Lieblingsspeisen.
+- Wie können wir diese Informationen in Tabellen darstellen?
+]
+
+--
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/adcr-relational-data-1.png" width=600&gt;
+&lt;/div&gt;
+&lt;div align="center"&gt;
+&lt;img src="../pics/adcr-relational-data-2.png" width=300&gt;
+&lt;/div&gt;
+
+- Wir beginnen mit der Darstellung der Daten in zwei Tabellen.
+- Sie sind über den Schlüssel `nameid` verknüpft, so dass wir die vollständigen Namen nicht in die Tabelle der Telefonnummern aufnehmen müssen.
+- Beachten Sie, dass wir hier eine 1:m (one-to-many) Beziehung haben, da Peter zwei Telefonnummern hat.
+]
+
+---
+# Tabellarische Daten: Beispiel
+
+.pull-left[
+### Speicherung von Daten in Tabellen
+
+- Eine einzige Tabelle stellt bereits Beziehungen her: Alle Daten in einer Zeile gehören zu demselben Datensatz.
+- Wenn wir komplexere Beziehungen darstellen wollen (z. B. das Gewicht einer Person zweimal messen oder das Gewicht ihrer Kinder ebenfalls messen), können wir Daten von einer Tabelle zur anderen in Beziehung setzen.
+
+### Beispiel
+
+- Wir haben Daten über Peter, Paul und Mary gesammelt.
+- Wir haben Informationen über Geburtstage, Telefonnummern und Lieblingsspeisen.
+- Wie können wir diese Informationen in Tabellen darstellen?
 ]
 
 .pull-right[
 &lt;div align="center"&gt;
-&lt;br&gt;
-&lt;img src="../pics/selb-munzert-overreporting.png" height=450&gt;
+&lt;img src="../pics/adcr-relational-data-1.png" width=600&gt;
+&lt;/div&gt;
+&lt;div align="center"&gt;
+&lt;img src="../pics/adcr-relational-data-2.png" width=300&gt;
 &lt;/div&gt;
 
-`Quelle` [Selb and Munzert 2013, Electoral Studies](https://kops.uni-konstanz.de/server/api/core/bitstreams/e755783d-acee-4592-a666-1562fc912906/content)
+- Die Art und Weise, wie wir die Daten speichern, ist jedoch nicht ideal. In der ersten Tabelle haben wir drei Spalten, die praktisch das Gleiche messen. Und was, wenn es noch mehr Lieblingsessen gibt? Das Hinzufügen von Informationen auf diese Weise führt zu einer Menge redundanter Informationen.
+- Wir können die Daten normalisieren, um Redundanzen zu vermeiden.
 ]
 
----
-# Schlechte Stichproben: gelernte Lektionen
 
+---
+# Tabellarische Daten: Beispiel
 
 .pull-left[
-## Was bedeutet das für Sie?
+### Speicherung von Daten in Tabellen
 
-- Nehmen Sie die angegebene „Repräsentativität“ nicht für bare Münze.
-- Der Stichprobenumfang allein garantiert keine Repräsentativität (siehe Big Data!).
-- Lassen Sie sich nicht von „großen Datenmengen“ täuschen (nicht per se repräsentativ).
-- Lassen Sie sich nicht von „Zufallsstichproben“ täuschen (nicht per se repräsentativ).
-- Schlechte Stichproben sind nicht auf Erhebungen beschränkt (denken Sie z.B. an Daten aus sozialen Medien, die Auswahl von Fällen für eine medizinische Studie oder die Auswahl von Ländern für eine politische Studie).
+- Eine einzige Tabelle stellt bereits Beziehungen her: Alle Daten in einer Zeile gehören zu demselben Datensatz.
+- Wenn wir komplexere Beziehungen darstellen wollen (z. B. das Gewicht einer Person zweimal messen oder das Gewicht ihrer Kinder ebenfalls messen), können wir Daten von einer Tabelle zur anderen in Beziehung setzen.
+
+### Beispiel
+
+- Wir haben Daten über Peter, Paul und Mary gesammelt.
+- Wir haben Informationen über Geburtstage, Telefonnummern und Lieblingsspeisen.
+- Wie können wir diese Informationen in Tabellen darstellen?
 ]
 
 .pull-right[
-## Achten Sie stattdessen auf: 
+&lt;div align="center"&gt;
+&lt;img src="../pics/adcr-relational-data-3.png" width=300&gt;
+&lt;/div&gt;
 
-1. **Transparenz** über das Auswahlverfahren.
-2. **Validierung** der Stichprobe anhand externer Benchmarks.
-4. **Ihren gesunden Menschenverstand**: Ist die Datengrundlage systematisch verzerrt, d.h. auf relevanten Kriterien unterschiedlich von der Grundgesamtheit?
+- Besser ist es, die Informationen aufzuteilen und eine weitere Tabelle für die Essenspräferenzen zu erstellen.
+- Es bleibt immer noch etwas Redundanz übrig. Ist es wirklich notwendig, "Hamburger" zweimal in der Tabelle zu haben?
+]
+
+
+---
+# Tabellarische Daten: Beispiel
+
+.pull-left[
+### Speicherung von Daten in Tabellen
+
+- Eine einzige Tabelle stellt bereits Beziehungen her: Alle Daten in einer Zeile gehören zu demselben Datensatz.
+- Wenn wir komplexere Beziehungen darstellen wollen (z. B. das Gewicht einer Person zweimal messen oder das Gewicht ihrer Kinder ebenfalls messen), können wir Daten von einer Tabelle zur anderen in Beziehung setzen.
+
+### Beispiel
+
+- Wir haben Daten über Peter, Paul und Mary gesammelt.
+- Wir haben Informationen über Geburtstage, Telefonnummern und Lieblingsspeisen.
+- Wie können wir diese Informationen in Tabellen darstellen?
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/adcr-relational-data-4.png" width=300&gt;
+&lt;/div&gt;
+&lt;div align="center"&gt;
+&lt;img src="../pics/adcr-relational-data-5.png" width=300&gt;
+&lt;/div&gt;
+
+- Jetzt ist es besser.
+- Bei der Umstrukturierung der Informationen in unserer Datenbank haben wir **Redundanz (Duplikation)** vermieden.
+- Dies ist der Prozess der **Datenbanknormalisierung**.
+]
+
+
+---
+# Was ist SQL?
+
+### Hintergrund und Geschichte
+
+- SQL (ausgesprochen [ɛsˌkjuːˈɛl] wie in S-Q-L, oder [siːkwəl] wie in sequel) steht für **Structured Query Language**. Ursprünglich hieß sie SEQUEL (Structured English Query Language), wurde aber aufgrund von Markenrechtsproblemen fallen gelassen.
+- Es handelt sich um eine domänenspezifische Sprache, die für die Abfrage von Daten in relationalen Datenbanken entwickelt wurde.
+- Ursprünglich wurde sie 1974 bei IBM von [Donald D. Chamberlin](https://en.wikipedia.org/wiki/Donald_D._Chamberlin) und [Raymond F. Boyce](https://en.wikipedia.org/wiki/Raymond_F._Boyce) entwickelt.
+
+--
+
+### Warum SQL?
+
+- Es gibt zwar unterschiedliche Datenbanktypen, aber die meisten relationalen Datenbanken, denen Sie begegnen werden, sprechen SQL.
+- Die wichtigste Fähigkeit für die Arbeit mit Datenbanken ist das Erlernen von SQL. 
+- SQL wird in vielen (den meisten?) Stellenausschreibungen für Datenwissenschaftler als erforderliche Fähigkeit aufgeführt.
+
+
+
+---
+
+# Datenbanken und Datenbankmanagementsysteme
+
+### Was sind Datenbanken?
+
+- Datenbanken sind eine organisierte Sammlung von Daten.
+- Sie sind so organisiert, dass sie ein effizientes Abrufen von Daten(-selektionen) ermöglichen.
+- Sie enthalten Daten + Metadaten über Struktur und Organisation.
+- Der Zugriff auf sie erfolgt im Allgemeinen über ein Datenbankmanagementsystem.
+
+### Wo sind Datenbanken?
+
+- Datenbanken können lokal oder dezentral, im Arbeitsspeicher oder auf der Festplatte existieren.
+- Wenn sie lokal gespeichert sind, werden sie als Binärdatei (nicht als Textdatei) gespeichert.
+- Im Allgemeinen denken wir an ein **Client-Server-Modell**:
+  - Datenbanken befinden sich auf einem **Server**, der sie verwaltet.
+  - Die Benutzer interagieren mit dem Server über ein **Client**-Programm.
+  - Mehrere Benutzer können **auf dieselbe Datenbank **gleichzeitig** zugreifen.
+
+
+
+---
+# Datenbanken und Datenbankmanagementsysteme
+
+.pull-left-wide[
+### Was sind DBMS?
+
+- Datenbankmanagementsysteme (DBMS) bieten **effiziente**, **zuverlässige**, **bequeme**, **sichere** Speicherung von und Zugriff auf **massive** Daten.
+    - **Effizient**: Einfach schnell.
+    - **Zuverlässig**: Hohe Betriebszeit.
+    - **Komfortabel**: Hochwertige Abfragesprachen.
+    - **Sicher**: Robust gegenüber Stromausfällen, Knotenausfällen, usw.
+    - **Mehrbenutzer**: Gleichzeitigkeitskontrolle. Nicht nur ein Benutzer, sondern mehrere.
+    - **Massiv**: Denken Sie an Terabytes, nicht an Gigabytes. Verarbeitung von Daten, die sich außerhalb des Speichers befinden.
+- Es gibt [etliche DBMS](https://en.wikipedia.org/wiki/List_of_relational_database_management_systems) allein für relationale Datenbankstrukturen.
+- RDBMS unterscheiden sich in Bezug auf Fähigkeiten, implementierte Funktionen, Betriebssystemunterstützung und vieles mehr. Siehe [The Database Database](https://technically.dev/database-database) für einen Überblick.
+]
+
+.pull-right-small[
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/mysql-logo.png" height=120&gt;
+&lt;img src="../pics/postgresql-logo.png" height=150&gt;
+&lt;img src="../pics/sqlite-logo.png" height=110&gt;
+&lt;img src="../pics/duckdb-logo.png" height=50&gt;
+&lt;/div&gt;
+
+]
+
+---
+# Datenbanken und Datenbankmanagementsysteme (Forts.)
+
+### Drei Grundformen von DBMS
+
+- **Client-Server-DBMS**: Läuft auf einem leistungsstarken zentralen Server, den Sie von Ihrem Computer (dem Client) aus ansteuern. Ideal für die gemeinsame Nutzung von Daten durch mehrere Personen in einer Organisation. Beliebte Client-Server-DBMS sind PostgreSQL, MariaDB, SQL Server und Oracle.
+- **Cloud DBMS**: Ähnlich wie Client-Server-DBMS, aber sie werden in der Cloud ausgeführt. Das bedeutet, dass sie problemlos extrem große Datenmengen verarbeiten und bei Bedarf automatisch mehr Rechenressourcen bereitstellen können. Beliebte Beispiele: Snowflake, RedShift von Amazon und BigQuery von Google.
+- **Eingebettetes (prozessinternes) DBMS**: Werden vollständig auf Ihrem Computer oder innerhalb einer Anwendung ausgeführt. Sie eignen sich hervorragend für die Arbeit mit großen Datensätzen, bei denen Sie der Hauptnutzer sind. Beispiele: SQLite oder [DuckDB](https://duckdb.org/).
+
+### Weitere nützliche Ressourcen für den Einstieg in das Thema Datenbanken
+
+Einen guten Einstieg bietet [The Beginner's Guide to Databases](https://technically.substack.com/p/the-beginners-guide-to-databases).
+
+Außerdem [Awesome MySQL](https://github.com/shlomi-noach/awesome-mysql), eine Goldgrube für die Arbeit mit MySQL.
+
+
+
+
+---
+# Weshalb Datenbanken im Verwaltungskontext wichtig sind
+
+&lt;div align="center"&gt;
+&lt;img src="../pics/excel-error-paper-2.jpeg" height="500"/&gt;
+&lt;img src="../pics/excel-error-paper.png" height="500"/&gt;
+&lt;/div&gt;
+
+Eine [Fallstudie der City University London](https://blogs.city.ac.uk/cityshortcourses/2020/10/13/what-really-caused-the-excel-error-in-nhs-test-and-trace-covid-19-system-an-in-depth-technical-analysis/) zu dem Vorfall.
+
+
+
+---
+# Weshalb SQL-Skills wichtig sind
+
+.pull-left-center[
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/fb-socsci1-1.png" width="550"/&gt;
+&lt;img src="../pics/fb-socsci1-2.png" width="550"/&gt;
+&lt;img src="../pics/fb-socsci1-3.png" width="550"/&gt;
+&lt;/div&gt;
+`Source` [Washington Post](https://www.washingtonpost.com/technology/2021/09/10/facebook-error-data-social-scientists/)
+]
+
+
+.pull-right-center[
+&lt;div align="center"&gt;
+&lt;br&gt;
+&lt;img src="../pics/fb-socsci1-4.png" width="450"/&gt;
+&lt;img src="../pics/fb-socsci1-5.png" width="450"/&gt;
+&lt;/div&gt;
+`Source` [Solomon Messing / Twitter](https://twitter.com/solomonmg/status/1436742352039669760)
 ]
 
 
 
 ---
 class: inverse, center, middle
-name: bigdataparadox
+name: datatypes
 
-# Das Big-Data-Paradoxon
+# Datentypen und Anwendungen
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
 
 
-
-
 ---
-# Was ist Big Data?
-
-&lt;div align="center"&gt;
-&lt;img src="../pics/big-data-5vs.png" height=480&gt;
-&lt;/div&gt;
-
-
----
-# Umgeben von massiven Datenmengen&lt;sup&gt;1&lt;/sup&gt;
+# Textdaten: GitHub Copilot
 
 .pull-left-wide2[
-&lt;div align="center"&gt;
-&lt;img src="../pics/ids-global-datasphere.png" height=360&gt;
-&lt;/div&gt;
+## "Your AI Pair Programmer"
+- [GitHub Copilot](https://en.wikipedia.org/wiki/GitHub_Copilot) ist ein KI-gestütztes Tool, das Entwickler/innen beim Schreiben von Code unterstützt.
+- Es wurde von GitHub und OpenAI entwickelt und basiert auf der GPT-3-Technologie.
+- Copilot kann Codevorschläge machen, die auf dem Kontext des Codes basieren, den Sie gerade schreiben.
+- Es kann auch ganze Funktionen schreiben, wenn man eine Beschreibung gibt (🖥️ Demonstration).
+- Copilot ist in der Lage, in vielen verschiedenen Programmiersprachen zu arbeiten.
 
-`Quelle` Reinsel et al., 2017, ["Data Age 2025"](https://www.seagate.com/files/www-content/our-story/trends/files/Seagate-WP-DataAge2025-March-2017.pdf)
-
-.footnote[&lt;div class="font80"&gt;&lt;sup&gt;1&lt;/sup&gt;Die Zahlen sind mit Vorsicht zu genießen. SIe sind fundamental schwer zu messen; deshalb weichen veröffentlichte Daten teilweise um ein Vielfaches voneinander ab.&lt;/div&gt;]
+## Datengrundlage
+- Massen an Code, vermutlich von Plattformen wie [GitHub](https://github.com/), [StackOverflow](https://stackoverflow.com/), etc.
+- Substantieller Impact auf Developer-Community, aber auch [Kritik](https://www.theverge.com/2021/7/7/22561180/github-copilot-legal-copyright-fair-use-public-code) bzgl. Urheberrechten und Datenschutz.
 ]
 
 .pull-right-small2[
-
 &lt;div align="center"&gt;
-&lt;img src="../pics/2023InternetMinuteSized.jpg" height=400&gt;
+&lt;img src="../pics/github-copilot-logo.jpeg" width=400&gt;
+&lt;img src="../pics/github-copilot-react-page-suggestion.gif" width=400&gt;
 &lt;/div&gt;
 
-`Quelle` [eDiscoveryToday, LTMG](https://ediscoverytoday.com/2023/04/20/2023-internet-minute-infographic-by-ediscovery-today-and-ltmg-ediscovery-trends/
-)
+`Quelle` [Scalablepath.com](https://www.scalablepath.com/full-stack/ai-pair-programming-github-copilot-review)
 ]
 
 
 ---
-# Das Zeitalter von Big Data - Große Trends
-
-&lt;br&gt;&lt;br&gt;
-
-1. Massive erzeugung von **vom Menschen erzeugten Daten** insbesondere im digitalen Bereich
-
-2. Verwendung von **neuen Datentypen**: Text, Video, digitale Spuren
-
-3.  **Rechen- und Speicherkosten** sind drastisch gesunken
-
-4.  Mainstreaming von **maschinellem Lernen** und **KI**-Technologien
-
-5. (begrenzte) **Demokratisierung des Zugangs** zu großen Datenbeständen
-
-6.  **Verlagerung der Forschungsavantgarde** von der akademischen Welt zur Industrie
-
-
-
-
----
-# Ein frühes Big-Data-Disaster
-
-&lt;div align="center"&gt;
-&lt;img src="../pics/literary-digest-1.png" height=520&gt;
-&lt;/div&gt;
-
----
-# Wahlumfrage 1936 der Zeitschrift Literary Digest 
-
+# Textdaten: Facebook Suicide Prediction
 .pull-left[
+## Absicht
+
+- Selbstmordrisiko vorhersagen mit Nutzerdaten und Interaktionen auf Facebook
+- **Behauptung**: Vorhersage von Suizidgefährdung zur Prävention
+
 ## Hintergrund
 
-- Die Wochenzeitschrift *Literary Digest* hatte die Ergebnisse aller Präsidentschaftswahlen zwischen 1920 und 1932 anhand von Umfragen korrekt vorhergesagt.
-- Die Umfrage von 1936 unter 10 Millionen Wählerinnen und Wählern ergab einen deutlichen Sieg des republikanischen Kandidaten Alfred Landon
+- **Belege**: keine konkreten Genauigkeitszahlen oder Details veröffentlicht [(s. Facebook Blogpost)](https://engineering.fb.com/2018/02/21/ml-applications/under-the-hood-suicide-prevention-tools-powered-by-ai/)
+- **Anfechtbarkeit:** keine Zustimmung durch Nutzer/innen, keine Einsicht welche Daten verwendet wurden
+- **Training der Modelle**: insb. Facebook-Kommentare und Meldungen, potenzielle Verzerrungen durch unterschiedliche Nutzergruppen und Sprachbarrieren
+]
 
-## Nachwehen
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/fb-suicide-1.jpeg" width=500&gt;
+&lt;img src="../pics/fb-suicide-2.jpeg" width=500&gt;
+&lt;/div&gt;
+`Quelle` [Murellio et al., 2018](https://engineering.fb.com/2018/02/21/ml-applications/under-the-hood-suicide-prevention-tools-powered-by-ai/)
+]
 
-- Landon verlor erdrutschartig gegen Franklin D. Roosevelt, der 46 von 48 Bundesstaaten für sich entschied und 60,8% der Wählerstimmen erhielt.
-- Das Ergebnis wurde von George Gallup mit einem Sample von 50.000 Personen richtig vorhergesagt.
-- Die Zeitschrift ging 1938 in Konkurs.
+
+---
+# Satellitenbilder zur Messung von räumlichen Phänomenen
+
+.pull-left[
+## Das Potential von Satellitenbildern und Luftaufnahmen
+
+- Mit massiv gestiegener **Auflösung** sowie **räumlicher** und **zeitlicher Abdeckung** werden Satellitenbilder mittlerweile für viele Forschungs- und kommerzielle Zwecke eingesetzt
+- Rohdaten alleine sind wenig nützlich: Machine-Learning-Techniken, um Muster zu erkennen bzw. inferieren
+
+## Beispiele
+
+- Vorhersage von Armut [(Neal Jean et al., Science)](https://www.science.org/doi/10.1126/science.aaf7894)
+- Vorhersage von ökonomischer Entwicklung [(Burke et al.)](https://www.nber.org/system/files/working_papers/w27879/w27879.pdf)
+- Erkennung von Photovoltaik-Anlagen [(de Hoog et al.)](https://dl.acm.org/doi/abs/10.1145/3396851.3397681?casa_token=k1cHq7bdfDwAAAAA:Q4NCtoVgj_QZzDHtomreQisLf-iMaScXE5UGEzj2IRWTFvn49pGjYya80n-v-my0PbiSUaP0wC_K)
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/satellite-imagery-ml-1.png" width=450&gt;
+&lt;img src="../pics/satellite-imagery-ml-2.png" width=300&gt;
+&lt;/div&gt;
+]
+
+---
+# Luftaufnahmen: Autobahnparkplatzerkennung
+
+.pull-left[
+&lt;div align="center"&gt;
+&lt;img src="../pics/korbach-thesis-1.png" width=500&gt;
+&lt;/div&gt;
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/korbach-thesis-2.png" width=500&gt;
+&lt;/div&gt;
+]
+
+---
+# Fotos: Googles Kindesmissbrauch-Prävention
+.pull-left-wide[
+## Absicht
+
+- Image Content Moderation mit KI: [Google's efforts to combat Child Sexual Abuse Material (CSAM)](https://support.google.com/transparencyreport/answer/10330933?hl=en-GB) über Google Photos; Sperren von Accounts mutmaßlicher Täter
+- Launch 2018: [Google Blogpost](https://blog.google/products/photos/using-technology-fight-child-exploitation/); letzter Stand [hier](https://blog.google/technology/safety-security/an-update-on-our-child-safety-efforts-and-commitments/)
+
+## Hintergrund
+
+- **Belege**: keine Angaben zu Accuracy des Tools; siehe auch [Narayanan/Kapoor, 2024: S. 181, 194](https://http://aisnakeoil.com/)
+- **Anfechtbarkeit:** Google Nutzer/innen kennen Kriterien nicht oder können Missklassifikation anfechten
+- [NYT Recherche:](https://www.nytimes.com/2022/08/21/technology/google-surveillance-toddler-photo.html) Familienvater fotografierte geschwollenen Intimbereich seines Babys für den Hausarzt, Missklassifikation als Kindesmissbrauch und Zugang zu allen Google Services, Google SIM Karte und Google beruflicher Account gesperrt
+- Zahllose weitere [Berichte](https://www.theverge.com/2022/8/21/23315513/google-photos-csam-scanning-account-deletion-investigation) von gesperrten Eltern
+
+]
+
+.pull-right-small[
+&lt;br&gt;
+&lt;div align="center"&gt;
+&lt;img src="../pics/s-extra_J_GooglePhotos.jpeg" width=400&gt;
+&lt;/div&gt;
+[Bildquelle](www.photos.google.com)
+]
+
+
+---
+# Digitale Spurendaten: COVID-19-App-Nutzung
+
+.pull-left[
+
+&lt;div align="center"&gt;
+&lt;img src="../pics/nhb-covid-app-1.png" width=500&gt;
+&lt;img src="../pics/nhb-covid-app-2.png" width=500&gt;
+&lt;/div&gt;
 ]
 
 .pull-right[
 &lt;br&gt;
 &lt;div align="center"&gt;
-&lt;img src="../pics/fdr-happy.jpeg" height=480&gt;
+&lt;img src="../pics/nhb-covid-app-3.png" width=550&gt;
 &lt;/div&gt;
 ]
 
 
 ---
-# Wahlumfrage 1936 der Zeitschrift Literary Digest
+# Videodaten: Automatisiertes Recruitment
 
-&lt;div align="center"&gt;
-&lt;img src="../pics/literary-digest-2.png" height=520&gt;
-&lt;/div&gt;
-
----
-# Wahlumfrage 1936 der Zeitschrift Literary Digest
-
+## HireVue Personalgewinnung
 .pull-left[
-## Anatomie eines Debakels
+- Tool für die Personalgewinnung: Video-Persönlichkeitstests und Games zur Vorhersage beruflichen Erfolgs (und "präventivem Einsatz" im Recruitment)
 
-1. **Stichprobenrahmen**: (1) eigene Leser, (2) registrierte Autobesitzer, (3) registrierte Telefonnutzer
-2. **Datenerhebung**: Jeder bekam einen Musterstimmzettel zugeschickt und wurde gebeten, den markierten Stimmzettel zurückzugeben
-3. **Rücklaufquote**: 2,4 Mio. von 10 Mio.
+## Hintergrund 
 
-**Stichprobenverzerrung** als Folge von **coverage error** und **non-reponse**: Überrepräsentation von wohlhabenderen Personen mit einer Präferenz für Landon
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-`Quelle` [Peverill Squire, 1988, Public Opinion Quarterly](https://www.jstor.org/stable/2749114)
+- **Belege**: 2020 ein Audit (keine veröffentl. Ergebnisse)
+- **Anfechtbarkeit:** Kandidat/innen haben keine Einsicht in die Bewertungskriterien oder Möglichkeit, Entscheidungen anzufechten
+- **Training der Modelle**: auf Basis von Bewertungen bereits eingestellter Mitarbeiter/innen, potenzielle Reproduktion bestehender Biases
+- BR Recherche: Bücherregale, seltene Vokabeln, und das Tragen einer Brille führen zu besseren Scores [(Harlan/Schnuck, BR, 2021)](https://interaktiv.br.de/ki-bewerbung/en/)
 ]
 
 .pull-right[
 &lt;div align="center"&gt;
-&lt;img src="../pics/literary-digest-squire-1.png" width=350&gt;
-&lt;img src="../pics/literary-digest-squire-2.png" width=350&gt;
-&lt;img src="../pics/literary-digest-squire-3.png" width=350&gt;
+&lt;img src="../pics/s-extra_A_HireVue.png" width=250&gt;
 &lt;/div&gt;
-]
-
----
-# Umfrage-basierte Evidenz ist mit Vorsicht zu genießen
 
 &lt;div align="center"&gt;
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;img src="../pics/calvin-hobbes-messing-data.png" width=800&gt;
+&lt;video width="230" controls autoplay&gt;
+  &lt;source src="../pics/279fe99896a2b0f526b3747339782a5d~1ki0iglay-q3.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+&lt;video width="230" controls autoplay&gt;
+  &lt;source src="../pics/af2546eda5c7c242e40b9477f48b2134~1ki0izhyq-q3.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
 &lt;/div&gt;
 
-
-
----
-# Ein modernes Big-Data-Umfrage-Desaster
- 
-.pull-left[
 &lt;div align="center"&gt;
-&lt;img src="../pics/bradley-unrepresentative-big-surveys-vaccine-1.png" height=480&gt;
+&lt;img src="../pics/ocean-results.png" width=450&gt;
 &lt;/div&gt;
-]
 
-.pull-right[
-&lt;div align="center"&gt;&lt;br&gt;&lt;br&gt;
-&lt;img src="../pics/bradley-unrepresentative-big-surveys-vaccine-2.png" height=340&gt;
-&lt;/div&gt;
-]
-
-
----
-# Ein modernes Big Data Umfrage-Desaster
-
-.pull-left-wide[
-&lt;div align="center"&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;img src="../pics/bradley-unrepresentative-big-surveys-vaccine-3.png" width=720&gt;
-&lt;/div&gt;
-]
-
-.pull-right-small[
-&lt;div align="center"&gt;&lt;br&gt;&lt;br&gt;
-&lt;img src="../pics/bradley-unrepresentative-big-surveys-vaccine-4.png" width=350&gt;
-&lt;/div&gt;
+`Quelle` [(Harlan/Schnuck, BR, 2021)](https://interaktiv.br.de/ki-bewerbung/en/)
 ]
 
 
 
----
-# Das Big-Data-Paradoxon
 
-.pull-left[
-&gt; „Wenn verzerrte Stichproben groß sind, sind sie doppelt irreführend: Sie erzeugen Konfidenzintervalle mit falschen Mitteln und erheblich unterschätzter Unsicherheit. Dies ist das **Big-Data-Paradoxon**: Je umfangreicher die Daten sind, desto sicherer täuschen wir uns selbst, wenn wir die Verzerrungen bei der Datenerhebung nicht berücksichtigen.“
 
-&lt;div align="right"&gt;Bradley et al. (2021), &lt;i&gt;Nature&lt;/i&gt;&lt;/div&gt;
 
-&gt; „Die 'Größe' solcher Big Data (für Rückschlüsse auf die Population) sollte an der relativen Größe f = n/N der Stichprobe zur Population gemessen werden, nicht an der absoluten Größe n der Stichprobe.
-
-&lt;div align="right"&gt;Xiao-Li Meng (2018), &lt;i&gt;The Annals of Applied Statistics&lt;/i&gt;&lt;/div&gt;
-
-]
-
---
-
-.pull-right[
-## Korrektur endlicher Grundgesamtheiten zur Rettung?
-
-- Die Intuition sagt uns, dass die Wahrscheinlichkeit eines Fehlers geringer sein sollte, wenn der Stichprobenumfang im Verhältnis zum Umfang der Grundgesamtheit groß ist.
-- Das stimmt auch, aber der Zugewinn ist relativ langsam.
-- Der endliche Populationskorrekturfaktor für den Standardfehler einer interessierenden Größe ist zum Beispiel gegeben durch `\(\sqrt{\frac{N-n}{N-1}}\)`. 
-
-## Beispiel
-
-- Wir führen eine Umfrage bei 100k Personen in einer Bevölkerung von 3,7 Mio. durch.
-- Für `\(N=3.7m\)` und `\(n=100k\)` ist dies `\(\sqrt{0.973}\)`.
-]
 
 
 
 ---
 class: inverse, center, middle
-name: garbageingarbageout
+name: yourdata
 
-# Garbage in, Garbage out
+# Ihre Daten
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
 
 
 ---
-# Garbage in, Garbage out
-
-.pull-left[
-## Das GIGO Prinzip
-- Die Qualität der Informationen, die ein Modell produziert (z.B. Vorhersagen), kann nicht besser sein als die Qualität der Informationen, die in das Modell eingespeist werden.
-- Dieser Grundsatz ist wird umso relevanter in Big-Data-Kontexten, wenn Daten unzureichend validiert oder Datenqualität schlicht nicht gegeben ist.
-- Das Problem verschärft sich potentiell in ML-Anwendungen, wenn Modelle komplex und intransparent sind.
-]
-
-.pull-right[
-&lt;div align="center"&gt;&lt;br&gt;&lt;br&gt;
-&lt;img src="../pics/gigo.png" width=480&gt;
-&lt;/div&gt;
-]
-
-
-
----
-# Beispiel: Google Flu Trends
-
-&lt;div align="center"&gt;
-&lt;img src="../pics/google-flu-nature.png" width=600&gt;
-&lt;/div&gt;
-
-`Quelle` Ginsberg et al., 2009, [Nature](https://www.nature.com/articles/nature07634)
-
----
-# Beispiel: Google Flu Trends
-
-&lt;div align="center"&gt;
-&lt;img src="../pics/google-flu-trends-screenshot-1.jpg" width=480&gt;&lt;br&gt;
-&lt;img src="../pics/google-flu-trends-screenshot-2.jpg" width=480&gt;
-&lt;/div&gt;
-
-
----
-# Beispiel: Google Flu Trends
-
-
-.pull-left-wide2[
-&lt;div align="center"&gt;
-&lt;img src="../pics/google-flu-parable-1.png" width=650&gt;
-&lt;/div&gt;
-
-`Quelle` Lazer et al., 2014, [Science](https://science.sciencemag.org/content/343/6176/1203)
-
-]
-
-.pull-right-small2[
-&lt;div align="center"&gt;&lt;br&gt;
-&lt;img src="../pics/google-flu-parable-2.png" width=500&gt;
-&lt;/div&gt;
-]
-
-
----
-# Beispiel: Erkennen von Straftätern durch Gesichtsdaten
-
-&lt;div align="center"&gt;
-&lt;img src="../pics/criminal-faces-1.png" width=600&gt;
-&lt;/div&gt;
-
-
----
-# Beispiel: Erkennen von Straftätern durch Gesichtsdaten
-
-&lt;div align="center"&gt;
-&lt;img src="../pics/criminal-faces-2.png" width=600&gt;
-&lt;/div&gt;
-
-
----
-# Beispiel: Erkennen von Straftätern durch Gesichtsdaten
-
-&lt;div align="center"&gt;&lt;br&gt;
-&lt;img src="../pics/criminal-faces-3.png" width=500&gt;
-&lt;img src="../pics/criminal-faces-4.png" width=500&gt;
-&lt;/div&gt;
-
-
-
----
-# Garbage in, Garbage out: Lessons learned
-
-.pull-left[
-1. **Messung-** und **Selektions-Fragen** sind bei der Big-Data-Analyse nach wie vor entscheidend.
-
-2. Trauen Sie **Messungen** nicht, die nicht **richtig validiert** wurden.
-
-3. Achten Sie darauf, was in ein Modell einfließt (der **Input**: Fälle, Variablen/Merkmale).
-
-4. Achten Sie auf eine angemessene **Out-of-Sample-Validierung** von Modellen.
-
-5. Vorsicht bei **unkritischer Nutzung von Online-/Sozialen Medien** als Datenquelle.
-]
-
-.pull-right-center[
-&lt;div align="center"&gt;
-&lt;img src="../pics/xkcd-2295-garbage_math.png" width=300&gt;
-&lt;/div&gt;
-`Quelle` XKCD, [2295](https://xkcd.com/2295/), ([hier erklärt](https://www.explainxkcd.com/wiki/index.php/2295:_Garbage_Math))
-]
-
-
----
-class: inverse, center, middle
-name: exercise
+class: exercise, center, middle
 
 # Übung
-&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px style="width:1000px; margin:auto;"/&gt;&lt;/html&gt;
 
+.content-box-white[
+**Formen Sie Gruppen zu bestimmten Datentypen!**
 
----
-# Umgang mit Evidenz als Detektivarbeit
+**Mögliche Datentypen:** 
 
-.pull-left-wide[
-## Der Ansatz
+Text, Bilder, Videos, Geodaten, Digitale Spurendaten
 
-- Auswertung von Daten ist wie Detektivarbeit
-- Wir müssen die **Evidenz genau unter die Lupe nehmen**, um herauszufinden, ob der Verdächtige - der vermutete Zusammenhang, der deskriptive Befund - tatsächlich hält, was er verspricht
-- Dazu müssen wir versuchen **Alternativerklärungen auszuschließen**
+**Aufgabe:** 
 
-## Die Ausstattung
-
-- **Unsere Toolbox:** Kritisches Denken, Beobachtung (Datenerhebung), Wahrnehmung (Messung), externes Wissen, statistische Methoden
-- Ohne qualitative Beurteilung sind die quantitativen Werkzeuge häufig ohne Wert
+Diskutieren Sie mögliche Anwendungen in Ihrem Kontext. Welches Potential, aber auch welche ethischen und rechtlichen Fragen ergeben sich aus der Verwendung dieser Daten?
 ]
 
 
-.pull-right-small[
-&lt;div align="center"&gt;
-&lt;br&gt;
-&lt;img src="../pics/sherlock-rathbone.jpeg" height=400&gt;
-&lt;/div&gt;
-]
 
----
-# Ein paar einfache Fälle
-
-&lt;br&gt;
-
-.pull-left[
-## Drückende Schuhe (?)
-
-&gt; Umfrageergebnisse zeigen, dass Menschen, die mit Schuhen schlafen, viel häufiger mit Kopfschmerzen aufwachen.
-
-## Gezuckerte Getränke führen zu Fettleibigkeit (?)
-
-&gt; Personen, die regelmäßig zuckerhaltige Getränke konsumieren, haben einen 30% höheren BMI.
-
-]
-
-.pull-right[
-
-
-## Lock-downs haben COVID-19-bedingte Tode herbeigeführt (?)
-
-&gt; Europäische Länder, die strengere und längere Lock-downs hatten, hatten höhere COVID-19-Todesraten.
-
-
-## UN-Friedensmissionen schützen die Zivilbevölkerung nicht (?)
-
-&gt; UN-Friedensmissionen in Bürgerkriegsszenarien sind stark positiv mit höheren Todesraten unter Zivilisten korreliert
-
-]
-
-
----
-# Daten-Tatort: Sind bestimmte Musikgenres tödlicher als andere?
-
-.pull-left[
-&lt;div align="center"&gt;
-&lt;img src="../pics/musician_mortality.jpeg" height=430&gt;
-&lt;/div&gt;
-
-`Quelle` [The Conversation](https://theconversation.com/music-to-die-for-how-genre-affects-popular-musicians-life-expectancy-36660), `Hintergrund (mit Autoren-Replik)` [Calling Bullshit](https://callingbullshit.org/case_studies/case_study_musician_mortality.html)
-]
-
-.pull-right[
-&gt; [Study author Dianna Kenny] found that musicians from older genres – including blues, jazz, country and gospel – have similar lifespans to American people their own age. The life expectancy for R&amp;B musicians is slightly lower, while the life expectancy for newer genres like rock, techno, punk, metal, rap and hip hop is significantly shorter."
-
-&lt;div align="right"&gt;Ana Swanson, &lt;a href="https://www.washingtonpost.com/news/wonk/wp/2015/04/15/the-causes-of-musicians-deaths-by-genre/"&gt;Washington Post&lt;/a&gt;&lt;/div&gt;
-
-&gt; "It's a cautionary tale to some degree," Kenny told the Washington Post. "People who go into rap music or hip hop or punk, they're in a much more occupational hazard profession compared to war. We don't lose half our army in a battle."
-
-&lt;div align="right"&gt;Dianna Kenny, &lt;a href="https://www.washingtonpost.com/news/morning-mix/wp/2015/03/25/over-half-of-dead-hip-hop-artists-were-murdered-study-finds/"&gt;quoted by Washington Post&lt;/a&gt;&lt;/div&gt;
-]
-
-
----
-# Weitere Evidenz
-
-.pull-left[
-&lt;div align="center"&gt;
-&lt;img src="../pics/musician_mortality2.jpeg" height=450&gt;
-&lt;/div&gt;
-]
-
---
-
-.pull-right[
-## Some issues
-
-1. **Sanity check:** Sind manche Genres wirklich so tödlich? Sterben z. B. Rap-Musiker wirklich mit einem Durchschnittsalter von ~30 Jahren?
-2. **Datenzensierung:** Einige Genres sind jünger als andere, und die Auswertung setzt voraus, dass die Musiker bereits gestorben sind. Die meisten Rap- und Hip-Hop-Stars sind heute noch am Leben - Lebensdauer unbekannt!
-3. **Bedingte Wahrscheinlichkeiten:** Die Wahrscheinlichkeiten der einzelnen Todesursachen hängen davon ab, dass der Tod zum Zeitpunkt der Untersuchung bereits eingetreten ist.
-4) (Kleineres Problem) Liniendiagramm für kategoriale Daten?  [Keine gute Idee.](https://www.jmp.com/en_gb/statistics-knowledge-portal/exploratory-data-analysis/line-graph.html#:~:text=Line%20graphs%20do%20not%20make,might%20have%20a%20defined%20order.)
-]
-
-
----
-# Lösung des Falles
-
-.pull-left[
-
-|                       	| Evidenz und Schlüsse                           	|
-|-----------------------	|----------------------------------------------------	|
-| **Der Tatort**   	| Musikgenre korreliert mit Todesalter                 	|
-| **Die Verdächtigen**    	| Lifestyle (z.B. Drogenkonsum), Alter des Genres, unvollständige Datenerhebung |
-| **Die Tatwaffe** 	| Konfundierung durch Daten-Zensur                              	|
-
-&gt; "In other words, it's not that rap stars will likely die young; it's that the rap stars who have died certainly died young because rap hasn't been around long enough for it to be otherwise." &lt;div align="right"&gt;Carl Bergstrom and Jevin West, &lt;a href="https://callingbullshit.org/case_studies/case_study_musician_mortality.html"&gt;Calling Bullshit&lt;/a&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/div&gt;
-
-&lt;div class="font50"&gt;&lt;br&gt;&lt;br&gt;&lt;sup&gt;1&lt;/sup&gt;Note that (1) the author, Dianna Kenny, has provided a nice and plausible response and that (2) a &lt;a href="http://dx.doi.org/10.21091/mppa.2016.1007"&gt;more rigorous study&lt;/a&gt; seems to provide evidence consistent with the original patterns.&lt;/div&gt;
-]
-
-.pull-right-center[
-&lt;div align="center"&gt;
-&lt;br&gt;
-&lt;b&gt;Inspector Lestrade:&lt;/b&gt;&lt;br&gt;
-&lt;img src="../pics/tikz/tikz-024.png" width=400&gt;
-&lt;br&gt;
-&lt;b&gt;Sherlock:&lt;/b&gt;&lt;br&gt;
-&lt;img src="../pics/tikz/tikz-025.png" width=400&gt;
-&lt;/div&gt;
-]
 
 
 

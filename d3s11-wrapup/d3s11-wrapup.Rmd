@@ -1,7 +1,7 @@
 ---
-title: "Day 6: Data Management and Ethics"
-subtitle: "Ethical considerations in data science</i>"
-author: "Sebastian Ramirez-Ruiz"
+title: "Tag 3: Auf dem Weg zur datenbewussten Organisation"
+subtitle: "Session 11: Wrap-up und Ausblick"
+author: "Simon Munzert"
 institute: "Hertie School"
 output:
   xaringan::moon_reader:
@@ -67,9 +67,12 @@ bib <-  RefManageR::ReadBib("grateful-refs.bib")
 ```
 
 
-# Table of contents
+# Überblick
 
 <br><br>
+
+Wir nehmen abschließend noch einmal den kompletten Daten-Lifecycle im Blick und erarbeiten uns praktische Take-Aways für den Umgang mit Daten im Verwaltungskontext. Dazu werfen wir einen Blick nach vorn auf die nachfolgenden Module.
+
 
 1. [Everyday ethics in data science](#everyday)
 

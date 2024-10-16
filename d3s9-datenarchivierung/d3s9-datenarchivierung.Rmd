@@ -232,6 +232,7 @@ name: dmp
 <img src="../pics/d6-s2-dikw.png" height=360>
 </div>
 ]
+
 ---
 
 # Daten in der politischen Analyse

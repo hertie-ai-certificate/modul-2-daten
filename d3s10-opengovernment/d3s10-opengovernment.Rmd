@@ -422,4 +422,16 @@ Data Scientist, Data Analyst, Data Engineer, Machine Learning Engineer, AI Resea
 `Quelle` Eigene Datenerhebung (April 2024), CSS-Master-Programme in Europa und USA
 
 
+---
+# Übung
+
+Rollen für Data Scientists in der Verwaltung
+
+- Digitalisierung
+- AI-Tool-Design
+- Datenverwaltung und Infrastruktur
+- Kommunikation
+- Politikgestaltung / Evaluation
+
+Data-Scientist- und KI-Specialist-Ausschreibungen sichten
 

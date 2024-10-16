@@ -574,7 +574,7 @@ name: exercise
 
 > "In other words, it's not that rap stars will likely die young; it's that the rap stars who have died certainly died young because rap hasn't been around long enough for it to be otherwise." <div align="right">Carl Bergstrom and Jevin West, <a href="https://callingbullshit.org/case_studies/case_study_musician_mortality.html">Calling Bullshit</a><sup>1</sup></div>
 
-<div class="font50"><br><br><sup>1</sup>Note that (1) the author, Dianna Kenny, has provided a nice and plausible response and that (2) a <a href="http://dx.doi.org/10.21091/mppa.2016.1007">more rigorous study</a> seems to provide evidence consistent with the original patterns.</div>
+<div class="font50"><br><br><sup>1</sup>Die Autorin Dianna Kenny hat mit einer plausiblen Antwort reagiert und auf eine <a href="http://dx.doi.org/10.21091/mppa.2016.1007">besser designte Studie verwiesen</a>, deren Evidenz konsistent mit den ursprünglichen Mustern zu sein scheint.</div>
 ]
 
 .pull-right-center[

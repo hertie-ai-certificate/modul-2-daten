@@ -221,7 +221,7 @@ Zum Ausprobieren:
             &lt;td&gt;
                 &lt;ul&gt;
                     &lt;li&gt;Gut für die Vorhersage von Verhaltensmustern (z. B. Nutzerverhalten)&lt;/li&gt;
-                    &lt;li&gt;Anfällig für systematische Verzerrungen, falls nicht repräsentativ&lt;/li&gt;
+                    &lt;li&gt;Anfällig für systematische Verzerrungen&lt;/li&gt;
                 &lt;/ul&gt;
             &lt;/td&gt;
         &lt;/tr&gt;
@@ -598,8 +598,59 @@ name: measurement
 
 
 
+---
+class: exercise, center, middle
+
+# Übung: Bias durch Selektions- oder Messfehler
+
+.content-box-white[
+**Diskussion in 3er-Gruppen, jeweils 10-15 Minuten**
+
+Welche Beispiele für KI-Anwendungen fallen Ihnen ein, bei denen Selektions- oder Messfehler zu systematischen Verzerrungen im Outcome der Modelle führen könnten?
+]
 
 
+---
+name: a
+#HireVue Personalgewinnung
+.pull-left[
+- Tool für die Personalgewinnung: Video-Personlichkeitstests und Games
+- **Behauptung**: HireVue Einstufung kann beruflichen Erfolg vorhersagen
+- **Belege**: kein Audit (Prüfung), nach 2020 ein Audit aber Ergebnisse nicht öffentlich
+- **Anfechtbarkeit:** Kandidat/innen haben keine Einsicht in die Bewertungskriterien oder Möglichkeit, Entscheidungen anzufechten
+- **Training der Modelle**: auf Basis von Bewertungen bereits eingestellter Mitarbeiter/innen, potenzielle Reproduktion bestehender Biases
+- BR Recherche: Bücherregale, seltene Vokabeln, und das Tragen einer Brille führen zu besseren Scores [(siehe Harlan/Schnuck, 2021)](https://interaktiv.br.de/ki-bewerbung/en/)
+
+`Source` [Harwell, 2019; ](https://www.washingtonpost.com/technology/2019/10/22/ai-hiring-face-scanning-algorithm-increasingly- decides- whether- you- deserve- job/) [Wang et al., 2023: S. 28](https://predictive-optimization.cs.princeton.edu/)
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/s-extra_A_HireVue.png" width=1000&gt;
+&lt;/div&gt;
+[Bildquelle](https://marketplace.icims.com/en-US/apps/119432/video-interviewing-video-assessment-solution-by-hirevue)
+]
+
+
+---
+name: f
+# Optum ImpactPro
+.pull-left[
+- Medizinisches Risiko vorhersagen mit früheren Patientendaten mit Optum ImpactPro
+- **Behauptung**: Vorhersage ermöglicht präventive Maßnahmen und Reduktion langfristiger Kosten 
+- **Belege**: keine Belege für Fairness oder Genauigkeit; ethnischer Bias [(s. Obermeyer, 2019)](https://doi.org/10. 1126/science.aax2342)
+- **Anfechtbarkeit:** Patienten können Ergebnisse und Trainingsdaten nicht herausfordern
+- **Training der Modelle**: Training anhand historischer Patientendaten, wodurch bestehende Bias erlernt wurden (z.B. schlechtere Gesundheitsversorgung für schwarze Menschen)
+
+`Source` [Optum, 2021; ](https://www.optum.com/content/dam/optum3/optum/en/resources/white-papers/wf4785959-impact-pro-white-paper.pdf)[Obermeyer, 2019; ](https://doi.org/10. 1126/science.aax2342) [Wang et al., 2023: S. 33](https://predictive- optimization.cs.princeton.edu/)
+]
+
+.pull-right[
+&lt;div align="center"&gt;
+&lt;img src="../pics/s-extra_F_OptumImpact.jpeg" width=1000&gt;
+&lt;/div&gt;
+[Bildquelle](https://www.modernhealthcare.com/technology/optum-algorithm-used-flag-high-risk-patients-found-have-unintentional-racial-bias)
+]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
